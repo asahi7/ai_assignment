@@ -1,0 +1,106 @@
+/*
+#main {
+
+        margin: 0px 30px 0px 50px;
+
+        font-family: helvetica,arial,sans-serif;
+
+        clear:both;
+
+        padding-top:50px;
+
+}
+*/
+
+html, body {
+  margin: 20px;
+  font-size: 18px;
+}
+
+div#caption {
+        font-weight: bold;
+        text-align: center;
+}
+
+div#comment {
+        color: red;
+        margin-top: 10px;
+        margin-bottom: 10px;
+}
+
+H1 {
+        text-align:center;
+        color:#00008B;
+}
+
+H2 {
+        text-align:left;
+        color:#996699;
+        margin-top: 20px;
+        margin-bottom: 20px;
+}
+
+span#diff {
+        color: red;
+        font-weight: bold;
+}
+
+span#important {
+        color: red;
+        font-weight: bold;
+        text-decoration: blink
+}
+
+
+table.gamematrix {
+        border-collapse: collapse;
+        margin-bottom:20px;
+        margin: 20px;
+}
+
+
+
+table.gamematrix td {
+        padding-left:5px;
+        padding-right:5px;
+}
+
+table.gamematrix td.cent {
+        text-align: center;
+}
+
+table.gamematrix td.pay {
+        border: 1px solid maroon;
+        text-align: center;
+        padding-top:3px;
+        padding-bottom:3px;
+        width: 5em;
+}
+
+
+
+table {
+        border-collapse: collapse;
+        margin-bottom:20px;
+        margin: 20px;
+}
+
+td {
+        border: 1px solid maroon;
+        text-align: left;
+        padding-top:3px;
+        padding-bottom:3px;
+        width: 5em;
+}
+
+td.invisible {
+        border: 0px solid green;
+        text-align: center;
+        padding-top:3px;
+        padding-bottom:3px;
+        width: 5em;
+}
+
+
+A {text-decoration:none;}
+

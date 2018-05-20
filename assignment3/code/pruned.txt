@@ -1,0 +1,1496 @@
+--- 1
+***
+*#*
+***
+--- 1
+O**
+*#*
+***
+--- 1
+OX*
+*#*
+***
+--- -1
+OXO
+*#*
+***
+--- 1
+OXO
+X#*
+***
+--- -1
+OXO
+X#O
+***
+--- 1
+OXO
+X#O
+X**
+--- 0
+OXO
+X#O
+XO*
+--- 0 DRAW
+OXO
+X#O
+XOX
+--- 1 WIN
+OXO
+X#O
+X*O
+--- -1 LOSE
+OXO
+X#O
+*X*
+--- pruned 
+OXO
+X#O
+**X
+--- 1 WIN
+OXO
+X#*
+O**
+--- -1
+OXO
+X#*
+*O*
+--- -1 LOSE
+OXO
+X#X
+*O*
+--- 1
+OXO
+X#*
+XO*
+--- 1 WIN
+OXO
+X#*
+XOO
+--- 1
+OXO
+X#*
+*OX
+--- 0
+OXO
+X#O
+*OX
+--- 1 WIN
+OXO
+X#*
+OOX
+--- 1 WIN
+OXO
+X#*
+**O
+--- 1
+OXO
+*#X
+***
+--- -1
+OXO
+O#X
+***
+--- 1
+OXO
+O#X
+X**
+--- 0
+OXO
+O#X
+XO*
+--- 0 DRAW
+OXO
+O#X
+XOX
+--- 1 WIN
+OXO
+O#X
+X*O
+--- -1 LOSE
+OXO
+O#X
+*X*
+--- 1
+OXO
+O#X
+**X
+--- 1 WIN
+OXO
+O#X
+O*X
+--- 0
+OXO
+O#X
+*OX
+--- 1 WIN
+OXO
+*#X
+O**
+--- -1
+OXO
+*#X
+*O*
+--- 1
+OXO
+*#X
+XO*
+--- 1 WIN
+OXO
+*#X
+XOO
+--- 1
+OXO
+*#X
+*OX
+--- 1 WIN
+OXO
+*#X
+OOX
+--- 1 WIN
+OXO
+*#X
+**O
+--- 1
+OXO
+*#*
+X**
+--- -1
+OXO
+O#*
+X**
+--- -1 LOSE
+OXO
+O#*
+XX*
+--- pruned 
+OXO
+O#*
+X*X
+--- -1
+OXO
+*#O
+X**
+--- -1 LOSE
+OXO
+*#O
+XX*
+--- pruned 
+OXO
+*#O
+X*X
+--- 0
+OXO
+*#*
+XO*
+--- 0
+OXO
+*#*
+XOX
+--- 0
+OXO
+O#*
+XOX
+--- 0
+OXO
+*#O
+XOX
+--- 1 WIN
+OXO
+*#*
+X*O
+--- -1 LOSE
+OXO
+*#*
+*X*
+--- pruned 
+OXO
+*#*
+**X
+--- -1
+OX*
+O#*
+***
+--- 1
+OXX
+O#*
+***
+--- 1 WIN
+OXX
+O#O
+***
+--- 1 WIN
+OXX
+O#*
+O**
+--- -1
+OXX
+O#*
+*O*
+--- 1
+OXX
+O#X
+*O*
+--- 1 WIN
+OXX
+O#X
+OO*
+--- 1 WIN
+OXX
+O#X
+*OO
+--- -1 LOSE
+OXX
+O#*
+XO*
+--- 1
+OXX
+O#*
+*OX
+--- 1 WIN
+OXX
+O#O
+*OX
+--- 1 WIN
+OXX
+O#*
+OOX
+--- 1 WIN
+OXX
+O#*
+**O
+--- 1
+OX*
+O#X
+***
+--- 1 WIN
+OX*
+O#X
+O**
+--- 1
+OX*
+O#X
+*O*
+--- 1
+OX*
+O#X
+XO*
+--- 1 WIN
+OX*
+O#X
+XOO
+--- 1
+OX*
+O#X
+*OX
+--- 1 WIN
+OX*
+O#X
+OOX
+--- 1 WIN
+OX*
+O#X
+**O
+--- 1
+OX*
+O#*
+X**
+--- 1 WIN
+OX*
+O#O
+X**
+--- -1
+OX*
+O#*
+XO*
+--- 1
+OX*
+O#*
+XOX
+--- 1 WIN
+OX*
+O#O
+XOX
+--- 1 WIN
+OX*
+O#*
+X*O
+--- -1 LOSE
+OX*
+O#*
+*X*
+--- pruned 
+OX*
+O#*
+**X
+--- -1
+OX*
+*#O
+***
+--- 1
+OXX
+*#O
+***
+--- pruned 
+OXX
+*#O
+O**
+--- -1
+OXX
+*#O
+*O*
+--- 1
+OXX
+X#O
+*O*
+--- 0
+OXX
+X#O
+OO*
+--- 0 DRAW
+OXX
+X#O
+OOX
+--- 1 WIN
+OXX
+X#O
+*OO
+--- -1 LOSE
+OXX
+*#O
+XO*
+--- pruned 
+OXX
+*#O
+*OX
+--- 1 WIN
+OXX
+*#O
+**O
+--- 1
+OX*
+X#O
+***
+--- -1
+OX*
+X#O
+O**
+--- 1
+OXX
+X#O
+O**
+--- 1 WIN
+OXX
+X#O
+O*O
+--- -1 LOSE
+OX*
+X#O
+OX*
+--- pruned 
+OX*
+X#O
+O*X
+--- 0
+OX*
+X#O
+*O*
+--- 1
+OX*
+X#O
+XO*
+--- 1 WIN
+OX*
+X#O
+XOO
+--- 0
+OX*
+X#O
+*OX
+--- 0
+OX*
+X#O
+OOX
+--- 1 WIN
+OX*
+X#O
+**O
+--- 1
+OX*
+*#O
+X**
+--- -1
+OX*
+*#O
+XO*
+--- pruned 
+OX*
+*#O
+XOX
+--- 1 WIN
+OX*
+*#O
+X*O
+--- -1 LOSE
+OX*
+*#O
+*X*
+--- pruned 
+OX*
+*#O
+**X
+--- -1
+OX*
+*#*
+O**
+--- 1
+OXX
+*#*
+O**
+--- pruned 
+OXX
+*#O
+O**
+--- 1
+OXX
+*#*
+OO*
+--- 1
+OXX
+X#*
+OO*
+--- 1 WIN
+OXX
+X#*
+OOO
+--- 1
+OXX
+*#X
+OO*
+--- 1 WIN
+OXX
+*#X
+OOO
+--- 1
+OXX
+*#*
+OOX
+--- pruned 
+OXX
+*#O
+OOX
+--- 1 WIN
+OXX
+*#*
+O*O
+--- 1
+OX*
+X#*
+O**
+--- -1
+OX*
+X#*
+OO*
+--- -1 LOSE
+OX*
+X#X
+OO*
+--- pruned 
+OX*
+X#*
+OOX
+--- 1 WIN
+OX*
+X#*
+O*O
+--- 1
+OX*
+*#X
+O**
+--- pruned 
+OX*
+*#X
+OO*
+--- 1 WIN
+OX*
+*#X
+O*O
+--- -1 LOSE
+OX*
+*#*
+OX*
+--- pruned 
+OX*
+*#*
+O*X
+--- 1
+OX*
+*#*
+*O*
+--- 1
+OXX
+*#*
+*O*
+--- 1 WIN
+OXX
+*#*
+*OO
+--- 1
+OX*
+X#*
+*O*
+--- 1 WIN
+OX*
+X#*
+*OO
+--- 1
+OX*
+*#X
+*O*
+--- pruned 
+OX*
+*#X
+OO*
+--- 1 WIN
+OX*
+*#X
+*OO
+--- 1
+OX*
+*#*
+XO*
+--- 1 WIN
+OX*
+*#*
+XOO
+--- 1
+OX*
+*#*
+*OX
+--- 0
+OXO
+*#*
+*OX
+--- 1
+OX*
+O#*
+*OX
+--- pruned 
+OX*
+*#O
+*OX
+--- pruned 
+OX*
+*#*
+OOX
+--- 1 WIN
+OX*
+*#*
+**O
+--- 1
+O*X
+*#*
+***
+--- -1
+OOX
+*#*
+***
+--- 1
+OOX
+X#*
+***
+--- 1 WIN
+OOX
+X#O
+***
+--- -1
+OOX
+X#*
+O**
+--- -1 LOSE
+OOX
+X#X
+O**
+--- 1
+OOX
+X#*
+OX*
+--- 1 WIN
+OOX
+X#O
+OX*
+--- 1 WIN
+OOX
+X#*
+OXO
+--- 1
+OOX
+X#*
+O*X
+--- 1 WIN
+OOX
+X#O
+O*X
+--- 1 WIN
+OOX
+X#*
+OOX
+--- 1 WIN
+OOX
+X#*
+*O*
+--- 1 WIN
+OOX
+X#*
+**O
+--- 1
+OOX
+*#X
+***
+--- -1
+OOX
+O#X
+***
+--- -1 LOSE
+OOX
+O#X
+X**
+--- 1
+OOX
+O#X
+*X*
+--- 1 WIN
+OOX
+O#X
+OX*
+--- 1 WIN
+OOX
+O#X
+*XO
+--- -1 LOSE
+OOX
+O#X
+**X
+--- -1
+OOX
+*#X
+O**
+--- 1
+OOX
+*#X
+OX*
+--- 1 WIN
+OOX
+*#X
+OXO
+--- -1 LOSE
+OOX
+*#X
+O*X
+--- 1 WIN
+OOX
+*#X
+*O*
+--- 1 WIN
+OOX
+*#X
+**O
+--- -1 LOSE
+OOX
+*#*
+X**
+--- 1
+OOX
+*#*
+*X*
+--- -1
+OOX
+O#*
+*X*
+--- -1 LOSE
+OOX
+O#*
+XX*
+--- pruned 
+OOX
+O#*
+*XX
+--- 1 WIN
+OOX
+*#O
+*X*
+--- 1
+OOX
+*#*
+OX*
+--- 1
+OOX
+*#*
+OXX
+--- 1 WIN
+OOX
+O#*
+OXX
+--- 1 WIN
+OOX
+*#O
+OXX
+--- 1 WIN
+OOX
+*#*
+*XO
+--- 1
+OOX
+*#*
+**X
+--- -1
+OOX
+O#*
+**X
+--- -1 LOSE
+OOX
+O#*
+X*X
+--- pruned 
+OOX
+O#*
+*XX
+--- 1 WIN
+OOX
+*#O
+**X
+--- -1
+OOX
+*#*
+O*X
+--- 1 WIN
+OOX
+*#*
+*OX
+--- -1
+O*X
+O#*
+***
+--- 1
+O*X
+O#X
+***
+--- 1 WIN
+O*X
+O#X
+O**
+--- pruned 
+O*X
+O#X
+*O*
+--- 1 WIN
+O*X
+O#X
+**O
+--- -1 LOSE
+O*X
+O#*
+X**
+--- pruned 
+O*X
+O#*
+*X*
+--- pruned 
+O*X
+O#*
+**X
+--- -1
+O*X
+*#O
+***
+--- 1
+O*X
+X#O
+***
+--- 1
+O*X
+X#O
+O**
+--- 1
+O*X
+X#O
+OX*
+--- 1 WIN
+O*X
+X#O
+OXO
+--- 1
+O*X
+X#O
+O*X
+--- pruned 
+O*X
+X#O
+OOX
+--- pruned 
+O*X
+X#O
+*O*
+--- 1 WIN
+O*X
+X#O
+**O
+--- -1 LOSE
+O*X
+*#O
+X**
+--- pruned 
+O*X
+*#O
+*X*
+--- pruned 
+O*X
+*#O
+**X
+--- 1
+O*X
+*#*
+O**
+--- 1
+O*X
+X#*
+O**
+--- pruned 
+O*X
+X#*
+OO*
+--- 1 WIN
+O*X
+X#*
+O*O
+--- 1
+O*X
+*#X
+O**
+--- pruned 
+O*X
+*#X
+OO*
+--- 1 WIN
+O*X
+*#X
+O*O
+--- 1
+O*X
+*#*
+OX*
+--- 1 WIN
+O*X
+O#*
+OX*
+--- pruned 
+O*X
+*#O
+OX*
+--- 1 WIN
+O*X
+*#*
+OXO
+--- 1
+O*X
+*#*
+O*X
+--- 1 WIN
+O*X
+O#*
+O*X
+--- pruned 
+O*X
+*#O
+O*X
+--- pruned 
+O*X
+*#*
+OOX
+--- pruned 
+O*X
+*#*
+*O*
+--- 1 WIN
+O*X
+*#*
+**O
+--- 1
+O**
+X#*
+***
+--- -1
+OO*
+X#*
+***
+--- -1 LOSE
+OO*
+X#X
+***
+--- pruned 
+OO*
+X#*
+X**
+--- 1
+OO*
+X#*
+*X*
+--- 1 WIN
+OOO
+X#*
+*X*
+--- 1 WIN
+OO*
+X#O
+*X*
+--- pruned 
+OO*
+X#*
+OX*
+--- 1 WIN
+OO*
+X#*
+*XO
+--- 1
+OO*
+X#*
+**X
+--- 1 WIN
+OOO
+X#*
+**X
+--- 1 WIN
+OO*
+X#O
+**X
+--- pruned 
+OO*
+X#*
+O*X
+--- 1 WIN
+OO*
+X#*
+*OX
+--- -1
+O*O
+X#*
+***
+--- -1 LOSE
+O*O
+X#X
+***
+--- 1
+O*O
+X#*
+X**
+--- 1 WIN
+OOO
+X#*
+X**
+--- pruned 
+O*O
+X#O
+X**
+--- pruned 
+O*O
+X#*
+XO*
+--- 1 WIN
+O*O
+X#*
+X*O
+--- pruned 
+O*O
+X#*
+*X*
+--- pruned 
+O*O
+X#*
+**X
+--- 1
+O**
+X#O
+***
+--- 1
+O**
+X#O
+X**
+--- 1 WIN
+OO*
+X#O
+X**
+--- pruned 
+O*O
+X#O
+X**
+--- pruned 
+O**
+X#O
+XO*
+--- 1 WIN
+O**
+X#O
+X*O
+--- 1
+O**
+X#O
+*X*
+--- pruned 
+O*O
+X#O
+*X*
+--- pruned 
+O**
+X#O
+OX*
+--- 1 WIN
+O**
+X#O
+*XO
+--- 1
+O**
+X#O
+**X
+--- pruned 
+O*O
+X#O
+**X
+--- pruned 
+O**
+X#O
+O*X
+--- pruned 
+O**
+X#O
+*OX
+--- pruned 
+O**
+X#*
+O**
+--- pruned 
+O**
+X#*
+*O*
+--- 1 WIN
+O**
+X#*
+**O
+--- 1
+O**
+*#X
+***
+--- -1
+OO*
+*#X
+***
+--- pruned 
+OO*
+*#X
+X**
+--- 1
+OO*
+*#X
+*X*
+--- 1 WIN
+OOO
+*#X
+*X*
+--- 1
+OO*
+O#X
+*X*
+--- 1
+OO*
+O#X
+XX*
+--- 1 WIN
+OOO
+O#X
+XX*
+--- 1 WIN
+OO*
+O#X
+XXO
+--- 1
+OO*
+O#X
+*XX
+--- 1 WIN
+OOO
+O#X
+*XX
+--- 1 WIN
+OO*
+O#X
+OXX
+--- pruned 
+OO*
+*#X
+OX*
+--- 1 WIN
+OO*
+*#X
+*XO
+--- 1
+OO*
+*#X
+**X
+--- 1 WIN
+OOO
+*#X
+**X
+--- -1
+OO*
+O#X
+**X
+--- pruned 
+OO*
+O#X
+X*X
+--- pruned 
+OO*
+*#X
+O*X
+--- 1 WIN
+OO*
+*#X
+*OX
+--- -1
+O*O
+*#X
+***
+--- 1
+O*O
+*#X
+X**
+--- 1 WIN
+OOO
+*#X
+X**
+--- 1
+O*O
+O#X
+X**
+--- 1
+O*O
+O#X
+XX*
+--- 1 WIN
+O*O
+O#X
+XXO
+--- 1
+O*O
+O#X
+X*X
+--- 1 WIN
+OOO
+O#X
+X*X
+--- pruned 
+O*O
+O#X
+XOX
+--- pruned 
+O*O
+*#X
+XO*
+--- 1 WIN
+O*O
+*#X
+X*O
+--- pruned 
+O*O
+*#X
+*X*
+--- pruned 
+O*O
+*#X
+**X
+--- 1
+O**
+O#X
+***
+--- 1
+O**
+O#X
+X**
+--- -1
+OO*
+O#X
+X**
+--- pruned 
+OO*
+O#X
+X*X
+--- pruned 
+O**
+O#X
+XO*
+--- 1 WIN
+O**
+O#X
+X*O
+--- 1
+O**
+O#X
+*X*
+--- pruned 
+O*O
+O#X
+*X*
+--- 1 WIN
+O**
+O#X
+OX*
+--- 1 WIN
+O**
+O#X
+*XO
+--- 1
+O**
+O#X
+**X
+--- 1
+O*O
+O#X
+**X
+--- 1
+O*O
+O#X
+*XX
+--- 1 WIN
+O*O
+O#X
+OXX
+--- 1 WIN
+O**
+O#X
+O*X
+--- pruned 
+O**
+O#X
+*OX
+--- pruned 
+O**
+*#X
+O**
+--- pruned 
+O**
+*#X
+*O*
+--- 1 WIN
+O**
+*#X
+**O
+--- 1
+O**
+*#*
+X**
+--- -1
+OO*
+*#*
+X**
+--- pruned 
+OO*
+X#*
+X**
+--- pruned 
+OO*
+*#X
+X**
+--- 1
+OO*
+*#*
+XX*
+--- 1 WIN
+OOO
+*#*
+XX*
+--- pruned 
+OO*
+O#*
+XX*
+--- 1 WIN
+OO*
+*#O
+XX*
+--- 1 WIN
+OO*
+*#*
+XXO
+--- 1
+OO*
+*#*
+X*X
+--- 1 WIN
+OOO
+*#*
+X*X
+--- pruned 
+OO*
+O#*
+X*X
+--- 1 WIN
+OO*
+*#O
+X*X
+--- 1 WIN
+OO*
+*#*
+XOX
+--- 1
+O*O
+*#*
+X**
+--- 1
+O*O
+*#*
+XX*
+--- pruned 
+O*O
+O#*
+XX*
+--- pruned 
+O*O
+*#O
+XX*
+--- 1 WIN
+O*O
+*#*
+XXO
+--- 1
+O*O
+*#*
+X*X
+--- pruned 
+O*O
+O#*
+X*X
+--- pruned 
+O*O
+*#O
+X*X
+--- pruned 
+O*O
+*#*
+XOX
+--- pruned 
+O**
+O#*
+X**
+--- pruned 
+O**
+*#O
+X**
+--- pruned 
+O**
+*#*
+XO*
+--- 1 WIN
+O**
+*#*
+X*O
+--- 1
+O**
+*#*
+*X*
+--- 1
+OO*
+*#*
+*X*
+--- 1
+OO*
+*#*
+*XX
+--- 1 WIN
+OOO
+*#*
+*XX
+--- pruned 
+OO*
+O#*
+*XX
+--- 1 WIN
+OO*
+*#O
+*XX
+--- pruned 
+OO*
+*#*
+OXX
+--- pruned 
+O*O
+*#*
+*X*
+--- pruned 
+O**
+O#*
+*X*
+--- pruned 
+O**
+*#O
+*X*
+--- pruned 
+O**
+*#*
+OX*
+--- 1 WIN
+O**
+*#*
+*XO
+--- 1
+O**
+*#*
+**X
+--- 1
+OO*
+*#*
+**X
+--- pruned 
+O*O
+*#*
+**X
+--- pruned 
+O**
+O#*
+**X
+--- pruned 
+O**
+*#O
+**X
+--- pruned 
+O**
+*#*
+O*X
+--- pruned 
+O**
+*#*
+*OX
+--- pruned 
+*O*
+*#*
+***
+--- pruned 
+**O
+*#*
+***
+--- pruned 
+***
+O#*
+***
+--- pruned 
+***
+*#O
+***
+--- pruned 
+***
+*#*
+O**
+--- pruned 
+***
+*#*
+*O*
+--- pruned 
+***
+*#*
+**O

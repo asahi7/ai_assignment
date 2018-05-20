@@ -1,0 +1,586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0053)http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   <title>Programming Assignment 2: Search Algorithms for CSPs: The N-Queens Problem</title>
+   
+   <meta name="description" content="Homework 2: N-Queens Problem">
+   <meta http-equiv="Window-target" content="_top">
+
+   <script type="text/javascript"> <!--
+      if (top!= self) top.location.replace(self.location.href); //-->
+   </script>
+   <link rel="stylesheet" type="text/css" href="./Programming Assignment 2_ Search Algorithms for CSPs_ The N-Queens Problem_files/mainstyle.css">
+</head>
+
+<body>
+
+<h1>Programming Assignment 2: Search Algorithms for CSPs: The N-Queens Problem</h1>
+
+<!-- --------------------------------------------------------- -->
+<a name="toc">
+<h2>Table of Contents</h2>
+</a>
+<!-- --------------------------------------------------------- -->
+
+<ol>
+<li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/#announcement">Announcement</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/#introduction">Introduction</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/#simulator">Download the code template</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/#implementation">Implement your search algorithms</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/#start">Compile and run your program</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/#verify">Verify your solutions</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/#evaluation">Evaluation of your implementations</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/#submission">Submit your program</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/#grading">Grading Scheme</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/#qa">Questions and Answers</a>
+</li></ol>
+
+
+<!-- --------------------------------------------------------- -->
+<a name="announcement"><h2>1. Announcement</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<ul>
+<li> <b>(September 29, 2016)</b> The due date has been extended to October 4, 2016.
+</li><li> <b>(September 19, 2016)</b> The due date is October 2, 2016.
+</li></ul>
+
+<!-- --------------------------------------------------------- -->
+<a name="introduction"><h2>2. Introduction</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+In the N-Queens Problem, the objective is to put N queens on
+a N × N chesshoard so that no two queens attack each other.
+This is a classical constraint satisfaction problem
+that has been widely studied in many different contexts.
+In this exercise, you will implement two heuristic search algorithms to solve
+the N-Queens problem. The first algorithm is a backtracking algorithm
+with the <i>minimum-remaining-values heuristic</i> (a.k.a. <i>most-constrained-variable heuristic</i>)
+and the <i>least-constraining-value heuristic</i>.
+The second algorithm is a local search algorithm using the <i>min-conflict heuristic</i>.
+Even though a rough implementation of these heuristics is sufficient
+to dramatically reduce the running time of your programs,
+the performance of your program ultimately depends on how well you
+implement these heuristics.  A careful choice of data structures and
+constraint checking methods is crucial to an efficient
+implementation.  We will evaluate your programs in terms of
+the largest problem size your program can solve given a finite amount of time.
+</p>
+
+<!-- --------------------------------------------------------- -->
+<a name="simulator"><h2>3. Download the code template</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+In this exercise, we will use C++ to implement the algorithms. In addition,
+you can use the container classes in the Standard Template Library (STL).
+To get start, download the following code template: <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/nqueen_template.cpp">nqueen_template.cpp</a>.
+</p>
+
+<div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff" width="800px">
+   <tbody><tr>
+   <td nowrap="nowrap" valign="top" align="left">
+
+<pre><font color="#000099">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;cstdlib&gt;
+</font><font color="#990000">
+using namespace</font> std<b><font color="#663300">;</font></b><i><font color="#999999">
+
+/*
+ * The n-queens problem solver
+ * 
+ * size      - the number of queens
+ * isVerbose - whether the intermediate nodes are displayed
+ */</font></i><font color="#FF6633">
+void</font> solve_nqueen<b><font color="#663300">(</font></b><font color="#FF6633">int</font> size<b><font color="#663300">,</font></b><font color="#FF6633"> bool</font> isVerbose<b><font color="#663300">) {</font></b><i><font color="#999999">
+
+    // ...
+</font></i><b><font color="#663300">
+}</font></b><i><font color="#999999">
+
+/*
+ * The main function.
+ */</font></i><font color="#FF6633">
+int</font><font color="#990000"> main</font><b><font color="#663300">(</font></b><font color="#FF6633">int</font> argc<b><font color="#663300">,</font></b><font color="#FF6633"> char</font><b><font color="#663300">**</font></b> argv<b><font color="#663300">) {</font></b><font color="#FF6633">
+
+    int</font> size<b><font color="#663300">;</font></b><font color="#FF6633">
+    bool</font> isVerbose<b><font color="#663300"> =</font></b><b><font color="#000000"> false</font></b><b><font color="#663300">,</font></b> isArgValid<b><font color="#663300"> =</font></b><b><font color="#000000"> true</font></b><b><font color="#663300">;</font></b><font color="#FF0000">
+
+    if</font><b><font color="#663300"> (</font></b>argc<b><font color="#663300">==</font></b><font color="#999900">2</font><b><font color="#663300">) {</font></b>
+        size<b><font color="#663300"> =</font></b> atoi<b><font color="#663300">(</font></b>argv<b><font color="#663300">[</font></b><font color="#999900">1</font><b><font color="#663300">]);</font></b>
+        isArgValid<b><font color="#663300"> = (</font></b>size<b><font color="#663300">&gt;</font></b><font color="#999900">0</font><b><font color="#663300">);
+    }</font></b><font color="#FF0000"> else if</font><b><font color="#663300"> (</font></b>argc<b><font color="#663300">==</font></b><font color="#999900">3</font><b><font color="#663300">) {</font></b><font color="#FF0000">
+        if</font><b><font color="#663300"> (</font></b>strcmp<b><font color="#663300">(</font></b>argv<b><font color="#663300">[</font></b><font color="#999900">1</font><b><font color="#663300">],</font></b><font color="#009900"> "-v"</font><b><font color="#663300">)==</font></b><font color="#999900">0</font><b><font color="#663300">) {</font></b>
+            isVerbose<b><font color="#663300"> =</font></b><b><font color="#000000"> true</font></b><b><font color="#663300">;</font></b>
+            size<b><font color="#663300"> =</font></b> atoi<b><font color="#663300">(</font></b>argv<b><font color="#663300">[</font></b><font color="#999900">2</font><b><font color="#663300">]);</font></b>
+            isArgValid<b><font color="#663300"> = (</font></b>size<b><font color="#663300">&gt;</font></b><font color="#999900">0</font><b><font color="#663300">);
+        }</font></b><font color="#FF0000"> else</font><b><font color="#663300"> {</font></b>
+            isArgValid<b><font color="#663300"> =</font></b><b><font color="#000000"> false</font></b><b><font color="#663300">;
+        }
+    }</font></b><font color="#FF0000"> else</font><b><font color="#663300"> {</font></b>
+        isArgValid<b><font color="#663300"> =</font></b><b><font color="#000000"> false</font></b><b><font color="#663300">;
+    }</font></b><font color="#FF0000">
+
+    if</font><b><font color="#663300"> (!</font></b>isArgValid<b><font color="#663300">) {</font></b>
+        cout<b><font color="#663300"> &lt;&lt;</font></b><font color="#009900"> "Error in command line arguments."</font><b><font color="#663300"> &lt;&lt;</font></b> endl<b><font color="#663300">;</font></b>
+        cout<b><font color="#663300"> &lt;&lt;</font></b><font color="#009900"> "Usage: "</font><b><font color="#663300"> &lt;&lt;</font></b> argv<b><font color="#663300">[</font></b><font color="#999900">0</font><b><font color="#663300">] &lt;&lt;</font></b><font color="#009900"> " [-v] n"</font><b><font color="#663300"> &lt;&lt;</font></b> endl<b><font color="#663300">;</font></b>
+        cout<b><font color="#663300"> &lt;&lt;</font></b><font color="#009900"> "where n is the number of queens and the size of the board (nxn)."</font><b><font color="#663300"> &lt;&lt;</font></b> endl<b><font color="#663300">;</font></b>
+        cout<b><font color="#663300"> &lt;&lt;</font></b><font color="#009900"> "The option -v enables the output of the intermediate states of"</font><b><font color="#663300"> &lt;&lt;</font></b> endl<b><font color="#663300">;</font></b>
+        cout<b><font color="#663300"> &lt;&lt;</font></b><font color="#009900"> "the search procedure."</font><b><font color="#663300"> &lt;&lt;</font></b> endl<b><font color="#663300">;</font></b><font color="#FF0000">
+        return</font><font color="#999900"> 1</font><b><font color="#663300">;
+    }</font></b>
+
+    solve_nqueen<b><font color="#663300">(</font></b>size<b><font color="#663300">,</font></b> isVerbose<b><font color="#663300">);</font></b><font color="#FF0000">
+    
+    return</font><font color="#999900"> 0</font><b><font color="#663300">;
+}</font></b>
+</pre>
+</td>
+</tr>
+</tbody></table>
+
+<p>
+You will use this code template to implement both algorithms.
+First of all, make a copy of the code template and rename the files to
+<code>nqueen_backtrack.cpp</code> and <code>nqueen_minconflict.cpp</code>.
+In the next section, we will talk about how to implement the search algorithms in these files.
+</p>
+
+<!-- --------------------------------------------------------- -->
+<a name="implementation"><h2>4. Implement your search algorithms</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+In the code template, we have given you the main function,
+which handles the command line arguments for you.
+The starting point of your algorithms should be in
+the function called <code>solve_nqueen()</code>,
+which have two parameters:
+</p>
+<ul>
+<li> <code>size</code> - the number of queens
+</li><li> <code>isVerbose</code>  -  whether the intermediate nodes are displayed
+</li></ul>
+
+<p>
+<code>size</code> is an integer which is greater than or equal to 1.
+<code>isVerbose</code> is a boolean variable indicating whether 
+your programs should output the intermediate nodes.
+In the next section, we will discuss the output of your program.
+</p>
+
+<!-- --------------------------------------------------------- -->
+<a name="start"><h2>5. Compile and run your program</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+After implementing your algorithms, you should compile
+the programs using the following commands in a Linux environment:
+</p>
+<div>
+<ul>
+<code>
+g++ -O3 -o nqueen_backtrack nqueen_backtrack.cpp
+</code>
+</ul>
+</div>
+and
+<div>
+<ul>
+<code>
+g++ -O3 -o nqueen_minconflict nqueen_minconflict.cpp
+</code>
+</ul>
+</div>
+<p>
+In non-Linux environments, the commands may be different.
+We recommend you to use an IDE such NetBeans or Microsoft Visual Studio to implement your
+programs.  But before submitting your programs, you must test whether
+your program can be compiled successfully on a Linux machine.
+We will test your program in a Linux environment only.
+</p>
+
+<p>
+In the following, we will discuss the implementation in
+<code>nqueen_backtrack.cpp</code> only. But the same discussion is applicable to
+<code>nqueen_minconflict.cpp</code>.
+</p>
+<p>
+Your program will take either one or two command line arguments.
+In the first form, the command line argument is the number of queens,
+which is also called the size of the chessboard.
+If you type:
+</p>
+<div>
+<ul>
+<code>
+nqueen_backtrack 8
+</code>
+</ul>
+</div>
+<p>
+your program should output a solution of the 8-queens problem 
+to the standard output. One possible solution is like this:
+</p>
+<div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff" width="800px">
+<tbody><tr>
+<td nowrap="nowrap" valign="top" align="left">
+<pre>Q*******
+*****Q**
+*******Q
+**Q*****
+******Q*
+***Q****
+*Q******
+****Q***
+</pre>
+</td>
+</tr>
+</tbody></table>
+<p>
+In this solution, a "Q" is the position of a queen on 
+the chessboard and a "*" is an empty position.
+</p><p>
+</p>
+Your solution, of course, could be different from this one,
+because there are many possible solutions to the
+8-Queens problem. And your program is only required
+to return one solution. But the solution
+generated by your program should
+follow exactly the same format as shown above.
+In particular, your program should use the character Q to represent
+the position of a queen.
+<p></p>
+
+<p>
+In case if your backtracking algorithm cannot find a solution 
+(e.g., when N is equal to 3), your program should
+output "No solution."  Your local search algorithm, however,
+is unable to determine whether a solution exists because
+the algorithm is not complete.  Therefore, after 1000
+failed random restart, your local search algorithm should
+output "Solution not found. Solution may not exist."
+</p>
+
+<p>
+If you specify the <code>-v</code> option when
+you run your program, your program should
+also output the intermediate nodes in the search process.
+For example, if you type:
+</p>
+<div>
+<ul>
+<code>
+nqueen_backtrack -v 8
+</code>
+</ul>
+</div>
+<p>
+Your program should output the following:
+</p>
+<div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff" width="800px">
+<tbody><tr>
+<td nowrap="nowrap" valign="top" align="left">
+<pre>-------- 0
+Q*******
+********
+********
+********
+********
+********
+********
+********
+-------- 1
+Q*******
+*****Q**
+********
+********
+********
+********
+********
+********
+-------- 2
+Q*******
+*****Q**
+*******Q
+********
+********
+********
+********
+********
+-------- 3
+Q*******
+*****Q**
+*******Q
+*Q******
+********
+********
+********
+********
+-------- 4
+Q*******
+*****Q**
+*******Q
+*Q******
+********
+********
+**Q*****
+********
+-------- 5
+Q*******
+*****Q**
+*******Q
+*Q******
+********
+******Q*
+**Q*****
+********
+-------- 6
+Q*******
+*****Q**
+*******Q
+**Q*****
+********
+********
+********
+********
+-------- 7
+Q*******
+*****Q**
+*******Q
+**Q*****
+******Q*
+********
+********
+********
+-------- 8
+Q*******
+*****Q**
+*******Q
+**Q*****
+******Q*
+***Q****
+********
+********
+-------- 9
+Q*******
+*****Q**
+*******Q
+**Q*****
+******Q*
+***Q****
+*Q******
+********
+-------- Solution
+Q*******
+*****Q**
+*******Q
+**Q*****
+******Q*
+***Q****
+*Q******
+****Q***
+</pre>
+</td>
+</tr>
+</tbody></table>
+<p>
+From this detailed output, we can trace the search process and identify
+problems in the implementation. This output is essential for us to check whether
+your program runs correctly.
+</p>
+<p>
+Each search algorithms has its own definition of intermediate nodes.
+In the backtracking algorithm, 
+an intermediate node is a visited node in the search tree.
+The ordering of the intermediate nodes generated by your program
+with the <code>-v</code> option should be exactly the same as
+the order of nodes visited by your backtracking algorithm.
+In the local search algorithm, an intermediate node
+is a partial solution in which some queens may be in conflict
+with other queens. The ordering of the nodes are 
+the successive refinement steps of the partial solutions
+until the algorithm finds a solution.
+</p>
+<p>
+You should annotate each intermediate node by a unique number
+starting from zero as shown in the above output. At the end,
+your program should return the solution with the annotation "Solution".
+Please use the same format in the above output.
+</p>
+
+<!-- --------------------------------------------------------- -->
+<a name="verify"><h2>6. Verify your solutions</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+It is hard to manually check the correctness of a solution
+when N is large.  We therefore developed a solution verifier
+for you to check your solution. You can download the solution
+verifier from here: <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/nqueen_check.cpp">nqueen_check.cpp</a>.
+</p>
+<p>
+Then compile the program using your C++ compiler.
+On a Linux machine, you can type:
+</p>
+<div>
+<ul>
+<code>
+g++ -o nqueen_check nqueen_check.cpp
+</code>
+</ul>
+</div>
+<p>
+The solution verifier reads a solution from
+the standard input and outputs "The solution is correct."
+if the solution is valid (i.e., no conflict among queens
+and no missing queens).
+Suppose you save a solution generated by your program 
+to a file named "output.txt":
+</p>
+<div>
+<ul>
+<code>
+nqueen_backtrack 8 &gt; output.txt
+</code>
+</ul>
+</div>
+<p>
+Then type the following command to verify the solution.
+</p>
+<div>
+<ul>
+<code>
+cat output.txt | nqueen_check
+</code>
+</ul>
+</div>
+<p>
+Or you can directly feed the solution into
+the verifer by this command:
+</p>
+<div>
+<ul>
+<code>
+nqueen_backtrack 8 | nqueen_check
+</code>
+</ul>
+</div>
+
+
+<!-- --------------------------------------------------------- -->
+<a name="evaluation"><h2>7. Evaluation of your implementation</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+In this exercise, your task to find an efficient implementation
+of the heuristic search algorithms.  Apart from the correctness
+of your solutions, we will check to see how large the problem your
+program can solve given 2 minutes of execution time.
+In the report, you will have to tell us the maximum number
+of queens your program can handle in 2 minutes.
+</p>
+
+<p>
+For comparisons, we provide some sample programs based on the instructor's implementations of the algorithms:
+</p>
+<ul>
+<li> Linux (Ubuntu 64 bits): <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/bin/nqueen_backtrack_linux64">nqueen_backtrack_linux64</a> and <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/bin/nqueen_minconflict_linux64">nqueen_minconflict_linux64</a>.
+</li><li> Mac: <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/bin/nqueen_backtrack_mac">nqueen_backtrack_mac</a> and <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/bin/nqueen_minconflict_mac">nqueen_minconflict_mac</a>.
+</li><li> Windows (32 bits): <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/bin/nqueen_backtrack_win32.exe">nqueen_backtrack_win32.exe</a> and <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw2/bin/nqueen_minconflict_win32.exe">nqueen_minconflict_win32.exe</a>.
+</li></ul>
+
+<p>
+Occasionally your program gets lucky and can solve some large problems.  However, we care about consistent behavior only and ignore these isolated cases.  Therefore, in your evaluation please find the largest five <b>consecutive</b> N values that your program can solve in 2 minutes (i.e., find the largest n such that your program can solve the problem with N = n-4, n-3, n-2, n-1, and n, each in two minutes).
+</p>
+
+<p>
+Please try hard to beat the sample programs we provide.
+</p>
+
+<br>
+<br>
+
+
+
+<!-- --------------------------------------------------------- -->
+<a name="submission"><h2>8. Submit your program</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+The implementation of your algorithms must be written in files
+named <b>nqueen_backtrack.cpp</b> and <b>nqueen_minconflict.cpp</b>.
+Please make sure that your programs can be compiled and
+run on our test machine.
+</p>
+<p>
+In the C++ file, please put your name, your student ID, and your email address
+as a comment at the top of the files.
+Apart from submitting these C++ files, you
+should include a plain text file reporting 
+the maximum size your program can handle in 2 minutes.
+Please submit these files as attachments on Blackboard.
+</p>
+
+<p>
+The deadline of this assignment is October 4, 2016 at 23:59pm.
+</p>
+
+<br>
+<br>
+
+<!-- --------------------------------------------------------- -->
+<a name="grading"><h2>9. Grading Scheme</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+A large portion of your score will depend on the performance of your programs. The performance score will be somehow proportional to the largest problem size your program can handle.
+</p>
+
+<p>
+Our tentative grading scheme is as follows:
+</p>
+<ul>
+<li> CORRECTNESS OF BACKTRACKING SEARCH (20%): the implementation of the backtracking algorithm
+with the two heuristics is correct.
+</li><li> CORRECTNESS OF LOCAL SEARCH (20%): the implementation of the local search 
+algorithm with the min-conflict heuristic is correct.
+</li><li> MAXIMUM PROBLEM SIZE OF FOR BACKTRACKING SEARCH (20%): the size of the largest problem handled by the backtracking algorithm is reasonable.
+</li><li> MAXIMUM PROBLEM SIZE OF FOR LOCAL SEARCH (20%): the size of the largest problem handled by the local search algorithm is reasonable.
+</li><li> READABILITY (20%): How clean your code is, and whether your code is well-documented.
+</li></ul>
+<p>
+Our grading scheme is subject to amendment.
+</p>
+
+<p>
+While alternative methods exist to solve the N-queens problem,
+we do not accept any other algorithms since the objective of this exercise
+is to study the two general-purpose search algorithms.
+</p>
+
+<br>
+<br>
+
+<!-- --------------------------------------------------------- -->
+<a name="qa"><h2>10. Questions and Answers</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+Please send your questions concerning about this project to Tsz-Chiu Au
+at <a href="mailto:chiu@unist.ac.kr">chiu@unist.ac.kr</a>.
+</p>
+
+
+<br>
+<br>
+
+
+
+
+</div></div></div></body></html>

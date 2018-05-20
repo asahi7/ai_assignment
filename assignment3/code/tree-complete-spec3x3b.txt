@@ -1,0 +1,5941 @@
+
+--- 1
+***
+*#*
+***
+--- 1
+O**
+*#*
+***
+--- 1
+OX*
+*#*
+***
+--- -1
+OXO
+*#*
+***
+--- 1
+OXO
+X#*
+***
+--- -1
+OXO
+X#O
+***
+--- 1
+OXO
+X#O
+X**
+--- 0
+OXO
+X#O
+XO*
+--- 0 DRAW
+OXO
+X#O
+XOX
+--- 1 WIN
+OXO
+X#O
+X*O
+--- -1 LOSE
+OXO
+X#O
+*X*
+--- 1
+OXO
+X#O
+**X
+--- 1 WIN
+OXO
+X#O
+O*X
+--- 0
+OXO
+X#O
+*OX
+--- 1 WIN
+OXO
+X#*
+O**
+--- -1
+OXO
+X#*
+*O*
+--- -1 LOSE
+OXO
+X#X
+*O*
+--- 1
+OXO
+X#*
+XO*
+--- 1 WIN
+OXO
+X#*
+XOO
+--- 1
+OXO
+X#*
+*OX
+--- 1 WIN
+OXO
+X#*
+OOX
+--- 1 WIN
+OXO
+X#*
+**O
+--- 1
+OXO
+*#X
+***
+--- -1
+OXO
+O#X
+***
+--- 1
+OXO
+O#X
+X**
+--- 0
+OXO
+O#X
+XO*
+--- 0 DRAW
+OXO
+O#X
+XOX
+--- 1 WIN
+OXO
+O#X
+X*O
+--- -1 LOSE
+OXO
+O#X
+*X*
+--- 1
+OXO
+O#X
+**X
+--- 1 WIN
+OXO
+O#X
+O*X
+--- 0
+OXO
+O#X
+*OX
+--- 1 WIN
+OXO
+*#X
+O**
+--- -1
+OXO
+*#X
+*O*
+--- 1
+OXO
+*#X
+XO*
+--- 1 WIN
+OXO
+*#X
+XOO
+--- 1
+OXO
+*#X
+*OX
+--- 1 WIN
+OXO
+*#X
+OOX
+--- 1 WIN
+OXO
+*#X
+**O
+--- 1
+OXO
+*#*
+X**
+--- -1
+OXO
+O#*
+X**
+--- -1 LOSE
+OXO
+O#*
+XX*
+--- 1
+OXO
+O#*
+X*X
+--- 1 WIN
+OXO
+O#O
+X*X
+--- 0
+OXO
+O#*
+XOX
+--- -1
+OXO
+*#O
+X**
+--- -1 LOSE
+OXO
+*#O
+XX*
+--- 1
+OXO
+*#O
+X*X
+--- 0
+OXO
+*#O
+XOX
+--- 0
+OXO
+*#*
+XO*
+--- 0
+OXO
+*#*
+XOX
+--- 1 WIN
+OXO
+*#*
+X*O
+--- -1 LOSE
+OXO
+*#*
+*X*
+--- 1
+OXO
+*#*
+**X
+--- -1
+OXO
+O#*
+**X
+--- -1 LOSE
+OXO
+O#*
+*XX
+--- -1
+OXO
+*#O
+**X
+--- -1 LOSE
+OXO
+*#O
+*XX
+--- 1 WIN
+OXO
+*#*
+O*X
+--- 0
+OXO
+*#*
+*OX
+--- -1
+OX*
+O#*
+***
+--- 1
+OXX
+O#*
+***
+--- 1 WIN
+OXX
+O#O
+***
+--- 1 WIN
+OXX
+O#*
+O**
+--- -1
+OXX
+O#*
+*O*
+--- 1
+OXX
+O#X
+*O*
+--- 1 WIN
+OXX
+O#X
+OO*
+--- 1 WIN
+OXX
+O#X
+*OO
+--- -1 LOSE
+OXX
+O#*
+XO*
+--- 1
+OXX
+O#*
+*OX
+--- 1 WIN
+OXX
+O#O
+*OX
+--- 1 WIN
+OXX
+O#*
+OOX
+--- 1 WIN
+OXX
+O#*
+**O
+--- 1
+OX*
+O#X
+***
+--- 1 WIN
+OX*
+O#X
+O**
+--- 1
+OX*
+O#X
+*O*
+--- 1
+OX*
+O#X
+XO*
+--- 1 WIN
+OX*
+O#X
+XOO
+--- 1
+OX*
+O#X
+*OX
+--- 1 WIN
+OX*
+O#X
+OOX
+--- 1 WIN
+OX*
+O#X
+**O
+--- 1
+OX*
+O#*
+X**
+--- 1 WIN
+OX*
+O#O
+X**
+--- -1
+OX*
+O#*
+XO*
+--- 1
+OX*
+O#*
+XOX
+--- 1 WIN
+OX*
+O#O
+XOX
+--- 1 WIN
+OX*
+O#*
+X*O
+--- -1 LOSE
+OX*
+O#*
+*X*
+--- 1
+OX*
+O#*
+**X
+--- 1 WIN
+OX*
+O#O
+**X
+--- 1 WIN
+OX*
+O#*
+O*X
+--- 1
+OX*
+O#*
+*OX
+--- -1
+OX*
+*#O
+***
+--- 1
+OXX
+*#O
+***
+--- -1
+OXX
+*#O
+O**
+--- 1
+OXX
+X#O
+O**
+--- 0
+OXX
+X#O
+OO*
+--- 0 DRAW
+OXX
+X#O
+OOX
+--- 1 WIN
+OXX
+X#O
+O*O
+--- -1 LOSE
+OXX
+*#O
+OX*
+--- 1
+OXX
+*#O
+O*X
+--- 1 WIN
+OXX
+O#O
+O*X
+--- 0
+OXX
+*#O
+OOX
+--- -1
+OXX
+*#O
+*O*
+--- 1
+OXX
+X#O
+*O*
+--- 1 WIN
+OXX
+X#O
+*OO
+--- -1 LOSE
+OXX
+*#O
+XO*
+--- 1
+OXX
+*#O
+*OX
+--- 1 WIN
+OXX
+*#O
+**O
+--- 1
+OX*
+X#O
+***
+--- -1
+OX*
+X#O
+O**
+--- -1 LOSE
+OX*
+X#O
+OX*
+--- 1
+OX*
+X#O
+O*X
+--- 0
+OX*
+X#O
+OOX
+--- 0
+OX*
+X#O
+*O*
+--- 1
+OX*
+X#O
+XO*
+--- 1 WIN
+OX*
+X#O
+XOO
+--- 0
+OX*
+X#O
+*OX
+--- 1 WIN
+OX*
+X#O
+**O
+--- 1
+OX*
+*#O
+X**
+--- -1
+OX*
+*#O
+XO*
+--- 1
+OX*
+*#O
+XOX
+--- 1 WIN
+OX*
+*#O
+X*O
+--- -1 LOSE
+OX*
+*#O
+*X*
+--- 1
+OX*
+*#O
+**X
+--- -1
+OX*
+*#O
+O*X
+--- -1 LOSE
+OX*
+*#O
+OXX
+--- 0
+OX*
+*#O
+*OX
+--- -1
+OX*
+*#*
+O**
+--- 1
+OXX
+*#*
+O**
+--- 1
+OXX
+*#*
+OO*
+--- 1
+OXX
+X#*
+OO*
+--- 1 WIN
+OXX
+X#*
+OOO
+--- 1
+OXX
+*#X
+OO*
+--- 1 WIN
+OXX
+*#X
+OOO
+--- 1
+OXX
+*#*
+OOX
+--- 1 WIN
+OXX
+*#*
+O*O
+--- 1
+OX*
+X#*
+O**
+--- -1
+OX*
+X#*
+OO*
+--- -1 LOSE
+OX*
+X#X
+OO*
+--- 1
+OX*
+X#*
+OOX
+--- 1 WIN
+OX*
+X#*
+O*O
+--- 1
+OX*
+*#X
+O**
+--- -1
+OX*
+*#X
+OO*
+--- 1
+OX*
+*#X
+OOX
+--- 1 WIN
+OX*
+*#X
+O*O
+--- -1 LOSE
+OX*
+*#*
+OX*
+--- 1
+OX*
+*#*
+O*X
+--- 1
+OX*
+*#*
+OOX
+--- 1
+OX*
+*#*
+*O*
+--- 1
+OXX
+*#*
+*O*
+--- 1 WIN
+OXX
+*#*
+*OO
+--- 1
+OX*
+X#*
+*O*
+--- 1 WIN
+OX*
+X#*
+*OO
+--- 1
+OX*
+*#X
+*O*
+--- 1 WIN
+OX*
+*#X
+*OO
+--- 1
+OX*
+*#*
+XO*
+--- 1 WIN
+OX*
+*#*
+XOO
+--- 1
+OX*
+*#*
+*OX
+--- 1 WIN
+OX*
+*#*
+**O
+--- 1
+O*X
+*#*
+***
+--- -1
+OOX
+*#*
+***
+--- 1
+OOX
+X#*
+***
+--- 1 WIN
+OOX
+X#O
+***
+--- -1
+OOX
+X#*
+O**
+--- -1 LOSE
+OOX
+X#X
+O**
+--- 1
+OOX
+X#*
+OX*
+--- 1 WIN
+OOX
+X#O
+OX*
+--- 1 WIN
+OOX
+X#*
+OXO
+--- 1
+OOX
+X#*
+O*X
+--- 1 WIN
+OOX
+X#O
+O*X
+--- 1 WIN
+OOX
+X#*
+OOX
+--- 1 WIN
+OOX
+X#*
+*O*
+--- 1 WIN
+OOX
+X#*
+**O
+--- 1
+OOX
+*#X
+***
+--- -1
+OOX
+O#X
+***
+--- -1 LOSE
+OOX
+O#X
+X**
+--- 1
+OOX
+O#X
+*X*
+--- 1 WIN
+OOX
+O#X
+OX*
+--- 1 WIN
+OOX
+O#X
+*XO
+--- -1 LOSE
+OOX
+O#X
+**X
+--- -1
+OOX
+*#X
+O**
+--- 1
+OOX
+*#X
+OX*
+--- 1 WIN
+OOX
+*#X
+OXO
+--- -1 LOSE
+OOX
+*#X
+O*X
+--- 1 WIN
+OOX
+*#X
+*O*
+--- 1 WIN
+OOX
+*#X
+**O
+--- -1 LOSE
+OOX
+*#*
+X**
+--- 1
+OOX
+*#*
+*X*
+--- -1
+OOX
+O#*
+*X*
+--- -1 LOSE
+OOX
+O#*
+XX*
+--- 1
+OOX
+O#*
+*XX
+--- 1 WIN
+OOX
+O#O
+*XX
+--- 1 WIN
+OOX
+O#*
+OXX
+--- 1 WIN
+OOX
+*#O
+*X*
+--- 1
+OOX
+*#*
+OX*
+--- 1
+OOX
+*#*
+OXX
+--- 1 WIN
+OOX
+*#O
+OXX
+--- 1 WIN
+OOX
+*#*
+*XO
+--- 1
+OOX
+*#*
+**X
+--- -1
+OOX
+O#*
+**X
+--- -1 LOSE
+OOX
+O#*
+X*X
+--- 1 WIN
+OOX
+*#O
+**X
+--- -1
+OOX
+*#*
+O*X
+--- 1 WIN
+OOX
+*#*
+*OX
+--- -1
+O*X
+O#*
+***
+--- 1
+O*X
+O#X
+***
+--- 1 WIN
+O*X
+O#X
+O**
+--- -1
+O*X
+O#X
+*O*
+--- -1 LOSE
+O*X
+O#X
+XO*
+--- -1 LOSE
+O*X
+O#X
+*OX
+--- 1 WIN
+O*X
+O#X
+**O
+--- -1 LOSE
+O*X
+O#*
+X**
+--- 1
+O*X
+O#*
+*X*
+--- 1 WIN
+O*X
+O#O
+*X*
+--- 1 WIN
+O*X
+O#*
+OX*
+--- 1 WIN
+O*X
+O#*
+*XO
+--- 1
+O*X
+O#*
+**X
+--- 1 WIN
+O*X
+O#O
+**X
+--- 1 WIN
+O*X
+O#*
+O*X
+--- -1
+O*X
+O#*
+*OX
+--- -1 LOSE
+O*X
+O#*
+XOX
+--- -1
+O*X
+*#O
+***
+--- 1
+O*X
+X#O
+***
+--- 1
+O*X
+X#O
+O**
+--- 1
+O*X
+X#O
+OX*
+--- 1 WIN
+O*X
+X#O
+OXO
+--- 1
+O*X
+X#O
+O*X
+--- 0
+O*X
+X#O
+OOX
+--- -1
+O*X
+X#O
+*O*
+--- -1 LOSE
+O*X
+X#O
+XO*
+--- 1
+O*X
+X#O
+*OX
+--- 1 WIN
+OOX
+X#O
+*OX
+--- 1 WIN
+O*X
+X#O
+**O
+--- -1 LOSE
+O*X
+*#O
+X**
+--- 1
+O*X
+*#O
+*X*
+--- -1
+O*X
+*#O
+OX*
+--- 1
+O*X
+*#O
+OXX
+--- 1 WIN
+O*X
+O#O
+OXX
+--- 1 WIN
+O*X
+*#O
+*XO
+--- 1
+O*X
+*#O
+**X
+--- 1
+O*X
+*#O
+O*X
+--- -1
+O*X
+*#O
+*OX
+--- -1 LOSE
+O*X
+*#O
+XOX
+--- 1
+O*X
+*#*
+O**
+--- 1
+O*X
+X#*
+O**
+--- -1
+O*X
+X#*
+OO*
+--- -1 LOSE
+O*X
+X#X
+OO*
+--- 1
+O*X
+X#*
+OOX
+--- 1 WIN
+O*X
+X#*
+O*O
+--- 1
+O*X
+*#X
+O**
+--- -1
+O*X
+*#X
+OO*
+--- -1 LOSE
+O*X
+*#X
+OOX
+--- 1 WIN
+O*X
+*#X
+O*O
+--- 1
+O*X
+*#*
+OX*
+--- 1 WIN
+O*X
+*#*
+OXO
+--- 1
+O*X
+*#*
+O*X
+--- -1
+O*X
+*#*
+OOX
+--- -1
+O*X
+*#*
+*O*
+--- 1
+O*X
+X#*
+*O*
+--- 1 WIN
+O*X
+X#*
+*OO
+--- 1
+O*X
+*#X
+*O*
+--- 1 WIN
+O*X
+*#X
+*OO
+--- -1 LOSE
+O*X
+*#*
+XO*
+--- 1
+O*X
+*#*
+*OX
+--- 1 WIN
+O*X
+*#*
+**O
+--- 1
+O**
+X#*
+***
+--- -1
+OO*
+X#*
+***
+--- -1 LOSE
+OO*
+X#X
+***
+--- 1
+OO*
+X#*
+X**
+--- 1 WIN
+OOO
+X#*
+X**
+--- 1 WIN
+OO*
+X#O
+X**
+--- 1 WIN
+OO*
+X#*
+XO*
+--- 1 WIN
+OO*
+X#*
+X*O
+--- 1
+OO*
+X#*
+*X*
+--- 1 WIN
+OOO
+X#*
+*X*
+--- 1 WIN
+OO*
+X#O
+*X*
+--- -1
+OO*
+X#*
+OX*
+--- -1 LOSE
+OO*
+X#X
+OX*
+--- 1
+OO*
+X#*
+OXX
+--- 1 WIN
+OOO
+X#*
+OXX
+--- 1 WIN
+OO*
+X#O
+OXX
+--- 1 WIN
+OO*
+X#*
+*XO
+--- 1
+OO*
+X#*
+**X
+--- 1 WIN
+OOO
+X#*
+**X
+--- 1 WIN
+OO*
+X#O
+**X
+--- -1
+OO*
+X#*
+O*X
+--- -1 LOSE
+OO*
+X#X
+O*X
+--- 1 WIN
+OO*
+X#*
+*OX
+--- -1
+O*O
+X#*
+***
+--- -1 LOSE
+O*O
+X#X
+***
+--- 1
+O*O
+X#*
+X**
+--- 1
+O*O
+X#O
+X**
+--- 1
+O*O
+X#O
+XX*
+--- 1 WIN
+OOO
+X#O
+XX*
+--- 1 WIN
+O*O
+X#O
+XXO
+--- 1
+O*O
+X#O
+X*X
+--- 1 WIN
+OOO
+X#O
+X*X
+--- 0
+O*O
+X#O
+XOX
+--- -1
+O*O
+X#*
+XO*
+--- -1 LOSE
+O*O
+X#X
+XO*
+--- 1
+O*O
+X#*
+XOX
+--- 1 WIN
+OOO
+X#*
+XOX
+--- 1 WIN
+O*O
+X#*
+X*O
+--- 1
+O*O
+X#*
+*X*
+--- -1
+O*O
+X#O
+*X*
+--- 1
+O*O
+X#O
+*XX
+--- 1 WIN
+OOO
+X#O
+*XX
+--- 1 WIN
+O*O
+X#O
+OXX
+--- 1 WIN
+O*O
+X#*
+OX*
+--- 1 WIN
+O*O
+X#*
+*XO
+--- 1
+O*O
+X#*
+**X
+--- 1
+O*O
+X#O
+**X
+--- 1 WIN
+O*O
+X#*
+O*X
+--- -1
+O*O
+X#*
+*OX
+--- -1 LOSE
+O*O
+X#X
+*OX
+--- 1
+O**
+X#O
+***
+--- 1
+O**
+X#O
+X**
+--- -1
+O**
+X#O
+XO*
+--- 1
+O**
+X#O
+XOX
+--- 1 WIN
+OO*
+X#O
+XOX
+--- 1 WIN
+O**
+X#O
+X*O
+--- 1
+O**
+X#O
+*X*
+--- -1
+O**
+X#O
+OX*
+--- 1
+O**
+X#O
+OXX
+--- 1 WIN
+O**
+X#O
+*XO
+--- 1
+O**
+X#O
+**X
+--- 1
+O**
+X#O
+O*X
+--- 0
+O**
+X#O
+*OX
+--- -1
+O**
+X#*
+O**
+--- -1 LOSE
+O**
+X#X
+O**
+--- 1
+O**
+X#*
+OX*
+--- 1 WIN
+O**
+X#*
+OXO
+--- 1
+O**
+X#*
+O*X
+--- -1
+O**
+X#*
+OOX
+--- -1 LOSE
+O**
+X#X
+OOX
+--- -1
+O**
+X#*
+*O*
+--- -1 LOSE
+O**
+X#X
+*O*
+--- 1
+O**
+X#*
+XO*
+--- 1 WIN
+O**
+X#*
+XOO
+--- 1
+O**
+X#*
+*OX
+--- 1 WIN
+O**
+X#*
+**O
+--- 1
+O**
+*#X
+***
+--- -1
+OO*
+*#X
+***
+--- 1
+OO*
+*#X
+X**
+--- 1 WIN
+OOO
+*#X
+X**
+--- -1
+OO*
+O#X
+X**
+--- 1
+OO*
+O#X
+XX*
+--- 1 WIN
+OOO
+O#X
+XX*
+--- 1 WIN
+OO*
+O#X
+XXO
+--- 1
+OO*
+O#X
+X*X
+--- 1 WIN
+OOO
+O#X
+X*X
+--- 1 WIN
+OO*
+O#X
+XOX
+--- 1 WIN
+OO*
+*#X
+XO*
+--- 1 WIN
+OO*
+*#X
+X*O
+--- 1
+OO*
+*#X
+*X*
+--- 1 WIN
+OOO
+*#X
+*X*
+--- 1
+OO*
+O#X
+*X*
+--- 1
+OO*
+O#X
+*XX
+--- 1 WIN
+OOO
+O#X
+*XX
+--- 1 WIN
+OO*
+O#X
+OXX
+--- -1
+OO*
+*#X
+OX*
+--- 1
+OO*
+*#X
+OXX
+--- 1 WIN
+OOO
+*#X
+OXX
+--- 1 WIN
+OO*
+*#X
+*XO
+--- 1
+OO*
+*#X
+**X
+--- 1 WIN
+OOO
+*#X
+**X
+--- -1
+OO*
+O#X
+**X
+--- -1
+OO*
+*#X
+O*X
+--- 1 WIN
+OO*
+*#X
+*OX
+--- -1
+O*O
+*#X
+***
+--- 1
+O*O
+*#X
+X**
+--- 1
+O*O
+O#X
+X**
+--- 1
+O*O
+O#X
+XX*
+--- 1 WIN
+O*O
+O#X
+XXO
+--- 1
+O*O
+O#X
+X*X
+--- 0
+O*O
+O#X
+XOX
+--- -1
+O*O
+*#X
+XO*
+--- 1
+O*O
+*#X
+XOX
+--- 1 WIN
+OOO
+*#X
+XOX
+--- 1 WIN
+O*O
+*#X
+X*O
+--- 1
+O*O
+*#X
+*X*
+--- -1
+O*O
+O#X
+*X*
+--- 1
+O*O
+O#X
+*XX
+--- 1 WIN
+O*O
+O#X
+OXX
+--- 1 WIN
+O*O
+*#X
+OX*
+--- 1 WIN
+O*O
+*#X
+*XO
+--- 1
+O*O
+*#X
+**X
+--- 1
+O*O
+O#X
+**X
+--- 1 WIN
+O*O
+*#X
+O*X
+--- -1
+O*O
+*#X
+*OX
+--- 1
+O**
+O#X
+***
+--- 1
+O**
+O#X
+X**
+--- -1
+O**
+O#X
+XO*
+--- 1
+O**
+O#X
+XOX
+--- 1 WIN
+O**
+O#X
+X*O
+--- 1
+O**
+O#X
+*X*
+--- 1 WIN
+O**
+O#X
+OX*
+--- 1 WIN
+O**
+O#X
+*XO
+--- 1
+O**
+O#X
+**X
+--- 1 WIN
+O**
+O#X
+O*X
+--- -1
+O**
+O#X
+*OX
+--- -1
+O**
+*#X
+O**
+--- 1
+O**
+*#X
+OX*
+--- 1 WIN
+O**
+*#X
+OXO
+--- 1
+O**
+*#X
+O*X
+--- -1
+O**
+*#X
+OOX
+--- -1
+O**
+*#X
+*O*
+--- 1
+O**
+*#X
+XO*
+--- 1 WIN
+O**
+*#X
+XOO
+--- 1
+O**
+*#X
+*OX
+--- 1 WIN
+O**
+*#X
+**O
+--- 1
+O**
+*#*
+X**
+--- -1
+OO*
+*#*
+X**
+--- 1
+OO*
+*#*
+XX*
+--- 1 WIN
+OOO
+*#*
+XX*
+--- -1
+OO*
+O#*
+XX*
+--- -1 LOSE
+OO*
+O#*
+XXX
+--- 1 WIN
+OO*
+*#O
+XX*
+--- 1 WIN
+OO*
+*#*
+XXO
+--- 1
+OO*
+*#*
+X*X
+--- 1 WIN
+OOO
+*#*
+X*X
+--- -1
+OO*
+O#*
+X*X
+--- 1 WIN
+OO*
+*#O
+X*X
+--- 1 WIN
+OO*
+*#*
+XOX
+--- 1
+O*O
+*#*
+X**
+--- 1
+O*O
+*#*
+XX*
+--- -1
+O*O
+O#*
+XX*
+--- -1 LOSE
+O*O
+O#*
+XXX
+--- -1
+O*O
+*#O
+XX*
+--- -1 LOSE
+O*O
+*#O
+XXX
+--- 1 WIN
+O*O
+*#*
+XXO
+--- 1
+O*O
+*#*
+X*X
+--- -1
+O*O
+O#*
+X*X
+--- -1
+O*O
+*#O
+X*X
+--- 0
+O*O
+*#*
+XOX
+--- -1
+O**
+O#*
+X**
+--- 1
+O**
+O#*
+XX*
+--- 1 WIN
+O**
+O#O
+XX*
+--- 1 WIN
+O**
+O#*
+XXO
+--- 1
+O**
+O#*
+X*X
+--- 1 WIN
+O**
+O#O
+X*X
+--- -1
+O**
+O#*
+XOX
+--- -1
+O**
+*#O
+X**
+--- 1
+O**
+*#O
+XX*
+--- 1 WIN
+O**
+*#O
+XXO
+--- 1
+O**
+*#O
+X*X
+--- -1
+O**
+*#O
+XOX
+--- -1
+O**
+*#*
+XO*
+--- 1
+O**
+*#*
+XOX
+--- 1 WIN
+O**
+*#*
+X*O
+--- 1
+O**
+*#*
+*X*
+--- 1
+OO*
+*#*
+*X*
+--- 1
+OO*
+*#*
+*XX
+--- 1 WIN
+OOO
+*#*
+*XX
+--- -1
+OO*
+O#*
+*XX
+--- 1 WIN
+OO*
+*#O
+*XX
+--- 1
+OO*
+*#*
+OXX
+--- -1
+O*O
+*#*
+*X*
+--- 1
+O*O
+*#*
+*XX
+--- -1
+O*O
+O#*
+*XX
+--- -1
+O*O
+*#O
+*XX
+--- 1 WIN
+O*O
+*#*
+OXX
+--- -1
+O**
+O#*
+*X*
+--- 1
+O**
+O#*
+*XX
+--- 1 WIN
+O**
+O#O
+*XX
+--- 1 WIN
+O**
+O#*
+OXX
+--- -1
+O**
+*#O
+*X*
+--- 1
+O**
+*#O
+*XX
+--- -1
+O**
+*#O
+OXX
+--- -1
+O**
+*#*
+OX*
+--- 1
+O**
+*#*
+OXX
+--- 1 WIN
+O**
+*#*
+*XO
+--- 1
+O**
+*#*
+**X
+--- 1
+OO*
+*#*
+**X
+--- 1
+O*O
+*#*
+**X
+--- 1
+O**
+O#*
+**X
+--- 1
+O**
+*#O
+**X
+--- 1
+O**
+*#*
+O*X
+--- 1
+O**
+*#*
+*OX
+--- 1
+*O*
+*#*
+***
+--- 1
+XO*
+*#*
+***
+--- -1
+XOO
+*#*
+***
+--- 1
+XOO
+X#*
+***
+--- -1
+XOO
+X#O
+***
+--- -1 LOSE
+XOO
+X#O
+X**
+--- 1
+XOO
+X#O
+*X*
+--- 1 WIN
+XOO
+X#O
+OX*
+--- 1 WIN
+XOO
+X#O
+*XO
+--- -1 LOSE
+XOO
+X#O
+**X
+--- 1 WIN
+XOO
+X#*
+O**
+--- 1 WIN
+XOO
+X#*
+*O*
+--- -1
+XOO
+X#*
+**O
+--- -1 LOSE
+XOO
+X#X
+**O
+--- -1 LOSE
+XOO
+X#*
+X*O
+--- 1
+XOO
+X#*
+*XO
+--- 1 WIN
+XOO
+X#*
+OXO
+--- 1
+XOO
+*#X
+***
+--- -1
+XOO
+O#X
+***
+--- 1
+XOO
+O#X
+X**
+--- 1 WIN
+XOO
+O#X
+XO*
+--- 0
+XOO
+O#X
+X*O
+--- 0 DRAW
+XOO
+O#X
+XXO
+--- 1
+XOO
+O#X
+*X*
+--- 1 WIN
+XOO
+O#X
+OX*
+--- 0
+XOO
+O#X
+*XO
+--- -1 LOSE
+XOO
+O#X
+**X
+--- 1 WIN
+XOO
+*#X
+O**
+--- 1 WIN
+XOO
+*#X
+*O*
+--- -1
+XOO
+*#X
+**O
+--- 1
+XOO
+*#X
+X*O
+--- 1 WIN
+XOO
+*#X
+XOO
+--- 1
+XOO
+*#X
+*XO
+--- 1 WIN
+XOO
+*#X
+OXO
+--- 1
+XOO
+*#*
+X**
+--- -1
+XOO
+O#*
+X**
+--- 1
+XOO
+O#*
+XX*
+--- 1 WIN
+XOO
+O#O
+XX*
+--- 0
+XOO
+O#*
+XXO
+--- -1 LOSE
+XOO
+O#*
+X*X
+--- -1
+XOO
+*#O
+X**
+--- 1
+XOO
+*#O
+XX*
+--- 1 WIN
+XOO
+*#O
+XXO
+--- -1 LOSE
+XOO
+*#O
+X*X
+--- 1 WIN
+XOO
+*#*
+XO*
+--- -1
+XOO
+*#*
+X*O
+--- 1
+XOO
+*#*
+XXO
+--- 1
+XOO
+*#*
+*X*
+--- -1
+XOO
+O#*
+*X*
+--- -1 LOSE
+XOO
+O#*
+*XX
+--- -1
+XOO
+*#O
+*X*
+--- -1 LOSE
+XOO
+*#O
+*XX
+--- 1 WIN
+XOO
+*#*
+OX*
+--- 1
+XOO
+*#*
+*XO
+--- -1 LOSE
+XOO
+*#*
+**X
+--- -1
+XO*
+O#*
+***
+--- 1
+XOX
+O#*
+***
+--- 1 WIN
+XOX
+O#O
+***
+--- -1
+XOX
+O#*
+O**
+--- 1
+XOX
+O#X
+O**
+--- 1 WIN
+XOX
+O#X
+OO*
+--- 0
+XOX
+O#X
+O*O
+--- 0 DRAW
+XOX
+O#X
+OXO
+--- 1
+XOX
+O#*
+OX*
+--- 1 WIN
+XOX
+O#O
+OX*
+--- 0
+XOX
+O#*
+OXO
+--- -1 LOSE
+XOX
+O#*
+O*X
+--- 1 WIN
+XOX
+O#*
+*O*
+--- -1
+XOX
+O#*
+**O
+--- 1
+XOX
+O#X
+**O
+--- 1 WIN
+XOX
+O#X
+*OO
+--- -1 LOSE
+XOX
+O#*
+X*O
+--- 1
+XOX
+O#*
+*XO
+--- 1 WIN
+XOX
+O#O
+*XO
+--- 1
+XO*
+O#X
+***
+--- -1
+XO*
+O#X
+O**
+--- 1
+XO*
+O#X
+OX*
+--- 0
+XO*
+O#X
+OXO
+--- -1 LOSE
+XO*
+O#X
+O*X
+--- 1 WIN
+XO*
+O#X
+*O*
+--- 0
+XO*
+O#X
+**O
+--- 1
+XO*
+O#X
+X*O
+--- 1 WIN
+XO*
+O#X
+XOO
+--- 0
+XO*
+O#X
+*XO
+--- 1
+XO*
+O#*
+X**
+--- 1 WIN
+XO*
+O#O
+X**
+--- 1 WIN
+XO*
+O#*
+XO*
+--- -1
+XO*
+O#*
+X*O
+--- 1
+XO*
+O#*
+XXO
+--- 1 WIN
+XO*
+O#O
+XXO
+--- 1
+XO*
+O#*
+*X*
+--- 1 WIN
+XO*
+O#O
+*X*
+--- -1
+XO*
+O#*
+OX*
+--- -1 LOSE
+XO*
+O#*
+OXX
+--- 0
+XO*
+O#*
+*XO
+--- -1 LOSE
+XO*
+O#*
+**X
+--- -1
+XO*
+*#O
+***
+--- 1
+XOX
+*#O
+***
+--- -1
+XOX
+*#O
+O**
+--- 1
+XOX
+X#O
+O**
+--- 1 WIN
+XOX
+X#O
+OO*
+--- 0
+XOX
+X#O
+O*O
+--- 0 DRAW
+XOX
+X#O
+OXO
+--- 1
+XOX
+*#O
+OX*
+--- 0
+XOX
+*#O
+OXO
+--- -1 LOSE
+XOX
+*#O
+O*X
+--- 1 WIN
+XOX
+*#O
+*O*
+--- -1
+XOX
+*#O
+**O
+--- 1
+XOX
+X#O
+**O
+--- 1 WIN
+XOX
+X#O
+*OO
+--- -1 LOSE
+XOX
+*#O
+X*O
+--- 1
+XOX
+*#O
+*XO
+--- 1
+XO*
+X#O
+***
+--- -1
+XO*
+X#O
+O**
+--- 1
+XO*
+X#O
+OX*
+--- 0
+XO*
+X#O
+OXO
+--- -1 LOSE
+XO*
+X#O
+O*X
+--- 1 WIN
+XO*
+X#O
+*O*
+--- -1
+XO*
+X#O
+**O
+--- -1 LOSE
+XO*
+X#O
+X*O
+--- 1
+XO*
+X#O
+*XO
+--- 1
+XO*
+*#O
+X**
+--- 1 WIN
+XO*
+*#O
+XO*
+--- -1
+XO*
+*#O
+X*O
+--- 1
+XO*
+*#O
+XXO
+--- 1
+XO*
+*#O
+*X*
+--- -1
+XO*
+*#O
+OX*
+--- -1 LOSE
+XO*
+*#O
+OXX
+--- 1
+XO*
+*#O
+*XO
+--- -1 LOSE
+XO*
+*#O
+**X
+--- -1
+XO*
+*#*
+O**
+--- 1
+XOX
+*#*
+O**
+--- 1 WIN
+XOX
+*#*
+OO*
+--- 0
+XOX
+*#*
+O*O
+--- 1
+XOX
+X#*
+O*O
+--- 1 WIN
+XOX
+X#*
+OOO
+--- 1
+XOX
+*#X
+O*O
+--- 1 WIN
+XOX
+*#X
+OOO
+--- 0
+XOX
+*#*
+OXO
+--- 1
+XO*
+X#*
+O**
+--- 1 WIN
+XO*
+X#*
+OO*
+--- -1
+XO*
+X#*
+O*O
+--- -1 LOSE
+XO*
+X#X
+O*O
+--- 1
+XO*
+X#*
+OXO
+--- 1
+XO*
+*#X
+O**
+--- 1 WIN
+XO*
+*#X
+OO*
+--- -1
+XO*
+*#X
+O*O
+--- 1
+XO*
+*#X
+OXO
+--- 1
+XO*
+*#*
+OX*
+--- 0
+XO*
+*#*
+OXO
+--- -1 LOSE
+XO*
+*#*
+O*X
+--- 1 WIN
+XO*
+*#*
+*O*
+--- 1
+XO*
+*#*
+**O
+--- 1
+XOX
+*#*
+**O
+--- 1 WIN
+XOX
+*#*
+*OO
+--- 1
+XO*
+X#*
+**O
+--- 1 WIN
+XO*
+X#*
+*OO
+--- 1
+XO*
+*#X
+**O
+--- 1 WIN
+XO*
+*#X
+*OO
+--- 1
+XO*
+*#*
+X*O
+--- 1 WIN
+XO*
+*#*
+XOO
+--- 1
+XO*
+*#*
+*XO
+--- 1
+*OX
+*#*
+***
+--- -1
+*OX
+O#*
+***
+--- 1
+*OX
+O#X
+***
+--- -1
+*OX
+O#X
+O**
+--- 1
+*OX
+O#X
+OX*
+--- 0
+*OX
+O#X
+OXO
+--- -1 LOSE
+*OX
+O#X
+O*X
+--- 1 WIN
+*OX
+O#X
+*O*
+--- -1
+*OX
+O#X
+**O
+--- -1 LOSE
+*OX
+O#X
+X*O
+--- 1
+*OX
+O#X
+*XO
+--- -1 LOSE
+*OX
+O#*
+X**
+--- 1
+*OX
+O#*
+*X*
+--- 1 WIN
+*OX
+O#O
+*X*
+--- 1
+*OX
+O#*
+OX*
+--- 1
+*OX
+O#*
+OXX
+--- 1 WIN
+*OX
+O#O
+OXX
+--- -1
+*OX
+O#*
+*XO
+--- -1 LOSE
+*OX
+O#*
+XXO
+--- 1
+*OX
+O#*
+**X
+--- 1 WIN
+*OX
+O#O
+**X
+--- -1
+*OX
+O#*
+O*X
+--- 1 WIN
+*OX
+O#*
+*OX
+--- -1
+*OX
+*#O
+***
+--- 1
+*OX
+X#O
+***
+--- 1
+*OX
+X#O
+O**
+--- 1
+*OX
+X#O
+OX*
+--- 0
+*OX
+X#O
+OXO
+--- 1
+*OX
+X#O
+O*X
+--- 1 WIN
+*OX
+X#O
+OOX
+--- 1 WIN
+*OX
+X#O
+*O*
+--- -1
+*OX
+X#O
+**O
+--- -1 LOSE
+*OX
+X#O
+X*O
+--- 1
+*OX
+X#O
+*XO
+--- 1 WIN
+OOX
+X#O
+*XO
+--- -1 LOSE
+*OX
+*#O
+X**
+--- 1
+*OX
+*#O
+*X*
+--- 1
+*OX
+*#O
+OX*
+--- 1
+*OX
+*#O
+OXX
+--- -1
+*OX
+*#O
+*XO
+--- -1 LOSE
+*OX
+*#O
+XXO
+--- 1
+*OX
+*#O
+**X
+--- -1
+*OX
+*#O
+O*X
+--- 1 WIN
+*OX
+*#O
+*OX
+--- 1
+*OX
+*#*
+O**
+--- 1
+*OX
+X#*
+O**
+--- 1 WIN
+*OX
+X#*
+OO*
+--- -1
+*OX
+X#*
+O*O
+--- -1 LOSE
+*OX
+X#X
+O*O
+--- 1
+*OX
+X#*
+OXO
+--- 1
+*OX
+*#X
+O**
+--- 1 WIN
+*OX
+*#X
+OO*
+--- -1
+*OX
+*#X
+O*O
+--- 1
+*OX
+*#X
+OXO
+--- 1
+*OX
+*#*
+OX*
+--- 0
+*OX
+*#*
+OXO
+--- 1
+*OX
+*#*
+O*X
+--- 1 WIN
+*OX
+*#*
+OOX
+--- 1 WIN
+*OX
+*#*
+*O*
+--- -1
+*OX
+*#*
+**O
+--- 1
+*OX
+X#*
+**O
+--- 1 WIN
+*OX
+X#*
+*OO
+--- 1
+*OX
+*#X
+**O
+--- 1 WIN
+*OX
+*#X
+*OO
+--- -1 LOSE
+*OX
+*#*
+X*O
+--- 1
+*OX
+*#*
+*XO
+--- 1
+*O*
+X#*
+***
+--- -1
+*OO
+X#*
+***
+--- -1 LOSE
+*OO
+X#X
+***
+--- 1
+*OO
+X#*
+X**
+--- -1
+*OO
+X#O
+X**
+--- 1
+*OO
+X#O
+XX*
+--- 1 WIN
+*OO
+X#O
+XXO
+--- 1
+*OO
+X#O
+X*X
+--- 1 WIN
+*OO
+X#O
+XOX
+--- 1 WIN
+*OO
+X#*
+XO*
+--- -1
+*OO
+X#*
+X*O
+--- -1 LOSE
+*OO
+X#X
+X*O
+--- 1
+*OO
+X#*
+XXO
+--- 1 WIN
+OOO
+X#*
+XXO
+--- 1
+*OO
+X#*
+*X*
+--- 1
+*OO
+X#O
+*X*
+--- 1
+*OO
+X#O
+*XX
+--- 1 WIN
+*OO
+X#O
+OXX
+--- 1 WIN
+*OO
+X#*
+OX*
+--- -1
+*OO
+X#*
+*XO
+--- -1 LOSE
+*OO
+X#X
+*XO
+--- 1
+*OO
+X#*
+**X
+--- -1
+*OO
+X#O
+**X
+--- 1 WIN
+*OO
+X#*
+O*X
+--- 1 WIN
+*OO
+X#*
+*OX
+--- 1
+*O*
+X#O
+***
+--- 1
+*O*
+X#O
+X**
+--- 1 WIN
+*O*
+X#O
+XO*
+--- -1
+*O*
+X#O
+X*O
+--- 1
+*O*
+X#O
+XXO
+--- 1 WIN
+OO*
+X#O
+XXO
+--- 1
+*O*
+X#O
+*X*
+--- 1
+*O*
+X#O
+OX*
+--- 1
+*O*
+X#O
+OXX
+--- 1
+*O*
+X#O
+*XO
+--- 1
+*O*
+X#O
+**X
+--- -1
+*O*
+X#O
+O*X
+--- 1 WIN
+*O*
+X#O
+*OX
+--- -1
+*O*
+X#*
+O**
+--- -1 LOSE
+*O*
+X#X
+O**
+--- 1
+*O*
+X#*
+OX*
+--- -1
+*O*
+X#*
+OXO
+--- -1 LOSE
+*O*
+X#X
+OXO
+--- 1
+*O*
+X#*
+O*X
+--- 1 WIN
+*O*
+X#*
+OOX
+--- 1 WIN
+*O*
+X#*
+*O*
+--- -1
+*O*
+X#*
+**O
+--- -1 LOSE
+*O*
+X#X
+**O
+--- 1
+*O*
+X#*
+X*O
+--- 1 WIN
+*O*
+X#*
+XOO
+--- 1
+*O*
+X#*
+*XO
+--- 1
+*O*
+*#X
+***
+--- -1
+*OO
+*#X
+***
+--- 1
+*OO
+*#X
+X**
+--- 1
+*OO
+O#X
+X**
+--- 1
+*OO
+O#X
+XX*
+--- 0
+*OO
+O#X
+XXO
+--- 1
+*OO
+O#X
+X*X
+--- 1 WIN
+*OO
+O#X
+XOX
+--- 1 WIN
+*OO
+*#X
+XO*
+--- -1
+*OO
+*#X
+X*O
+--- 1
+*OO
+*#X
+XXO
+--- 1 WIN
+OOO
+*#X
+XXO
+--- 1
+*OO
+*#X
+*X*
+--- 1
+*OO
+O#X
+*X*
+--- 1
+*OO
+O#X
+*XX
+--- 1 WIN
+*OO
+O#X
+OXX
+--- 1 WIN
+*OO
+*#X
+OX*
+--- -1
+*OO
+*#X
+*XO
+--- 1
+*OO
+*#X
+**X
+--- -1
+*OO
+O#X
+**X
+--- 1 WIN
+*OO
+*#X
+O*X
+--- 1 WIN
+*OO
+*#X
+*OX
+--- 1
+*O*
+O#X
+***
+--- 1
+*O*
+O#X
+X**
+--- 1 WIN
+*O*
+O#X
+XO*
+--- -1
+*O*
+O#X
+X*O
+--- 1
+*O*
+O#X
+XXO
+--- 1
+*O*
+O#X
+*X*
+--- 1
+*O*
+O#X
+OX*
+--- 1
+*O*
+O#X
+OXX
+--- 0
+*O*
+O#X
+*XO
+--- 1
+*O*
+O#X
+**X
+--- -1
+*O*
+O#X
+O*X
+--- 1 WIN
+*O*
+O#X
+*OX
+--- -1
+*O*
+*#X
+O**
+--- 1
+*O*
+*#X
+OX*
+--- -1
+*O*
+*#X
+OXO
+--- 1
+*O*
+*#X
+O*X
+--- 1 WIN
+*O*
+*#X
+OOX
+--- 1 WIN
+*O*
+*#X
+*O*
+--- -1
+*O*
+*#X
+**O
+--- 1
+*O*
+*#X
+X*O
+--- 1 WIN
+*O*
+*#X
+XOO
+--- 1
+*O*
+*#X
+*XO
+--- 1
+*O*
+*#*
+X**
+--- 1
+*OO
+*#*
+X**
+--- 1
+*OO
+*#*
+XX*
+--- -1
+*OO
+O#*
+XX*
+--- -1 LOSE
+*OO
+O#*
+XXX
+--- -1
+*OO
+*#O
+XX*
+--- -1 LOSE
+*OO
+*#O
+XXX
+--- 1
+*OO
+*#*
+XXO
+--- 1
+*OO
+*#*
+X*X
+--- -1
+*OO
+O#*
+X*X
+--- -1
+*OO
+*#O
+X*X
+--- 1 WIN
+*OO
+*#*
+XOX
+--- -1
+*O*
+O#*
+X**
+--- 1
+*O*
+O#*
+XX*
+--- 1 WIN
+*O*
+O#O
+XX*
+--- -1
+*O*
+O#*
+XXO
+--- 1
+*O*
+O#*
+X*X
+--- 1 WIN
+*O*
+O#O
+X*X
+--- 1 WIN
+*O*
+O#*
+XOX
+--- -1
+*O*
+*#O
+X**
+--- 1
+*O*
+*#O
+XX*
+--- -1
+*O*
+*#O
+XXO
+--- 1
+*O*
+*#O
+X*X
+--- 1 WIN
+*O*
+*#O
+XOX
+--- 1 WIN
+*O*
+*#*
+XO*
+--- -1
+*O*
+*#*
+X*O
+--- 1
+*O*
+*#*
+XXO
+--- 1
+*O*
+*#*
+*X*
+--- 1
+*OO
+*#*
+*X*
+--- 1
+*OO
+*#*
+*XX
+--- -1
+*OO
+O#*
+*XX
+--- -1
+*OO
+*#O
+*XX
+--- 1 WIN
+*OO
+*#*
+OXX
+--- 1
+*O*
+O#*
+*X*
+--- 1
+*O*
+O#*
+*XX
+--- 1 WIN
+*O*
+O#O
+*XX
+--- -1
+*O*
+O#*
+OXX
+--- 1
+*O*
+*#O
+*X*
+--- 1
+*O*
+*#O
+*XX
+--- -1
+*O*
+*#O
+OXX
+--- 1
+*O*
+*#*
+OX*
+--- 1
+*O*
+*#*
+OXX
+--- 1
+*O*
+*#*
+*XO
+--- 1
+*O*
+*#*
+**X
+--- -1
+*OO
+*#*
+**X
+--- -1
+*O*
+O#*
+**X
+--- -1
+*O*
+*#O
+**X
+--- -1
+*O*
+*#*
+O*X
+--- 1 WIN
+*O*
+*#*
+*OX
+--- 1
+**O
+*#*
+***
+--- 1
+X*O
+*#*
+***
+--- -1
+X*O
+O#*
+***
+--- 1
+XXO
+O#*
+***
+--- 1 WIN
+XXO
+O#O
+***
+--- 1 WIN
+XXO
+O#*
+O**
+--- -1
+XXO
+O#*
+*O*
+--- -1 LOSE
+XXO
+O#X
+*O*
+--- 1
+XXO
+O#*
+XO*
+--- 1 WIN
+XXO
+O#O
+XO*
+--- -1
+XXO
+O#*
+XOO
+--- -1 LOSE
+XXO
+O#X
+XOO
+--- -1 LOSE
+XXO
+O#*
+*OX
+--- -1
+XXO
+O#*
+**O
+--- -1 LOSE
+XXO
+O#X
+**O
+--- 1
+XXO
+O#*
+X*O
+--- 1 WIN
+XXO
+O#O
+X*O
+--- -1 LOSE
+XXO
+O#*
+*XO
+--- 1
+X*O
+O#X
+***
+--- 1 WIN
+X*O
+O#X
+O**
+--- -1
+X*O
+O#X
+*O*
+--- 1
+X*O
+O#X
+XO*
+--- -1
+X*O
+O#X
+XOO
+--- -1 LOSE
+X*O
+O#X
+*OX
+--- -1
+X*O
+O#X
+**O
+--- 0
+X*O
+O#X
+X*O
+--- 1
+X*O
+O#X
+*XO
+--- 1 WIN
+X*O
+O#X
+OXO
+--- 1
+X*O
+O#*
+X**
+--- 1 WIN
+X*O
+O#O
+X**
+--- -1
+X*O
+O#*
+XO*
+--- -1 LOSE
+X*O
+O#*
+XOX
+--- 0
+X*O
+O#*
+X*O
+--- 1
+X*O
+O#*
+XXO
+--- 1 WIN
+X*O
+O#O
+XXO
+--- 1
+X*O
+O#*
+*X*
+--- 1 WIN
+X*O
+O#O
+*X*
+--- 1 WIN
+X*O
+O#*
+OX*
+--- -1
+X*O
+O#*
+*XO
+--- -1 LOSE
+X*O
+O#*
+**X
+--- -1
+X*O
+*#O
+***
+--- 1
+XXO
+*#O
+***
+--- 1 WIN
+XXO
+*#O
+O**
+--- -1
+XXO
+*#O
+*O*
+--- 1
+XXO
+X#O
+*O*
+--- 1 WIN
+XXO
+X#O
+OO*
+--- 1 WIN
+XXO
+X#O
+*OO
+--- 1
+XXO
+*#O
+XO*
+--- 1 WIN
+XXO
+*#O
+XOO
+--- -1 LOSE
+XXO
+*#O
+*OX
+--- 1 WIN
+XXO
+*#O
+**O
+--- 1
+X*O
+X#O
+***
+--- 1 WIN
+X*O
+X#O
+O**
+--- -1
+X*O
+X#O
+*O*
+--- -1 LOSE
+X*O
+X#O
+XO*
+--- -1 LOSE
+X*O
+X#O
+*OX
+--- 1 WIN
+X*O
+X#O
+**O
+--- 1
+X*O
+*#O
+X**
+--- -1
+X*O
+*#O
+XO*
+--- -1 LOSE
+X*O
+*#O
+XOX
+--- 1 WIN
+X*O
+*#O
+X*O
+--- 1
+X*O
+*#O
+*X*
+--- 1 WIN
+X*O
+*#O
+OX*
+--- 1 WIN
+X*O
+*#O
+*XO
+--- -1 LOSE
+X*O
+*#O
+**X
+--- 1 WIN
+X*O
+*#*
+O**
+--- -1
+X*O
+*#*
+*O*
+--- 1
+XXO
+*#*
+*O*
+--- 1 WIN
+XXO
+*#*
+OO*
+--- -1
+XXO
+*#*
+*OO
+--- 1
+XXO
+X#*
+*OO
+--- 1 WIN
+XXO
+X#*
+OOO
+--- -1 LOSE
+XXO
+*#X
+*OO
+--- 1
+XXO
+*#*
+XOO
+--- 1
+X*O
+X#*
+*O*
+--- 1 WIN
+X*O
+X#*
+OO*
+--- -1
+X*O
+X#*
+*OO
+--- -1 LOSE
+X*O
+X#X
+*OO
+--- -1 LOSE
+X*O
+X#*
+XOO
+--- 1
+X*O
+*#X
+*O*
+--- 1 WIN
+X*O
+*#X
+OO*
+--- -1
+X*O
+*#X
+*OO
+--- 1
+X*O
+*#X
+XOO
+--- 1
+X*O
+*#*
+XO*
+--- -1
+X*O
+*#*
+XOO
+--- -1 LOSE
+X*O
+*#*
+*OX
+--- 1
+X*O
+*#*
+**O
+--- 1
+XXO
+*#*
+**O
+--- 1 WIN
+XXO
+*#*
+O*O
+--- 1
+X*O
+X#*
+**O
+--- 1 WIN
+X*O
+X#*
+O*O
+--- 1
+X*O
+*#X
+**O
+--- 1 WIN
+X*O
+*#X
+O*O
+--- 1
+X*O
+*#*
+X*O
+--- 1
+X*O
+*#*
+*XO
+--- 1 WIN
+X*O
+*#*
+OXO
+--- 1
+*XO
+*#*
+***
+--- -1
+*XO
+O#*
+***
+--- 1
+*XO
+O#X
+***
+--- 1 WIN
+*XO
+O#X
+O**
+--- -1
+*XO
+O#X
+*O*
+--- 0
+*XO
+O#X
+XO*
+--- -1
+*XO
+O#X
+XOO
+--- 1
+*XO
+O#X
+*OX
+--- 1 WIN
+*XO
+O#X
+OOX
+--- -1
+*XO
+O#X
+**O
+--- 1
+*XO
+O#X
+X*O
+--- -1 LOSE
+*XO
+O#X
+*XO
+--- 1
+*XO
+O#*
+X**
+--- 1 WIN
+*XO
+O#O
+X**
+--- 0
+*XO
+O#*
+XO*
+--- 1
+*XO
+O#*
+XOX
+--- 1 WIN
+*XO
+O#O
+XOX
+--- -1
+*XO
+O#*
+X*O
+--- -1 LOSE
+*XO
+O#*
+XXO
+--- -1 LOSE
+*XO
+O#*
+*X*
+--- 1
+*XO
+O#*
+**X
+--- 1 WIN
+*XO
+O#O
+**X
+--- 1 WIN
+*XO
+O#*
+O*X
+--- -1
+*XO
+O#*
+*OX
+--- -1
+*XO
+*#O
+***
+--- 1
+*XO
+X#O
+***
+--- 1 WIN
+*XO
+X#O
+O**
+--- 1
+*XO
+X#O
+*O*
+--- 1
+*XO
+X#O
+XO*
+--- 1 WIN
+*XO
+X#O
+XOO
+--- 1
+*XO
+X#O
+*OX
+--- 1 WIN
+*XO
+X#O
+OOX
+--- 1 WIN
+*XO
+X#O
+**O
+--- 1
+*XO
+*#O
+X**
+--- 1
+*XO
+*#O
+XO*
+--- 1
+*XO
+*#O
+XOX
+--- 1 WIN
+*XO
+*#O
+X*O
+--- -1 LOSE
+*XO
+*#O
+*X*
+--- 1
+*XO
+*#O
+**X
+--- 1 WIN
+*XO
+*#O
+O*X
+--- -1
+*XO
+*#O
+*OX
+--- 1 WIN
+*XO
+*#*
+O**
+--- 1
+*XO
+*#*
+*O*
+--- 1
+*XO
+X#*
+*O*
+--- 1 WIN
+*XO
+X#*
+OO*
+--- -1
+*XO
+X#*
+*OO
+--- -1 LOSE
+*XO
+X#X
+*OO
+--- 1
+*XO
+X#*
+XOO
+--- 1
+*XO
+*#X
+*O*
+--- 1 WIN
+*XO
+*#X
+OO*
+--- -1
+*XO
+*#X
+*OO
+--- 1
+*XO
+*#X
+XOO
+--- 1
+*XO
+*#*
+XO*
+--- 1
+*XO
+*#*
+XOO
+--- 1
+*XO
+*#*
+*OX
+--- 1 WIN
+*XO
+*#*
+OOX
+--- -1
+*XO
+*#*
+**O
+--- 1
+*XO
+X#*
+**O
+--- 1 WIN
+*XO
+X#*
+O*O
+--- 1
+*XO
+*#X
+**O
+--- 1 WIN
+*XO
+*#X
+O*O
+--- 1
+*XO
+*#*
+X*O
+--- -1 LOSE
+*XO
+*#*
+*XO
+--- 1
+**O
+X#*
+***
+--- 1
+**O
+X#O
+***
+--- 1
+**O
+X#O
+X**
+--- -1
+**O
+X#O
+XO*
+--- 1
+**O
+X#O
+XOX
+--- 1 WIN
+**O
+X#O
+X*O
+--- 1
+**O
+X#O
+*X*
+--- 1 WIN
+**O
+X#O
+OX*
+--- 1 WIN
+**O
+X#O
+*XO
+--- 1
+**O
+X#O
+**X
+--- 1 WIN
+**O
+X#O
+O*X
+--- -1
+**O
+X#O
+*OX
+--- 1 WIN
+**O
+X#*
+O**
+--- -1
+**O
+X#*
+*O*
+--- -1 LOSE
+**O
+X#X
+*O*
+--- 1
+**O
+X#*
+XO*
+--- -1
+**O
+X#*
+XOO
+--- -1 LOSE
+**O
+X#X
+XOO
+--- 1
+**O
+X#*
+*OX
+--- 1 WIN
+**O
+X#*
+OOX
+--- -1
+**O
+X#*
+**O
+--- -1 LOSE
+**O
+X#X
+**O
+--- 1
+**O
+X#*
+X*O
+--- 1
+**O
+X#*
+*XO
+--- 1 WIN
+**O
+X#*
+OXO
+--- 1
+**O
+*#X
+***
+--- 1
+**O
+O#X
+***
+--- 1
+**O
+O#X
+X**
+--- 0
+**O
+O#X
+XO*
+--- 1
+**O
+O#X
+XOX
+--- 0
+**O
+O#X
+X*O
+--- 1
+**O
+O#X
+XXO
+--- 1
+**O
+O#X
+*X*
+--- 1 WIN
+**O
+O#X
+OX*
+--- -1
+**O
+O#X
+*XO
+--- 1
+**O
+O#X
+**X
+--- 1 WIN
+**O
+O#X
+O*X
+--- -1
+**O
+O#X
+*OX
+--- 1 WIN
+**O
+*#X
+O**
+--- -1
+**O
+*#X
+*O*
+--- 1
+**O
+*#X
+XO*
+--- -1
+**O
+*#X
+XOO
+--- 1
+**O
+*#X
+*OX
+--- 1 WIN
+**O
+*#X
+OOX
+--- -1
+**O
+*#X
+**O
+--- 1
+**O
+*#X
+X*O
+--- 1
+**O
+*#X
+*XO
+--- 1 WIN
+**O
+*#X
+OXO
+--- 1
+**O
+*#*
+X**
+--- 1
+**O
+O#*
+X**
+--- 1
+**O
+O#*
+XX*
+--- 1 WIN
+**O
+O#O
+XX*
+--- -1
+**O
+O#*
+XXO
+--- 1
+**O
+O#*
+X*X
+--- 1 WIN
+**O
+O#O
+X*X
+--- -1
+**O
+O#*
+XOX
+--- 1
+**O
+*#O
+X**
+--- 1
+**O
+*#O
+XX*
+--- 1 WIN
+**O
+*#O
+XXO
+--- 1
+**O
+*#O
+X*X
+--- -1
+**O
+*#O
+XOX
+--- 1
+**O
+*#*
+XO*
+--- 1
+**O
+*#*
+XOX
+--- 1
+**O
+*#*
+X*O
+--- 1
+**O
+*#*
+XXO
+--- 1
+**O
+*#*
+*X*
+--- -1
+**O
+O#*
+*X*
+--- 1
+**O
+O#*
+*XX
+--- 1 WIN
+**O
+O#O
+*XX
+--- 1 WIN
+**O
+O#*
+OXX
+--- -1
+**O
+*#O
+*X*
+--- 1
+**O
+*#O
+*XX
+--- 1 WIN
+**O
+*#O
+OXX
+--- 1 WIN
+**O
+*#*
+OX*
+--- -1
+**O
+*#*
+*XO
+--- 1
+**O
+*#*
+**X
+--- -1
+**O
+O#*
+**X
+--- -1
+**O
+*#O
+**X
+--- 1 WIN
+**O
+*#*
+O*X
+--- -1
+**O
+*#*
+*OX
+--- 1
+***
+O#*
+***
+--- 1
+X**
+O#*
+***
+--- 1 WIN
+X**
+O#O
+***
+--- -1
+X**
+O#*
+O**
+--- 1
+XX*
+O#*
+O**
+--- 1 WIN
+XX*
+O#O
+O**
+--- -1
+XX*
+O#*
+OO*
+--- -1 LOSE
+XXX
+O#*
+OO*
+--- -1 LOSE
+XX*
+O#X
+OO*
+--- -1 LOSE
+XX*
+O#*
+OOX
+--- -1
+XX*
+O#*
+O*O
+--- -1 LOSE
+XXX
+O#*
+O*O
+--- -1 LOSE
+XX*
+O#X
+O*O
+--- -1 LOSE
+XX*
+O#*
+OXO
+--- 1
+X*X
+O#*
+O**
+--- 1 WIN
+X*X
+O#O
+O**
+--- -1
+X*X
+O#*
+OO*
+--- 1
+X*X
+O#X
+OO*
+--- 1 WIN
+X*X
+O#X
+OOO
+--- -1 LOSE
+X*X
+O#*
+OOX
+--- -1
+X*X
+O#*
+O*O
+--- 1
+X*X
+O#X
+O*O
+--- 1
+X*X
+O#*
+OXO
+--- 1 WIN
+X*X
+O#O
+OXO
+--- 1
+X**
+O#X
+O**
+--- -1
+X**
+O#X
+OO*
+--- -1 LOSE
+X**
+O#X
+OOX
+--- -1
+X**
+O#X
+O*O
+--- 1
+X**
+O#X
+OXO
+--- 1
+X**
+O#*
+OX*
+--- 1 WIN
+X**
+O#O
+OX*
+--- -1
+X**
+O#*
+OXO
+--- -1 LOSE
+X**
+O#*
+O*X
+--- -1
+X**
+O#*
+*O*
+--- 1
+XX*
+O#*
+*O*
+--- 1 WIN
+XX*
+O#O
+*O*
+--- -1
+XX*
+O#*
+*OO
+--- -1 LOSE
+XXX
+O#*
+*OO
+--- -1 LOSE
+XX*
+O#X
+*OO
+--- 1
+XX*
+O#*
+XOO
+--- 1 WIN
+XX*
+O#O
+XOO
+--- 1
+X*X
+O#*
+*O*
+--- 1 WIN
+X*X
+O#O
+*O*
+--- -1
+X*X
+O#*
+*OO
+--- 1
+X*X
+O#X
+*OO
+--- -1 LOSE
+X*X
+O#*
+XOO
+--- 1
+X**
+O#X
+*O*
+--- -1
+X**
+O#X
+*OO
+--- 1
+X**
+O#X
+XOO
+--- 1
+X**
+O#*
+XO*
+--- 1 WIN
+X**
+O#O
+XO*
+--- -1
+X**
+O#*
+XOO
+--- -1 LOSE
+X**
+O#*
+*OX
+--- 0
+X**
+O#*
+**O
+--- 1
+XX*
+O#*
+**O
+--- 1 WIN
+XX*
+O#O
+**O
+--- 1
+X*X
+O#*
+**O
+--- 1 WIN
+X*X
+O#O
+**O
+--- 0
+X**
+O#X
+**O
+--- 1
+X**
+O#*
+X*O
+--- 1 WIN
+X**
+O#O
+X*O
+--- 1
+X**
+O#*
+*XO
+--- 1 WIN
+X**
+O#O
+*XO
+--- 1
+*X*
+O#*
+***
+--- 1 WIN
+*X*
+O#O
+***
+--- -1
+*X*
+O#*
+O**
+--- 1
+*XX
+O#*
+O**
+--- 1 WIN
+*XX
+O#O
+O**
+--- -1
+*XX
+O#*
+OO*
+--- 1
+*XX
+O#X
+OO*
+--- 1 WIN
+*XX
+O#X
+OOO
+--- 1
+*XX
+O#*
+OOX
+--- 1 WIN
+*XX
+O#O
+OOX
+--- -1
+*XX
+O#*
+O*O
+--- 1
+*XX
+O#X
+O*O
+--- 1 WIN
+OXX
+O#X
+O*O
+--- -1 LOSE
+*XX
+O#*
+OXO
+--- 1
+*X*
+O#X
+O**
+--- -1
+*X*
+O#X
+OO*
+--- 1
+*X*
+O#X
+OOX
+--- -1
+*X*
+O#X
+O*O
+--- -1 LOSE
+*X*
+O#X
+OXO
+--- -1 LOSE
+*X*
+O#*
+OX*
+--- 1
+*X*
+O#*
+O*X
+--- 1 WIN
+*X*
+O#O
+O*X
+--- -1
+*X*
+O#*
+OOX
+--- 1
+*X*
+O#*
+*O*
+--- 1
+*XX
+O#*
+*O*
+--- 1 WIN
+*XX
+O#O
+*O*
+--- -1
+*XX
+O#*
+*OO
+--- 1
+*XX
+O#X
+*OO
+--- -1 LOSE
+*XX
+O#*
+XOO
+--- 1
+*X*
+O#X
+*O*
+--- -1
+*X*
+O#X
+*OO
+--- 1
+*X*
+O#X
+XOO
+--- 1
+*X*
+O#*
+XO*
+--- 1 WIN
+*X*
+O#O
+XO*
+--- -1
+*X*
+O#*
+XOO
+--- 1
+*X*
+O#*
+*OX
+--- 1 WIN
+*X*
+O#O
+*OX
+--- -1
+*X*
+O#*
+**O
+--- 1
+*XX
+O#*
+**O
+--- 1 WIN
+*XX
+O#O
+**O
+--- 1
+*X*
+O#X
+**O
+--- 1
+*X*
+O#*
+X*O
+--- 1 WIN
+*X*
+O#O
+X*O
+--- -1 LOSE
+*X*
+O#*
+*XO
+--- 1
+**X
+O#*
+***
+--- 1 WIN
+**X
+O#O
+***
+--- 1
+**X
+O#*
+O**
+--- 1
+**X
+O#X
+O**
+--- -1
+**X
+O#X
+OO*
+--- -1 LOSE
+**X
+O#X
+OOX
+--- 1
+**X
+O#X
+O*O
+--- 1
+**X
+O#X
+OXO
+--- 1 WIN
+O*X
+O#X
+OXO
+--- 1
+**X
+O#*
+OX*
+--- 1 WIN
+**X
+O#O
+OX*
+--- -1
+**X
+O#*
+OXO
+--- 1
+**X
+O#*
+O*X
+--- 1 WIN
+**X
+O#O
+O*X
+--- -1
+**X
+O#*
+OOX
+--- -1
+**X
+O#*
+*O*
+--- 1
+**X
+O#X
+*O*
+--- -1
+**X
+O#X
+*OO
+--- -1 LOSE
+**X
+O#X
+XOO
+--- -1 LOSE
+**X
+O#*
+XO*
+--- 1
+**X
+O#*
+*OX
+--- 1 WIN
+**X
+O#O
+*OX
+--- -1
+**X
+O#*
+**O
+--- 1
+**X
+O#X
+**O
+--- -1 LOSE
+**X
+O#*
+X*O
+--- 1
+**X
+O#*
+*XO
+--- 1 WIN
+**X
+O#O
+*XO
+--- 1
+***
+O#X
+***
+--- 1
+***
+O#X
+O**
+--- 1
+***
+O#X
+OX*
+--- -1
+***
+O#X
+OXO
+--- 1
+***
+O#X
+O*X
+--- -1
+***
+O#X
+OOX
+--- 1
+***
+O#X
+*O*
+--- 1
+***
+O#X
+XO*
+--- -1
+***
+O#X
+XOO
+--- 1
+***
+O#X
+*OX
+--- 0
+***
+O#X
+**O
+--- 1
+***
+O#X
+X*O
+--- 1
+***
+O#X
+*XO
+--- 1
+***
+O#*
+X**
+--- 1 WIN
+***
+O#O
+X**
+--- -1
+***
+O#*
+XO*
+--- 1
+***
+O#*
+XOX
+--- 1 WIN
+***
+O#O
+XOX
+--- -1
+***
+O#*
+X*O
+--- 1
+***
+O#*
+XXO
+--- 1 WIN
+***
+O#O
+XXO
+--- 1
+***
+O#*
+*X*
+--- 1 WIN
+***
+O#O
+*X*
+--- -1
+***
+O#*
+OX*
+--- 1
+***
+O#*
+OXX
+--- 1 WIN
+***
+O#O
+OXX
+--- -1
+***
+O#*
+*XO
+--- 1
+***
+O#*
+**X
+--- 1 WIN
+***
+O#O
+**X
+--- -1
+***
+O#*
+O*X
+--- -1
+***
+O#*
+*OX
+--- 1
+***
+*#O
+***
+--- 1
+X**
+*#O
+***
+--- -1
+X**
+*#O
+O**
+--- 1
+XX*
+*#O
+O**
+--- -1
+XX*
+*#O
+OO*
+--- -1 LOSE
+XXX
+*#O
+OO*
+--- 1
+XX*
+X#O
+OO*
+--- 1 WIN
+XX*
+X#O
+OOO
+--- -1 LOSE
+XX*
+*#O
+OOX
+--- -1
+XX*
+*#O
+O*O
+--- -1 LOSE
+XXX
+*#O
+O*O
+--- 1
+XX*
+X#O
+O*O
+--- 1 WIN
+XXO
+X#O
+O*O
+--- -1 LOSE
+XX*
+*#O
+OXO
+--- 1
+X*X
+*#O
+O**
+--- -1
+X*X
+*#O
+OO*
+--- 1
+X*X
+X#O
+OO*
+--- 1 WIN
+X*X
+X#O
+OOO
+--- -1 LOSE
+X*X
+*#O
+OOX
+--- -1
+X*X
+*#O
+O*O
+--- 1
+X*X
+X#O
+O*O
+--- 1
+X*X
+*#O
+OXO
+--- 1
+X**
+X#O
+O**
+--- -1
+X**
+X#O
+OO*
+--- -1 LOSE
+X**
+X#O
+OOX
+--- 1
+X**
+X#O
+O*O
+--- 1
+X**
+X#O
+OXO
+--- 1 WIN
+X*O
+X#O
+OXO
+--- 1
+X**
+*#O
+OX*
+--- -1
+X**
+*#O
+OXO
+--- -1 LOSE
+X**
+*#O
+O*X
+--- -1
+X**
+*#O
+*O*
+--- 1
+XX*
+*#O
+*O*
+--- -1
+XX*
+*#O
+*OO
+--- -1 LOSE
+XXX
+*#O
+*OO
+--- 1
+XX*
+X#O
+*OO
+--- 1
+XX*
+*#O
+XOO
+--- 1
+X*X
+*#O
+*O*
+--- -1
+X*X
+*#O
+*OO
+--- 1
+X*X
+X#O
+*OO
+--- -1 LOSE
+X*X
+*#O
+XOO
+--- 1
+X**
+X#O
+*O*
+--- -1
+X**
+X#O
+*OO
+--- -1 LOSE
+X**
+X#O
+XOO
+--- 1
+X**
+*#O
+XO*
+--- -1
+X**
+*#O
+XOO
+--- -1 LOSE
+X**
+*#O
+*OX
+--- 1
+X**
+*#O
+**O
+--- 1
+XX*
+*#O
+**O
+--- 1
+X*X
+*#O
+**O
+--- 1
+X**
+X#O
+**O
+--- 1
+X**
+*#O
+X*O
+--- 1
+X**
+*#O
+*XO
+--- 1
+*X*
+*#O
+***
+--- -1
+*X*
+*#O
+O**
+--- 1
+*XX
+*#O
+O**
+--- -1
+*XX
+*#O
+OO*
+--- 1
+*XX
+X#O
+OO*
+--- 1 WIN
+*XX
+X#O
+OOO
+--- 1
+*XX
+*#O
+OOX
+--- -1
+*XX
+*#O
+O*O
+--- 1
+*XX
+X#O
+O*O
+--- -1 LOSE
+*XX
+*#O
+OXO
+--- 1
+*X*
+X#O
+O**
+--- 1
+*X*
+X#O
+OO*
+--- 1
+*X*
+X#O
+OOX
+--- -1
+*X*
+X#O
+O*O
+--- -1 LOSE
+*X*
+X#O
+OXO
+--- -1 LOSE
+*X*
+*#O
+OX*
+--- 1
+*X*
+*#O
+O*X
+--- -1
+*X*
+*#O
+OOX
+--- 1
+*X*
+*#O
+*O*
+--- 1
+*XX
+*#O
+*O*
+--- -1
+*XX
+*#O
+*OO
+--- 1
+*XX
+X#O
+*OO
+--- -1 LOSE
+*XX
+*#O
+XOO
+--- 1
+*X*
+X#O
+*O*
+--- 1
+*X*
+X#O
+*OO
+--- 1
+*X*
+X#O
+XOO
+--- 1
+*X*
+*#O
+XO*
+--- -1
+*X*
+*#O
+XOO
+--- 1
+*X*
+*#O
+*OX
+--- -1
+*X*
+*#O
+**O
+--- 1
+*XX
+*#O
+**O
+--- 1
+*X*
+X#O
+**O
+--- 1
+*X*
+*#O
+X*O
+--- -1 LOSE
+*X*
+*#O
+*XO
+--- 1
+**X
+*#O
+***
+--- 1
+**X
+*#O
+O**
+--- 1
+**X
+X#O
+O**
+--- 1
+**X
+X#O
+OO*
+--- 1
+**X
+X#O
+OOX
+--- 1
+**X
+X#O
+O*O
+--- 1
+**X
+X#O
+OXO
+--- 1
+**X
+*#O
+OX*
+--- -1
+**X
+*#O
+OXO
+--- 1
+**X
+*#O
+O*X
+--- -1
+**X
+*#O
+OOX
+--- -1
+**X
+*#O
+*O*
+--- 1
+**X
+X#O
+*O*
+--- -1
+**X
+X#O
+*OO
+--- -1 LOSE
+**X
+X#O
+XOO
+--- -1 LOSE
+**X
+*#O
+XO*
+--- 1
+**X
+*#O
+*OX
+--- -1
+**X
+*#O
+**O
+--- 1
+**X
+X#O
+**O
+--- -1 LOSE
+**X
+*#O
+X*O
+--- 1
+**X
+*#O
+*XO
+--- 1
+***
+X#O
+***
+--- 1
+***
+X#O
+O**
+--- 1
+***
+X#O
+OX*
+--- -1
+***
+X#O
+OXO
+--- 1
+***
+X#O
+O*X
+--- -1
+***
+X#O
+OOX
+--- 1
+***
+X#O
+*O*
+--- 1
+***
+X#O
+XO*
+--- -1
+***
+X#O
+XOO
+--- 1
+***
+X#O
+*OX
+--- 1
+***
+X#O
+**O
+--- 1
+***
+X#O
+X*O
+--- 1
+***
+X#O
+*XO
+--- 1
+***
+*#O
+X**
+--- -1
+***
+*#O
+XO*
+--- 1
+***
+*#O
+XOX
+--- -1
+***
+*#O
+X*O
+--- 1
+***
+*#O
+XXO
+--- 1
+***
+*#O
+*X*
+--- -1
+***
+*#O
+OX*
+--- 1
+***
+*#O
+OXX
+--- -1
+***
+*#O
+*XO
+--- 1
+***
+*#O
+**X
+--- -1
+***
+*#O
+O*X
+--- -1
+***
+*#O
+*OX
+--- 1
+***
+*#*
+O**
+--- 1
+X**
+*#*
+O**
+--- -1
+X**
+*#*
+OO*
+--- 1
+XX*
+*#*
+OO*
+--- 1 WIN
+XX*
+*#*
+OOO
+--- 1
+X*X
+*#*
+OO*
+--- 1 WIN
+X*X
+*#*
+OOO
+--- 1
+X**
+X#*
+OO*
+--- 1 WIN
+X**
+X#*
+OOO
+--- 1
+X**
+*#X
+OO*
+--- 1 WIN
+X**
+*#X
+OOO
+--- -1 LOSE
+X**
+*#*
+OOX
+--- 1
+X**
+*#*
+O*O
+--- 1
+XX*
+*#*
+O*O
+--- 1
+X*X
+*#*
+O*O
+--- 1
+X**
+X#*
+O*O
+--- 1
+X**
+*#X
+O*O
+--- 1
+X**
+*#*
+OXO
+--- 1
+*X*
+*#*
+O**
+--- 1
+*X*
+*#*
+OO*
+--- 1
+*XX
+*#*
+OO*
+--- 1 WIN
+*XX
+*#*
+OOO
+--- 1
+*X*
+X#*
+OO*
+--- 1 WIN
+*X*
+X#*
+OOO
+--- 1
+*X*
+*#X
+OO*
+--- 1 WIN
+*X*
+*#X
+OOO
+--- 1
+*X*
+*#*
+OOX
+--- -1
+*X*
+*#*
+O*O
+--- 1
+*XX
+*#*
+O*O
+--- 1
+*X*
+X#*
+O*O
+--- 1
+*X*
+*#X
+O*O
+--- -1 LOSE
+*X*
+*#*
+OXO
+--- 1
+**X
+*#*
+O**
+--- 1
+**X
+*#*
+OO*
+--- 1
+**X
+X#*
+OO*
+--- 1 WIN
+**X
+X#*
+OOO
+--- 1
+**X
+*#X
+OO*
+--- 1 WIN
+**X
+*#X
+OOO
+--- 1
+**X
+*#*
+OOX
+--- 1
+**X
+*#*
+O*O
+--- 1
+**X
+X#*
+O*O
+--- 1
+**X
+*#X
+O*O
+--- 1
+**X
+*#*
+OXO
+--- 1
+***
+X#*
+O**
+--- -1
+***
+X#*
+OO*
+--- -1 LOSE
+***
+X#X
+OO*
+--- 1
+***
+X#*
+OOX
+--- -1
+***
+X#*
+O*O
+--- -1 LOSE
+***
+X#X
+O*O
+--- 1
+***
+X#*
+OXO
+--- 1
+***
+*#X
+O**
+--- -1
+***
+*#X
+OO*
+--- 1
+***
+*#X
+OOX
+--- -1
+***
+*#X
+O*O
+--- 1
+***
+*#X
+OXO
+--- 1
+***
+*#*
+OX*
+--- -1
+***
+*#*
+OXO
+--- 1
+***
+*#*
+O*X
+--- -1
+***
+*#*
+OOX
+--- 1
+***
+*#*
+*O*
+--- 1
+X**
+*#*
+*O*
+--- 1
+X**
+*#*
+*OO
+--- 1
+XX*
+*#*
+*OO
+--- 1
+X*X
+*#*
+*OO
+--- 1
+X**
+X#*
+*OO
+--- 1
+X**
+*#X
+*OO
+--- 1
+X**
+*#*
+XOO
+--- 1
+*X*
+*#*
+*O*
+--- 1
+*X*
+*#*
+*OO
+--- 1
+*XX
+*#*
+*OO
+--- 1
+*X*
+X#*
+*OO
+--- 1
+*X*
+*#X
+*OO
+--- 1
+*X*
+*#*
+XOO
+--- 1
+**X
+*#*
+*O*
+--- -1
+**X
+*#*
+*OO
+--- 1
+**X
+X#*
+*OO
+--- 1
+**X
+*#X
+*OO
+--- -1 LOSE
+**X
+*#*
+XOO
+--- 1
+***
+X#*
+*O*
+--- -1
+***
+X#*
+*OO
+--- -1 LOSE
+***
+X#X
+*OO
+--- 1
+***
+X#*
+XOO
+--- 1
+***
+*#X
+*O*
+--- -1
+***
+*#X
+*OO
+--- 1
+***
+*#X
+XOO
+--- 1
+***
+*#*
+XO*
+--- -1
+***
+*#*
+XOO
+--- 1
+***
+*#*
+*OX
+--- 1
+***
+*#*
+**O
+--- 1
+X**
+*#*
+**O
+--- 1
+*X*
+*#*
+**O
+--- 1
+**X
+*#*
+**O
+--- 1
+***
+X#*
+**O
+--- 1
+***
+*#X
+**O
+--- 1
+***
+*#*
+X*O
+--- 1
+***
+*#*
+*XO

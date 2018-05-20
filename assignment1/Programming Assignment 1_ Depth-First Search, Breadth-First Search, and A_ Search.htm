@@ -1,0 +1,540 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0053)http://market.unist.ac.kr/~chiu/ai_resource/prog/hw1/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   <title>Programming Assignment 1: Depth-First Search, Breadth-First Search, and A* Search</title>
+   
+   <meta name="description" content="Homework 1: Depth-First Search, Breadth-First Search, and A* Search">
+   <meta http-equiv="Window-target" content="_top">
+
+   <link rel="stylesheet" type="text/css" href="./Programming Assignment 1_ Depth-First Search, Breadth-First Search, and A_ Search_files/mainstyle.css">
+</head>
+
+<body>
+
+<h1>Programming Assignment 1: Depth-First Search, Breadth-First Search, and A* Search</h1>
+
+<!-- --------------------------------------------------------- -->
+<a name="toc">
+<h2>Table of Contents</h2>
+</a>
+<!-- --------------------------------------------------------- -->
+
+<ol>
+<li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw1/#announcement">Announcement</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw1/#introduction">Introduction</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw1/#simulator">Download the maze simulator</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw1/#implementation">Implement your search algorithms</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw1/#start">Compile and run your program</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw1/#evaluation">Evaluation of your implementations</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw1/#submission">Submit your program</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw1/#grading">Grading Scheme</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw1/#qa">Questions and Answers</a>
+</li></ol>
+
+
+<!-- --------------------------------------------------------- -->
+<a name="announcement"><h2>1. Announcement</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<ul>
+
+<li> <b>(September 22, 2016)</b> Some students do not know how to set up X11 forwarding when testing their programs on our test server, causing the failure of the display of the GUI on their local computers.  If you want to open the GUI remotely, you need to run a X server on your local machine and then use -X option when you ssh to the test server (i.e., 'ssh -X cXXXXXXX@10.20.12.150').  However, different platforms have different ways to install and run the X server.  If you fails to open the GUI remotely, you can schedule a meeting with our TA to test your program directly on the test machine.  However, notice that TA will not provide any technical support or even answer any question regarding the homework.
+
+</li><li> <b>(September 21, 2016)</b> Highlighted the texts that explain what is the start position and its coordinate.  More details about the coordinates of other positions relative to the start position.
+
+</li><li> <b>(September 11, 2016)</b> The due date is September 22, 2016. 
+Please put your program and documentation in one zip file and
+upload it to Blackboard.
+
+</li></ul>
+
+<!-- --------------------------------------------------------- -->
+<a name="introduction"><h2>2. Introduction</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p> 
+Suppose your agent is located in a large maze and its task is to find the shortest path
+to the exit and leave the maze.  The agent, however, do not know the maze and the
+location of the exit.  Therefore your agent needs to explore the maze to
+search for the exit.  In addition, the agent has to find
+the <i>shortest path</i> to the exit.  What should your agent do to find the 
+shortest path, given that your agent has no knowledge about the maze?
+In this homework, you will implement three search algorithms for finding 
+shortest paths in a maze: <i>depth-first search</i>, <i>breadth-first search</i>,
+and <i>A* search</i>.
+</p>
+
+<!-- --------------------------------------------------------- -->
+<a name="simulator"><h2>3. Download the maze simulator</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+We have developed a maze simulator for this exercise.
+First of all, download the maze simulator from this link: <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw1/maze_v1.tar.gz">maze_v1.tar.gz</a>.
+</p>
+
+<p>
+Uncompress the file and you will find a set of <code>.java</code> files.
+Three of the files, named <b>DepthFirstSearchAgent.java</b>, 
+<b>BreadthFirstSearchAgent.java</b>, and <b>AStarSearchAgent.java</b>, are incomplete java files.
+You cannot compile and run the maze simulator until you fill out these files.  In the next section,
+we will talk about how to implement the search algorithms in these files.
+</p>
+
+<!-- --------------------------------------------------------- -->
+<a name="implementation"><h2>4. Implement your search algorithms</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+<b>DepthFirstSearchAgent.java</b>, <b>BreadthFirstSearchAgent.java</b>, and <b>AStarSearchAgent.java</b>
+contain the following codes:
+</p>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff" width="800px">
+   <tbody><tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#0000c0"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">DepthFirstSearchAgent&nbsp;</font><font color="#0000c0"><b>implements&nbsp;</b></font><font color="#000000">SearchAgent&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">DepthFirstSearchAgent</font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">sizeX,&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">sizeY</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;...</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">Coordinate&nbsp;move</font><font color="#000000">(</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">isExit,</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">hasWallSouth,</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">hasWallNorth,</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">hasWallEast,</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">hasWallWest</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;...</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#646464">@Override</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">List&lt;Coordinate&gt;&nbsp;getShortestPath</font><font color="#000000">()&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;...</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</tbody></table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<p>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+</p><div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff" width="800px">
+   <tbody><tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#0000c0"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">BreadthFirstSearchAgent&nbsp;</font><font color="#0000c0"><b>implements&nbsp;</b></font><font color="#000000">SearchAgent&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">BreadthFirstSearchAgent</font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">sizeX,&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">sizeY</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;...</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">Coordinate&nbsp;move</font><font color="#000000">(</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">isExit,</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">hasWallSouth,</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">hasWallNorth,</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">hasWallEast,</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">hasWallWest</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;...</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#646464">@Override</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">List&lt;Coordinate&gt;&nbsp;getShortestPath</font><font color="#000000">()&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;...</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</tbody></table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<p>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+</p><div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff" width="800px">
+   <tbody><tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#0000c0"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">AStarSearchAgent&nbsp;</font><font color="#0000c0"><b>implements&nbsp;</b></font><font color="#000000">SearchAgent&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">AStarSearchAgent</font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">sizeX,&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">sizeY</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;...</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">Coordinate&nbsp;move</font><font color="#000000">(</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">isExit,</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">hasWallSouth,</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">hasWallNorth,</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">hasWallEast,</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">hasWallWest,</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>double&nbsp;</b></font><font color="#000000">distance</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;...</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#646464">@Override</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">List&lt;Coordinate&gt;&nbsp;getShortestPath</font><font color="#000000">()&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;...</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</tbody></table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<p>
+There are three methods in the each class.  The parameters of
+constructors, <code>sizeX</code> and <code>sizeY</code>, 
+are the size of maze including the border.  The simulator will inform
+the agents the number of spaces in the X and Y dimensions of the maze
+via the constructors. The <code>move()</code> functions implement the agent functions.
+As discussed in our lectures, an agent is supposed to
+get percepts repeatedly from the environment and generate
+an action after receiving a percept.
+This control-loop will continue until the agent finds
+the shortest path to the exit position, which is not
+known to the agent beforehand.
+</p>
+
+<p>
+At the beginning the last visited position is <b>the start position</b>.
+The input of these functions are the sensing information (i.e., percepts)
+received by the agent at the last visited location.  For <code>DepthFirstSearchAgent</code>
+and <code>BreadthFirstSearchAgent</code>, there are five input parameters.
+</p>
+<ol>
+<li> <code>isExit</code> - whether the current position is an exit position.
+</li><li> <code>hasWallSouth</code> - whether there is a wall below the current position.
+</li><li> <code>hasWallNorth</code> - whether there is a wall above the current position.
+</li><li> <code>hasWallEast</code> - whether there is a wall at the left of the current position.
+</li><li> <code>hasWallWest</code> - whether there is a wall at the right of the current position.
+</li></ol>
+<p>
+The <code>move()</code> function in <code>AStarSearchAgent.java</code> has one more parameter.
+</p>
+<ol>
+<li> <code>distance</code> - the Euclidean distance between the last visited position and the exit position.
+</li></ol>
+<p>
+Your agent will have to utilize these sensing information to make decisions.
+After processing the sensing information, your agent will have to 
+determine what to do next.
+The agent function can return either (1) the next position to explore, or
+(2) <code>null</code> which signifies the end of the search.
+A position is specified by a <i>coordinate</i>, which is a pair of integer values.
+A next position cannot be a position that is either (1) a
+wall <i>or</i> (2) a position not 
+adjacent to a visited position without a wall between them.
+If your <code>move()</code> functions return an invalid next position,
+the simulator will generate an error message and stop.
+</p>
+
+<p>
+The following code is the <code>Coordinate</code> class.
+</p>
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff" width="800px">
+   <tbody><tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#ffffff"></font><br>
+<font color="#0000c0"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">Coordinate&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;final&nbsp;</b></font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">x;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;final&nbsp;</b></font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">y;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">Coordinate</font><font color="#000000">()&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>this</b></font><font color="#000000">.x&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>this</b></font><font color="#000000">.y&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">Coordinate</font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">x,&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">y</font><font color="#000000">)&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>this</b></font><font color="#000000">.x&nbsp;=&nbsp;x;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>this</b></font><font color="#000000">.y&nbsp;=&nbsp;y;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">getX</font><font color="#000000">()&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">x;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">getY</font><font color="#000000">()&nbsp;{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">y;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</tbody></table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<p>
+<b>The coordinate of the start position is always (0, 0)</b>.
+Notice that the start position is not necessary at the 
+lower-left or upper-left corner of the maze.
+Also, negative values can appear in a coordinate.
+For example, the coordinate of the position on the left of
+the start position is (-1, 0), while the coordinate of the
+position on the right of the start position is (1, 0).
+The coordinate of the position on the left of the left position of
+the start position is (-2, 0), the coordinate of the position
+on the right of the right of the start position is (2, 0).
+Similarly, the coordinate of the position above
+the start position is (0, -1), while the coordinate of
+the position below the start position is (0, 1).
+</p>
+
+<p>
+When your agent reaches the exit position,
+the environment will set the <code>isExit</code> argument to true.
+In this case, your agent function can choose to continue
+its search, but it can also return <code>null</code> to ask
+the simulation to break the control-loop.  In the later case,
+the simulator will call <code>getShortestPath()</code> to get
+the shortest path found by your agent and display the result
+on the computer screen.  The shortest path is represented by a
+list of consecutive coordinates, from the start location to the exit location,
+including the coordinates of the start and exit position.
+The simulation will highlight the shortest
+path with yellow color and compute the length of the path,
+which is the length of the list minus 1, as 
+the number of spaces visited by your agent.
+The result will be shown as "The shortest distance you found"
+and "Number of visited spaces" at the top of the screen.
+</p>
+
+
+
+<!-- --------------------------------------------------------- -->
+<a name="start"><h2>5. Compile and run your program</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+The simulator should be compiled using JDK 8, the latest version
+of the Java Development Kit.
+After filling out the missing parts in the above java files.
+you can compile the simulator by this command:
+</p>
+<div>
+<ul>
+<code>
+javac MazeGame.java
+</code>
+</ul>
+</div>
+
+<p>
+After compiling the simulator successfully,
+you run the simulator by typing
+</p>
+<div>
+<ul>
+<code>
+java MazeGame
+</code>
+</ul>
+</div>
+<p>
+Then you will see the following window  on your computer screen.
+</p>
+
+<center>
+<img width="800px" src="./Programming Assignment 1_ Depth-First Search, Breadth-First Search, and A_ Search_files/main_screen.png">
+</center>
+
+<p>
+Click the "Generate new maze" to generate a new maze with a different size.
+During development, a smaller maze can help you to identify 
+misbehaviors in your programs.  In our evaluation,
+we will test your agent using very large mazes (up to 300x300).
+However, your agent should be feasible in terms of the size of the mazes
+they can handle.
+</p>
+
+<p>
+To generate a large maze without the
+stack overflow error, try turning on <code>-Xss</code> option on your Java
+Virtual Machine such as <code>java -Xss4m MazeGame</code>.
+</p>
+
+<!-- --------------------------------------------------------- -->
+<a name="evaluation"><h2>6. Evaluation of your implementation</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+To run your agents, choose one of the search algorithms and then click "Start Agent". 
+When the agent finishes exploring the maze, the result
+will be displayed on the screen.  The green areas are the spaces visited by the agent.
+Obviously, a good algorithm should avoid visiting too many spaces.
+The yellow path is the shortest path reported by your agent.
+If the yellow path is indeed one of the shortest path, it should be equal to the
+actual shortest distance.
+</p>
+
+<p>
+In exercises, your agents should aim to find the shortest path.
+Since the depth-first search, in general, does not guarantee optimality,
+you need to modify the depth-first search algorithm to make it returns
+the shortest path.  (Hint: consider using some forms of branch-and-bound algorithms).
+</p>
+
+<p>
+There are four performance measures:
+</p>
+<ol>
+<li> The length of the shortest path found by your agent, which must be equal to the
+actual shortest distance.
+</li><li> The number of visited spaces, which cannot be much larger than the
+number of visited spaces of our reference implementations of the algorithm.
+</li><li> The memory usage. A out of memory error should not occur during execution on our machines
+which has 16GB of memory. You should turn on the options such as <code>-Xss</code> or <code>-Xms</code> of your Java virtual machine if your programs have any memory problem.
+</li><li> The execution time. For each agents, you will have to report the largest mazes it
+can <i>consistently</i> handle given 2 minutes of execution time.  Your agents will
+be compared with our reference implementations, and the largest mazes your agents 
+can handle should not be substantially smaller than what the reference implementations can handle.
+</li></ol>
+
+<p>
+You will have to report the performance of your agents according to these measures when you
+submit your programs.
+</p>
+
+<br>
+<br>
+
+
+
+<!-- --------------------------------------------------------- -->
+<a name="submission"><h2>7. Submit your program</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+The implementation of your algorithms must be written in <b>DepthFirstSearchAgent.java</b>, 
+<b>BreadthFirstSearchAgent.java</b>, and <b>AStarSearchAgent.java</b>.
+In the java file, please put your name and your email address
+as a comment at the top of the files.
+Apart from submitting these three .java files, you
+should include a plaintext file containing the performance measures.
+Please submit these files as attachments on Blackboard.
+</p>
+
+<p>
+The deadline of this assignment is 23:59pm on September 22, 2016.
+</p>
+
+<br>
+<br>
+
+<!-- --------------------------------------------------------- -->
+<a name="grading"><h2>8. Grading Scheme</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+Our tentative grading scheme is as follows:
+</p>
+<ul>
+<li> CORRECTNESS FOR DFS (5%): the implementation of DFS is correct.
+</li><li> CORRECTNESS FOR BFS (5%): the implementation of BFS is correct.
+</li><li> CORRECTNESS FOR A* (5%): the implementation of the A* search is correct.
+</li><li> SHOREST PATH FOR DFS (5%): the path returns by your DFS procedure is indeed one of the shortest paths.
+</li><li> SHOREST PATH FOR BFS (5%): the path returns by your BFS procedure is indeed one of the shortest paths.
+</li><li> SHOREST PATH FOR A* (5%): the path returns by your A* search procedure is indeed one of the shortest paths.
+</li><li> NUMBER OF VISITED STATES FOR DFS (10%): the number of visited states by the DFS search is reasonable.
+</li><li> NUMBER OF VISITED STATES FOR BFS (10%): the number of visited states by BFS is reasonable.
+</li><li> NUMBER OF VISITED STATES FOR A* (10%): the number of visited states by the A* search is reasonable.
+</li><li> THE SIZE OF THE LARGEST MAZES FOR DFS (10%): the size of the largest mazes handled by the DFS search is reasonable.
+</li><li> THE SIZE OF THE LARGEST MAZES FOR BFS (10%): the size of the largest mazes by BFS is reasonable.
+</li><li> THE SIZE OF THE LARGEST MAZES FOR A* (10%): the size of the largest mazes by the A* search is reasonable.
+
+</li><li> READABILITY (10%): How clean your code is, and whether your code is well-documented.
+</li></ul>
+
+
+<p>
+10% of your grade is dedicated to
+the readability of your programs.  Please follow the standard practice of 
+programming such as making your codes well-organized, 
+choosing meaningful variable names, and adding comments to your
+code.  We won't hesitate to give you 0 point for
+readability if we fail to understand any part of your code.
+</p>
+
+<p>
+In the report of the performance
+of your agents, we will mainly focus on (1) whether your agents
+can always find the optimal solutions; (2) whether your A* search
+agent explores less positions than your BFS and DFS agents; and
+(3) how large is the maze your agents can handle in 2 minutes.
+</p>
+
+<p>
+Our grading scheme is subject to amendment.
+</p>
+
+<br>
+<br>
+
+<!-- --------------------------------------------------------- -->
+<a name="qa"><h2>9. Questions and Answers</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+Please send your questions concerning about this project to Tsz-Chiu Au
+at <a href="mailto:chiu@unist.ac.kr">chiu@unist.ac.kr</a>.
+If you have any problem with the simulator, please contact Tsz-Chiu Au.
+</p>
+
+
+<br>
+<br>
+
+
+
+
+</body></html>

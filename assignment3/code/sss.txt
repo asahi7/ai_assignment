@@ -1,0 +1,2668 @@
+------ pruned
+OXO
+X#O
+XXX
+--- pruned
+OXO
+X#X
+XOX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+X#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXO
+X#X
+XOX
+--- pruned
+OXO
+X#X
+XOX
+--- pruned
+OXO
+X#O
+XOX
+--- pruned
+OXO
+X#X
+XXO
+--- pruned
+OXO
+X#X
+OXX
+--- pruned
+OXO
+X#X
+XXO
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+X#X
+XXX
+--- pruned
+OXX
+O#X
+XOX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXX
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXX
+O#X
+XXX
+--- pruned
+OXX
+O#X
+XXX
+--- pruned
+OXX
+X#O
+OOX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+OOX
+--- pruned
+OXX
+X#O
+XOX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+XOX
+--- pruned
+OXX
+X#O
+XOX
+--- pruned
+OXX
+X#O
+OOX
+--- pruned
+OXX
+X#O
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXX
+X#O
+XXX
+--- pruned
+OXX
+X#O
+XXX
+--- pruned
+OXX
+X#O
+OOX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+OOX
+--- pruned
+OXX
+X#X
+OOX
+--- pruned
+OXX
+X#X
+OXO
+--- pruned
+OXX
+X#X
+OXX
+--- pruned
+OXX
+X#X
+OXX
+--- pruned
+OXO
+X#X
+OXX
+--- pruned
+OXX
+X#X
+OXX
+--- pruned
+OXO
+X#X
+OXX
+--- pruned
+OXX
+X#X
+OXX
+--- pruned
+OXX
+O#X
+XOX
+--- pruned
+OXX
+X#O
+OOX
+--- pruned
+OXX
+X#O
+XOX
+--- pruned
+OXX
+X#O
+OOX
+--- pruned
+OXX
+X#X
+OOX
+--- pruned
+OXX
+X#X
+XOO
+--- pruned
+OXX
+X#X
+XOX
+--- pruned
+OXX
+X#X
+OXO
+--- pruned
+OXX
+X#X
+XOO
+--- pruned
+OXX
+X#X
+XXO
+--- pruned
+OOX
+X#X
+OXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+X#X
+OXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XOX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OXX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+OXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXO
+X#X
+XXX
+--- pruned
+OXO
+X#X
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+XOX
+--- pruned
+OXX
+X#O
+XOX
+--- pruned
+OXX
+X#O
+OOX
+--- pruned
+OXX
+X#O
+XXX
+--- pruned
+OOX
+X#O
+XXX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+XXX
+--- pruned
+OXX
+X#O
+XXX
+--- pruned
+OOX
+X#O
+XXX
+--- pruned
+OXX
+X#O
+XXX
+--- pruned
+OOX
+X#O
+XXX
+--- pruned
+OXX
+X#O
+XXX
+--- pruned
+OXX
+X#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+X#X
+OXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+X#X
+XXX
+--- pruned
+OXO
+X#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXX
+O#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OXX
+O#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXX
+O#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OXX
+O#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXX
+O#X
+XXX
+--- pruned
+OXX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XOX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OXX
+X#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OXX
+X#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OXX
+X#X
+XXX
+--- pruned
+XOO
+X#O
+XXX
+--- pruned
+XOO
+X#X
+XXO
+--- pruned
+XOO
+X#X
+XXX
+--- pruned
+XOX
+O#X
+OXO
+--- pruned
+XOX
+O#X
+OXX
+--- pruned
+XOX
+O#X
+OXO
+--- pruned
+XOX
+O#X
+XXO
+--- pruned
+XOX
+O#X
+XXX
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#O
+OXX
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#O
+XXO
+--- pruned
+XOX
+X#O
+XXX
+--- pruned
+XOX
+O#X
+OXO
+--- pruned
+XOX
+O#X
+OXX
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#O
+OXX
+--- pruned
+XOX
+X#X
+OOX
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#X
+OXO
+--- pruned
+XOX
+X#X
+OXX
+--- pruned
+XOX
+X#X
+OOX
+--- pruned
+XOX
+X#X
+XOO
+--- pruned
+XOX
+X#X
+XOX
+--- pruned
+XOX
+O#X
+OXO
+--- pruned
+XOX
+O#X
+XXO
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#O
+XXO
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#X
+OXO
+--- pruned
+XOX
+X#X
+XOO
+--- pruned
+XOX
+X#X
+XXO
+--- pruned
+XOX
+X#X
+XXX
+--- pruned
+XOO
+X#O
+XXX
+--- pruned
+XOO
+X#X
+XXO
+--- pruned
+XOO
+X#X
+XXX
+--- pruned
+XXO
+O#X
+XOX
+--- pruned
+XXO
+O#X
+XXO
+--- pruned
+XXO
+O#X
+XXX
+--- pruned
+XXO
+X#O
+XOX
+--- pruned
+XXO
+X#O
+XXX
+--- pruned
+XXO
+X#X
+OOX
+--- pruned
+XXO
+X#X
+OXO
+--- pruned
+XXO
+X#X
+OXX
+--- pruned
+XXO
+O#X
+XOX
+--- pruned
+XXO
+X#O
+XOX
+--- pruned
+XXO
+X#X
+OOX
+--- pruned
+XXO
+X#X
+XOO
+--- pruned
+XXO
+X#X
+XOX
+--- pruned
+XXO
+O#X
+XXO
+--- pruned
+XXO
+X#X
+OXO
+--- pruned
+XXO
+X#X
+XOO
+--- pruned
+XXO
+X#X
+XXO
+--- pruned
+XXO
+X#X
+XXX
+--- pruned
+XOX
+O#X
+OXO
+--- pruned
+XOX
+O#X
+OXX
+--- pruned
+XOX
+O#X
+OXO
+--- pruned
+XOX
+O#X
+XXO
+--- pruned
+XOX
+O#X
+XXX
+--- pruned
+XXO
+O#X
+XOX
+--- pruned
+XXO
+O#X
+XXO
+--- pruned
+XXO
+O#X
+XXX
+--- pruned
+XXX
+O#X
+OOX
+--- pruned
+XXX
+O#X
+OXO
+--- pruned
+XXX
+O#X
+OXX
+--- pruned
+XXO
+O#X
+XOX
+--- pruned
+XXX
+O#X
+OOX
+--- pruned
+XXX
+O#X
+XOO
+--- pruned
+XXX
+O#X
+XOX
+--- pruned
+XXO
+O#X
+XXO
+--- pruned
+XXX
+O#X
+OXO
+--- pruned
+XXX
+O#X
+XOO
+--- pruned
+XXX
+O#X
+XXO
+--- pruned
+XXX
+O#X
+XXX
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#O
+OXX
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#O
+XXO
+--- pruned
+XOX
+X#O
+XXX
+--- pruned
+XXO
+X#O
+XOX
+--- pruned
+XXO
+X#O
+XXX
+--- pruned
+XXX
+X#O
+OOX
+--- pruned
+XXX
+X#O
+OXO
+--- pruned
+XXX
+X#O
+OXX
+--- pruned
+XXO
+X#O
+XOX
+--- pruned
+XXX
+X#O
+OOX
+--- pruned
+XXX
+X#O
+XOO
+--- pruned
+XXX
+X#O
+XOX
+--- pruned
+XXX
+X#O
+OXO
+--- pruned
+XXX
+X#O
+XOO
+--- pruned
+XXX
+X#O
+XXO
+--- pruned
+XXX
+X#O
+XXX
+--- pruned
+XOX
+O#X
+OXO
+--- pruned
+XOX
+O#X
+OXX
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#O
+OXX
+--- pruned
+XOX
+X#X
+OOX
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#X
+OXO
+--- pruned
+XOX
+X#X
+OXX
+--- pruned
+XXO
+X#X
+OOX
+--- pruned
+XXO
+X#X
+OXO
+--- pruned
+XXO
+X#X
+OXX
+--- pruned
+XXX
+O#X
+OOX
+--- pruned
+XXX
+O#X
+OXO
+--- pruned
+XXX
+O#X
+OXX
+--- pruned
+XXX
+X#O
+OOX
+--- pruned
+XXX
+X#O
+OXO
+--- pruned
+XXX
+X#O
+OXX
+--- pruned
+XXO
+X#X
+OOX
+--- pruned
+XXX
+O#X
+OOX
+--- pruned
+XXX
+X#O
+OOX
+--- pruned
+XXX
+X#X
+OOO
+--- pruned
+XXX
+X#X
+OOX
+--- pruned
+XXO
+X#X
+OXO
+--- pruned
+XXX
+O#X
+OXO
+--- pruned
+XXX
+X#O
+OXO
+--- pruned
+XXX
+X#X
+OOO
+--- pruned
+XXX
+X#X
+OXO
+--- pruned
+XXX
+X#X
+OXX
+--- pruned
+XOX
+X#X
+OOX
+--- pruned
+XOX
+X#X
+XOO
+--- pruned
+XOX
+X#X
+XOX
+--- pruned
+XXO
+O#X
+XOX
+--- pruned
+XXO
+X#O
+XOX
+--- pruned
+XXO
+X#X
+OOX
+--- pruned
+XXO
+X#X
+XOO
+--- pruned
+XXO
+X#X
+XOX
+--- pruned
+XXO
+O#X
+XOX
+--- pruned
+XXX
+O#X
+OOX
+--- pruned
+XXX
+O#X
+XOO
+--- pruned
+XXX
+O#X
+XOX
+--- pruned
+XXO
+X#O
+XOX
+--- pruned
+XXX
+X#O
+OOX
+--- pruned
+XXX
+X#O
+XOO
+--- pruned
+XXX
+X#O
+XOX
+--- pruned
+XXO
+X#X
+OOX
+--- pruned
+XXX
+O#X
+OOX
+--- pruned
+XXX
+X#O
+OOX
+--- pruned
+XXX
+X#X
+OOO
+--- pruned
+XXX
+X#X
+OOX
+--- pruned
+XXO
+X#X
+XOO
+--- pruned
+XXX
+O#X
+XOO
+--- pruned
+XXX
+X#O
+XOO
+--- pruned
+XXX
+X#X
+OOO
+--- pruned
+XXX
+X#X
+XOO
+--- pruned
+XXX
+X#X
+XOX
+--- pruned
+XOX
+O#X
+OXO
+--- pruned
+XOX
+O#X
+XXO
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#O
+XXO
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#X
+OXO
+--- pruned
+XOX
+X#X
+XOO
+--- pruned
+XOX
+X#X
+XXO
+--- pruned
+XXO
+O#X
+XXO
+--- pruned
+XXO
+X#X
+OXO
+--- pruned
+XXO
+X#X
+XOO
+--- pruned
+XXO
+X#X
+XXO
+--- pruned
+XXO
+O#X
+XXO
+--- pruned
+XXX
+O#X
+OXO
+--- pruned
+XXX
+O#X
+XOO
+--- pruned
+XXX
+O#X
+XXO
+--- pruned
+XXX
+X#O
+OXO
+--- pruned
+XXX
+X#O
+XOO
+--- pruned
+XXX
+X#O
+XXO
+--- pruned
+XXO
+X#X
+OXO
+--- pruned
+XXX
+O#X
+OXO
+--- pruned
+XXX
+X#O
+OXO
+--- pruned
+XXX
+X#X
+OOO
+--- pruned
+XXX
+X#X
+OXO
+--- pruned
+XXO
+X#X
+XOO
+--- pruned
+XXX
+O#X
+XOO
+--- pruned
+XXX
+X#O
+XOO
+--- pruned
+XXX
+X#X
+OOO
+--- pruned
+XXX
+X#X
+XOO
+--- pruned
+XXX
+X#X
+XXO
+ 1
+XXX
+X#X
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXO
+X#X
+XOX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+X#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXO
+X#X
+XOX
+--- pruned
+OXO
+X#X
+XOX
+--- pruned
+OXO
+X#O
+XOX
+--- pruned
+OXO
+X#X
+XXO
+--- pruned
+OXO
+X#X
+OXX
+--- pruned
+OXO
+X#X
+XXO
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+X#X
+XXX
+--- pruned
+OXX
+O#X
+XOX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXX
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXX
+O#X
+XXX
+--- pruned
+OXX
+O#X
+XXX
+--- pruned
+OXX
+X#O
+OOX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+OOX
+--- pruned
+OXX
+X#O
+XOX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+XOX
+--- pruned
+OXX
+X#O
+XOX
+--- pruned
+OXX
+X#O
+OOX
+--- pruned
+OXX
+X#O
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXX
+X#O
+XXX
+--- pruned
+OXX
+X#O
+XXX
+--- pruned
+OXX
+X#O
+OOX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+OOX
+--- pruned
+OXX
+X#X
+OOX
+--- pruned
+OXX
+X#X
+OXO
+--- pruned
+OXX
+X#X
+OXX
+--- pruned
+OXX
+X#X
+OXX
+--- pruned
+OXO
+X#X
+OXX
+--- pruned
+OXX
+X#X
+OXX
+--- pruned
+OXO
+X#X
+OXX
+--- pruned
+OXX
+X#X
+OXX
+--- pruned
+OXX
+O#X
+XOX
+--- pruned
+OXX
+X#O
+OOX
+--- pruned
+OXX
+X#O
+XOX
+--- pruned
+OXX
+X#O
+OOX
+--- pruned
+OXX
+X#X
+OOX
+--- pruned
+OXX
+X#X
+XOO
+--- pruned
+OXX
+X#X
+XOX
+--- pruned
+OXX
+X#X
+OXO
+--- pruned
+OXX
+X#X
+XOO
+--- pruned
+OXX
+X#X
+XXO
+--- pruned
+OOX
+X#X
+OXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+X#X
+OXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XOX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OXX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+OXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXO
+X#X
+XXX
+--- pruned
+OXO
+X#X
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXO
+X#O
+XXX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+XOX
+--- pruned
+OXX
+X#O
+XOX
+--- pruned
+OXX
+X#O
+OOX
+--- pruned
+OXX
+X#O
+XXX
+--- pruned
+OOX
+X#O
+XXX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+OXX
+--- pruned
+OXX
+X#O
+XXX
+--- pruned
+OXX
+X#O
+XXX
+--- pruned
+OOX
+X#O
+XXX
+--- pruned
+OXX
+X#O
+XXX
+--- pruned
+OOX
+X#O
+XXX
+--- pruned
+OXX
+X#O
+XXX
+--- pruned
+OXX
+X#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+X#X
+OXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+X#X
+XXX
+--- pruned
+OXO
+X#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXX
+O#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OXX
+O#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXX
+O#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OXX
+O#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXO
+O#X
+XXX
+--- pruned
+OXX
+O#X
+XXX
+--- pruned
+OXX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XOX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OXX
+X#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OXX
+X#X
+XXX
+--- pruned
+OOX
+O#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OOX
+X#X
+XXX
+--- pruned
+OXX
+X#X
+XXX
+--- pruned
+XOO
+X#O
+XXX
+--- pruned
+XOO
+X#X
+XXO
+--- pruned
+XOO
+X#X
+XXX
+--- pruned
+XOX
+O#X
+OXO
+--- pruned
+XOX
+O#X
+OXX
+--- pruned
+XOX
+O#X
+OXO
+--- pruned
+XOX
+O#X
+XXO
+--- pruned
+XOX
+O#X
+XXX
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#O
+OXX
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#O
+XXO
+--- pruned
+XOX
+X#O
+XXX
+--- pruned
+XOX
+O#X
+OXO
+--- pruned
+XOX
+O#X
+OXX
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#O
+OXX
+--- pruned
+XOX
+X#X
+OOX
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#X
+OXO
+--- pruned
+XOX
+X#X
+OXX
+--- pruned
+XOX
+X#X
+OOX
+--- pruned
+XOX
+X#X
+XOO
+--- pruned
+XOX
+X#X
+XOX
+--- pruned
+XOX
+O#X
+OXO
+--- pruned
+XOX
+O#X
+XXO
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#O
+XXO
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#X
+OXO
+--- pruned
+XOX
+X#X
+XOO
+--- pruned
+XOX
+X#X
+XXO
+--- pruned
+XOX
+X#X
+XXX
+--- pruned
+XOO
+X#O
+XXX
+--- pruned
+XOO
+X#X
+XXO
+--- pruned
+XOO
+X#X
+XXX
+--- pruned
+XXO
+O#X
+XOX
+--- pruned
+XXO
+O#X
+XXO
+--- pruned
+XXO
+O#X
+XXX
+--- pruned
+XXO
+X#O
+XOX
+--- pruned
+XXO
+X#O
+XXX
+--- pruned
+XXO
+X#X
+OOX
+--- pruned
+XXO
+X#X
+OXO
+--- pruned
+XXO
+X#X
+OXX
+--- pruned
+XXO
+O#X
+XOX
+--- pruned
+XXO
+X#O
+XOX
+--- pruned
+XXO
+X#X
+OOX
+--- pruned
+XXO
+X#X
+XOO
+--- pruned
+XXO
+X#X
+XOX
+--- pruned
+XXO
+O#X
+XXO
+--- pruned
+XXO
+X#X
+OXO
+--- pruned
+XXO
+X#X
+XOO
+--- pruned
+XXO
+X#X
+XXO
+--- pruned
+XXO
+X#X
+XXX
+--- pruned
+XOX
+O#X
+OXO
+--- pruned
+XOX
+O#X
+OXX
+--- pruned
+XOX
+O#X
+OXO
+--- pruned
+XOX
+O#X
+XXO
+--- pruned
+XOX
+O#X
+XXX
+--- pruned
+XXO
+O#X
+XOX
+--- pruned
+XXO
+O#X
+XXO
+--- pruned
+XXO
+O#X
+XXX
+--- pruned
+XXX
+O#X
+OOX
+--- pruned
+XXX
+O#X
+OXO
+--- pruned
+XXX
+O#X
+OXX
+--- pruned
+XXO
+O#X
+XOX
+--- pruned
+XXX
+O#X
+OOX
+--- pruned
+XXX
+O#X
+XOO
+--- pruned
+XXX
+O#X
+XOX
+--- pruned
+XXO
+O#X
+XXO
+--- pruned
+XXX
+O#X
+OXO
+--- pruned
+XXX
+O#X
+XOO
+--- pruned
+XXX
+O#X
+XXO
+--- pruned
+XXX
+O#X
+XXX
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#O
+OXX
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#O
+XXO
+--- pruned
+XOX
+X#O
+XXX
+--- pruned
+XXO
+X#O
+XOX
+--- pruned
+XXO
+X#O
+XXX
+--- pruned
+XXX
+X#O
+OOX
+--- pruned
+XXX
+X#O
+OXO
+--- pruned
+XXX
+X#O
+OXX
+--- pruned
+XXO
+X#O
+XOX
+--- pruned
+XXX
+X#O
+OOX
+--- pruned
+XXX
+X#O
+XOO
+--- pruned
+XXX
+X#O
+XOX
+--- pruned
+XXX
+X#O
+OXO
+--- pruned
+XXX
+X#O
+XOO
+--- pruned
+XXX
+X#O
+XXO
+--- pruned
+XXX
+X#O
+XXX
+--- pruned
+XOX
+O#X
+OXO
+--- pruned
+XOX
+O#X
+OXX
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#O
+OXX
+--- pruned
+XOX
+X#X
+OOX
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#X
+OXO
+--- pruned
+XOX
+X#X
+OXX
+--- pruned
+XXO
+X#X
+OOX
+--- pruned
+XXO
+X#X
+OXO
+--- pruned
+XXO
+X#X
+OXX
+--- pruned
+XXX
+O#X
+OOX
+--- pruned
+XXX
+O#X
+OXO
+--- pruned
+XXX
+O#X
+OXX
+--- pruned
+XXX
+X#O
+OOX
+--- pruned
+XXX
+X#O
+OXO
+--- pruned
+XXX
+X#O
+OXX
+--- pruned
+XXO
+X#X
+OOX
+--- pruned
+XXX
+O#X
+OOX
+--- pruned
+XXX
+X#O
+OOX
+--- pruned
+XXX
+X#X
+OOO
+--- pruned
+XXX
+X#X
+OOX
+--- pruned
+XXO
+X#X
+OXO
+--- pruned
+XXX
+O#X
+OXO
+--- pruned
+XXX
+X#O
+OXO
+--- pruned
+XXX
+X#X
+OOO
+--- pruned
+XXX
+X#X
+OXO
+--- pruned
+XXX
+X#X
+OXX
+--- pruned
+XOX
+X#X
+OOX
+--- pruned
+XOX
+X#X
+XOO
+--- pruned
+XOX
+X#X
+XOX
+--- pruned
+XXO
+O#X
+XOX
+--- pruned
+XXO
+X#O
+XOX
+--- pruned
+XXO
+X#X
+OOX
+--- pruned
+XXO
+X#X
+XOO
+--- pruned
+XXO
+X#X
+XOX
+--- pruned
+XXO
+O#X
+XOX
+--- pruned
+XXX
+O#X
+OOX
+--- pruned
+XXX
+O#X
+XOO
+--- pruned
+XXX
+O#X
+XOX
+--- pruned
+XXO
+X#O
+XOX
+--- pruned
+XXX
+X#O
+OOX
+--- pruned
+XXX
+X#O
+XOO
+--- pruned
+XXX
+X#O
+XOX
+--- pruned
+XXO
+X#X
+OOX
+--- pruned
+XXX
+O#X
+OOX
+--- pruned
+XXX
+X#O
+OOX
+--- pruned
+XXX
+X#X
+OOO
+--- pruned
+XXX
+X#X
+OOX
+--- pruned
+XXO
+X#X
+XOO
+--- pruned
+XXX
+O#X
+XOO
+--- pruned
+XXX
+X#O
+XOO
+--- pruned
+XXX
+X#X
+OOO
+--- pruned
+XXX
+X#X
+XOO
+--- pruned
+XXX
+X#X
+XOX
+--- pruned
+XOX
+O#X
+OXO
+--- pruned
+XOX
+O#X
+XXO
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#O
+XXO
+--- pruned
+XOX
+X#O
+OXO
+--- pruned
+XOX
+X#X
+OXO
+--- pruned
+XOX
+X#X
+XOO
+--- pruned
+XOX
+X#X
+XXO
+--- pruned
+XXO
+O#X
+XXO
+--- pruned
+XXO
+X#X
+OXO
+--- pruned
+XXO
+X#X
+XOO
+--- pruned
+XXO
+X#X
+XXO
+--- pruned
+XXO
+O#X
+XXO
+--- pruned
+XXX
+O#X
+OXO
+--- pruned
+XXX
+O#X
+XOO
+--- pruned
+XXX
+O#X
+XXO
+--- pruned
+XXX
+X#O
+OXO
+--- pruned
+XXX
+X#O
+XOO
+--- pruned
+XXX
+X#O
+XXO
+--- pruned
+XXO
+X#X
+OXO
+--- pruned
+XXX
+O#X
+OXO
+--- pruned
+XXX
+X#O
+OXO
+--- pruned
+XXX
+X#X
+OOO
+--- pruned
+XXX
+X#X
+OXO
+--- pruned
+XXO
+X#X
+XOO
+--- pruned
+XXX
+O#X
+XOO
+--- pruned
+XXX
+X#O
+XOO
+--- pruned
+XXX
+X#X
+OOO
+--- pruned
+XXX
+X#X
+XOO
+--- pruned
+XXX
+X#X
+XXO

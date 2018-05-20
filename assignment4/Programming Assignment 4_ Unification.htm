@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0053)http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   <title>Programming Assignment 4: Unification</title>
+   
+   <meta name="description" content="Programming Assignment 4: Unification">
+   <meta http-equiv="Window-target" content="_top">
+
+   <script type="text/javascript"> <!--
+      if (top!= self) top.location.replace(self.location.href); //-->
+   </script>
+   <link rel="stylesheet" type="text/css" href="./Programming Assignment 4_ Unification_files/mainstyle.css">
+   <link rel="stylesheet" type="text/css" href="./Programming Assignment 4_ Unification_files/bedaux_net.css">
+</head>
+
+<body>
+
+<h1>Programming Assignment 4: Unification</h1>
+
+<!-- --------------------------------------------------------- -->
+<a name="toc">
+<h2>Table of Contents</h2>
+</a>
+<!-- --------------------------------------------------------- -->
+
+<ol>
+<li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/#announcement">Announcement</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/#introduction">Introduction</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/#download">Download the code template and other files</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/#implementation">Implement the unification algorithm</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/#run">Run your program</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/#start">Compile your program</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/#evaluation">Evaluation of your implementation</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/#submission">Submit your program</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/#grading">Grading Scheme</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/#qa">Bug Reports</a>
+</li></ol>
+
+
+<!-- --------------------------------------------------------- -->
+<a name="announcement"><h2>1. Announcement</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<ul>
+<li> <b>(October 29, 2016)</b> The due date is November 11, 2016.
+</li></ul>
+
+<!-- --------------------------------------------------------- -->
+<a name="introduction"><h2>2. Introduction</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+In this exercise, you will implement the unification algorithm in Figure 9.1 on Page 328 in the textbook.
+</p>
+
+<!-- --------------------------------------------------------- -->
+<a name="download"><h2>3. Download the code template and other files</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+You will use C++ to implement the program. 
+To get start, download the code template: <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/code/code_template.zip">code_template.zip</a>.
+This archive contains the following files:
+</p>
+<ul>
+<li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/code/code_template/unify.cpp">unify.cpp</a> - the code template of your program.
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/code/code_template/Makefile">Makefile</a> - the Makefile.
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/code/code_template/fol-parser.ypp">fol-parser.ypp</a> - the parser of a predicate in first-order logic.
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/code/code_template/fol-scanner.ll">fol-scanner.ll</a> - the lexical analyser of a predicate in first-order logic.
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/code/code_template/fol-reader.cpp">fol-reader.cpp</a> - the reader class of a predicate in first-order logic.
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/code/code_template/fol-reader.hpp">fol-reader.hpp</a> - the reader class of a predicate in first-order logic.
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/code/code_template/fol.cpp">fol.cpp</a> - the implementation of a predicate in first-order logic.
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw4/code/code_template/fol.hpp">fol.hpp</a> - the implementation of a predicate in first-order logic.
+</li></ul>
+
+<p>
+You do not need to understand every line of the codes we provided. But you will need to understand <code>unify.cpp</code>, <code>fol.hpp</code>, and <code>fol.cpp</code>.  The latter two files define the structure of a predicate in first-order logic.  You will need to understand the classes in the files in order to implement your algorithm.  However you should not need to modify <code>fol.hpp</code> and <code>fol.cpp</code>---you should only need to implement your algorithm in <code>unify.cpp</code>.
+</p>
+
+<!-- --------------------------------------------------------- -->
+<a name="implementation"><h2>4. Implement the unification algorithm</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+We provide the following code template (<code>unify.cpp</code>) for you to implement your unification algorithm and the standardizing apart procedure.
+</p>
+
+<div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff" width="800px">
+   <tbody><tr>
+   <td nowrap="nowrap" valign="top" align="left">
+   
+<pre><span class="pre">#include &lt;iostream&gt;
+#include &lt;sstream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;map&gt;
+#include &lt;set&gt;
+#include &lt;utility&gt;
+#include &lt;stdexcept&gt;
+
+#include "fol.hpp"
+#include "fol-reader.hpp"
+</span><span class="keyword">
+using namespace</span> std<span class="operator">;</span><span class="keyword">
+
+struct</span> Variable_Ptr_Comparer<span class="operator"> {</span><span class="type">
+  bool</span><span class="keyword"> operator</span><span class="operator">() (</span><span class="keyword">const</span> Variable<span class="operator">*</span> x<span class="operator">,</span><span class="keyword"> const</span> Variable<span class="operator">*</span> y<span class="operator">)</span><span class="keyword"> const</span><span class="operator"> {</span><span class="flow">
+      return</span> x<span class="operator">-&gt;</span>getName<span class="operator">().</span>compare<span class="operator">(</span>y<span class="operator">-&gt;</span>getName<span class="operator">()) &lt;</span><span class="int"> 0</span><span class="operator">;
+  }
+};</span><span class="keyword">
+
+typedef</span> map<span class="operator">&lt;</span>Variable<span class="operator">*,</span>Term<span class="operator">*,</span>Variable_Ptr_Comparer<span class="operator">&gt;</span> Substitute<span class="operator">;</span><span class="type">
+
+
+void</span> unify<span class="operator">(</span>Substitute<span class="operator"> &amp;</span>theta<span class="operator">,</span> Predicate<span class="operator"> &amp;</span>x<span class="operator">,</span> Predicate<span class="operator"> &amp;</span>y<span class="operator">) {</span><span class="comment">
+    // ...
+</span><span class="operator">}</span>
+
+
+pair<span class="operator">&lt;</span>Predicate<span class="operator">*,</span>Predicate<span class="operator">*&gt;</span> standandizing_apart<span class="operator">(</span>Predicate<span class="operator"> *</span>p1<span class="operator">,</span> Predicate<span class="operator"> *</span>p2<span class="operator">) {</span><span class="comment">
+    // ...
+</span><span class="flow">    return</span> make_pair<span class="operator">(</span>p1<span class="operator">,</span> p2<span class="operator">);
+}</span><span class="comment">
+
+
+/*
+ * Printing
+ */</span><span class="type">
+void</span> print<span class="operator">(</span>Term<span class="operator"> &amp;</span>x<span class="operator">,</span> Substitute<span class="operator"> &amp;</span>theta<span class="operator">) {</span><span class="flow">
+    if</span><span class="operator"> (</span>x<span class="operator">.</span>getType<span class="operator">() ==</span> VARIABLE<span class="operator"> &amp;&amp;</span> theta<span class="operator">.</span>count<span class="operator">(</span><span class="keyword">dynamic_cast</span><span class="operator">&lt;</span>Variable<span class="operator">*&gt;(&amp;</span>x<span class="operator">)) &gt;</span><span class="int"> 0</span><span class="operator">) {</span>
+        print<span class="operator">(*</span>theta<span class="operator">[</span><span class="keyword">dynamic_cast</span><span class="operator">&lt;</span>Variable<span class="operator">*&gt;(&amp;</span>x<span class="operator">)],</span> theta<span class="operator">);
+    }</span><span class="flow"> else if</span><span class="operator"> (</span>x<span class="operator">.</span>getType<span class="operator">() ==</span> FUNCTION<span class="operator">) {</span>
+        Function<span class="operator">&amp;</span> f<span class="operator"> =</span><span class="keyword"> dynamic_cast</span><span class="operator">&lt;</span>Function<span class="operator">&amp;&gt;(</span>x<span class="operator">);</span>
+        cout<span class="operator"> &lt;&lt;</span> f<span class="operator">.</span>getName<span class="operator">() &lt;&lt;</span><span class="string"> "("</span><span class="operator">;</span><span class="flow">
+        for</span><span class="operator">(</span><span class="type">int</span> i<span class="operator">=</span><span class="int">0</span><span class="operator">;</span> i<span class="operator">&lt;</span>f<span class="operator">.</span>getTermSize<span class="operator">();</span> i<span class="operator">++) {</span><span class="flow">
+            if</span><span class="operator"> (</span>i<span class="operator"> !=</span><span class="int"> 0</span><span class="operator">)</span> cout<span class="operator"> &lt;&lt;</span><span class="string"> ", "</span><span class="operator">;</span>
+            print<span class="operator">(</span>f<span class="operator">.</span>getTerm<span class="operator">(</span>i<span class="operator">),</span> theta<span class="operator">);
+        }</span>
+        cout<span class="operator"> &lt;&lt;</span><span class="string"> ")"</span><span class="operator">;
+    }</span><span class="flow"> else</span><span class="operator"> {</span>
+        cout<span class="operator"> &lt;&lt;</span> x<span class="operator">;
+    }
+}</span><span class="comment">
+
+/*
+ * The main function.
+ */</span><span class="type">
+int</span><span class="keyword"> main</span><span class="operator">(</span><span class="type">int</span> argc<span class="operator">,</span><span class="type"> char</span><span class="operator"> **</span>argv<span class="operator">) {</span><span class="type">
+
+    bool</span> isArgValid<span class="operator"> =</span><span class="bool"> true</span><span class="operator">;</span><span class="type">
+    bool</span> isStandardizingApart<span class="operator"> =</span><span class="bool"> false</span><span class="operator">;</span><span class="flow">
+
+    if</span><span class="operator"> (</span>argc<span class="operator">==</span><span class="int">2</span><span class="operator">) {</span><span class="flow">
+        if</span><span class="operator"> (</span>strcmp<span class="operator">(</span>argv<span class="operator">[</span><span class="int">1</span><span class="operator">],</span><span class="string"> "-s"</span><span class="operator">)==</span><span class="int">0</span><span class="operator">) {</span>
+           isStandardizingApart<span class="operator"> =</span><span class="bool"> true</span><span class="operator">;
+        }</span><span class="flow"> else</span><span class="operator"> {</span>
+            isArgValid<span class="operator"> =</span><span class="bool"> false</span><span class="operator">;
+        }
+    }</span><span class="flow"> else if</span><span class="operator"> (</span>argc<span class="operator"> &gt;</span><span class="int"> 2</span><span class="operator">) {</span>
+        isArgValid<span class="operator"> =</span><span class="bool"> false</span><span class="operator">;
+    }</span><span class="flow">
+
+    if</span><span class="operator"> (!</span>isArgValid<span class="operator">) {</span>
+        cerr<span class="operator"> &lt;&lt;</span><span class="string"> "Error in command line arguments."</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span><span class="string"> "Usage: "</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span><span class="string"> "       "</span><span class="operator"> &lt;&lt;</span> argv<span class="operator">[</span><span class="int">0</span><span class="operator">] &lt;&lt;</span><span class="string"> " [-s]"</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span><span class="string"> "The option -s enables standardizing apart."</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span><span class="flow">
+        return</span><span class="int"> 1</span><span class="operator">;
+    }</span>
+
+    fol_reader reader<span class="operator">;</span>
+
+    cout<span class="operator"> &lt;&lt;</span><span class="string"> "Please enter the first predicate: "</span><span class="operator">;</span>
+    Predicate<span class="operator"> *</span>p1<span class="operator"> =</span> reader<span class="operator">.</span>read<span class="operator">();</span><span class="flow">
+    if</span><span class="operator"> (!</span>p1<span class="operator">) {</span> 
+        cerr<span class="operator"> &lt;&lt;</span><span class="string"> "Error when reading from STDIN."</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span><span class="flow">
+        return</span><span class="int"> 2</span><span class="operator">;
+    }</span>
+
+    cout<span class="operator"> &lt;&lt;</span><span class="string"> "Please enter the second predicate: "</span><span class="operator">;</span>
+    Predicate<span class="operator"> *</span>p2<span class="operator"> =</span> reader<span class="operator">.</span>read<span class="operator">();</span><span class="flow">
+    if</span><span class="operator"> (!</span>p1<span class="operator">) {</span> 
+        cerr<span class="operator"> &lt;&lt;</span><span class="string"> "Error when reading from STDIN."</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span><span class="flow">
+        return</span><span class="int"> 3</span><span class="operator">;
+    }</span><span class="flow">
+
+    if</span><span class="operator"> (</span>isStandardizingApart<span class="operator">) {</span>
+        pair<span class="operator">&lt;</span>Predicate<span class="operator">*,</span>Predicate<span class="operator">*&gt;</span> pair<span class="operator"> =</span> standandizing_apart<span class="operator">(</span>p1<span class="operator">,</span> p2<span class="operator">);</span><span class="keyword">
+        delete</span> p1<span class="operator">;</span><span class="keyword">
+        delete</span> p2<span class="operator">;</span>
+        p1<span class="operator"> =</span> pair<span class="operator">.</span>first<span class="operator">;</span>
+        p2<span class="operator"> =</span> pair<span class="operator">.</span>second<span class="operator">;</span>
+        cout<span class="operator"> &lt;&lt;</span><span class="string"> "After standardizing apart, the predicates are:"</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cout<span class="operator"> &lt;&lt;</span><span class="string"> "    "</span><span class="operator"> &lt;&lt; *</span>p1<span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cout<span class="operator"> &lt;&lt;</span><span class="string"> "    "</span><span class="operator"> &lt;&lt; *</span>p2<span class="operator"> &lt;&lt;</span> endl<span class="operator">;
+    }</span>
+
+    Substitute theta<span class="operator">;</span><span class="flow">
+
+    try</span><span class="operator"> {</span>
+        unify<span class="operator">(</span>theta<span class="operator">, *</span>p1<span class="operator">, *</span>p2<span class="operator">);
+    }</span><span class="flow"> catch</span><span class="operator">(</span><span class="keyword">const</span> runtime_error<span class="operator">&amp;</span> e<span class="operator">) {</span>
+        cout<span class="operator"> &lt;&lt;</span><span class="string"> "Unification failed: "</span><span class="operator"> &lt;&lt;</span> e<span class="operator">.</span>what<span class="operator">() &lt;&lt;</span> endl<span class="operator">;</span>
+        exit<span class="operator">(</span>EXIT_FAILURE<span class="operator">);
+    }</span>
+
+    cout<span class="operator"> &lt;&lt;</span><span class="string"> "The substitution is:"</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span><span class="flow">
+    for</span><span class="operator">(</span>Substitute<span class="operator">::</span>iterator iter<span class="operator"> =</span> theta<span class="operator">.</span>begin<span class="operator">();</span> iter<span class="operator"> !=</span> theta<span class="operator">.</span>end<span class="operator">(); ++</span>iter<span class="operator">) {</span>
+        cout<span class="operator"> &lt;&lt;</span><span class="string"> "    "</span><span class="operator"> &lt;&lt; *(</span>iter<span class="operator">-&gt;</span>first<span class="operator">) &lt;&lt;</span><span class="string"> " := "</span><span class="operator">;</span>
+        print<span class="operator">(*</span>iter<span class="operator">-&gt;</span>second<span class="operator">,</span> theta<span class="operator">);</span>
+        cout<span class="operator"> &lt;&lt;</span> endl<span class="operator">;
+    }</span><span class="keyword">
+
+    delete</span> p1<span class="operator">;</span><span class="keyword">
+    delete</span> p2<span class="operator">;
+}</span>
+</pre>
+
+</td>
+</tr>
+</tbody></table>
+
+<p>
+You will implement the unification algorithm in <code>unify()</code> and
+the standandizing apart procedure in <code>standandizing_apart()</code>.
+You will also need to implement <i>occur check</i> in the unification algorithm
+as discussed on Page 327.  In most cases, there is no need to modify the
+main function and the other part of the codes in <code>unify()</code>
+in order to implement your algorithms.  However, if you know
+a better way to implement your algorithm, feel free to modify the code.
+</p>
+
+
+<!-- --------------------------------------------------------- -->
+<a name="run"><h2>5. Run your program</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+The program will ask the user to enter two predicates and then your
+program will generate the substitution.  One example gaven in the
+textbook is <code>UNIFY(Knows(John,x),Knows(y,Mother(y)))</code>.
+The interactive session of your program should be like this:
+</p>
+
+<div><ul><code>
+Please enter the first predicate: <b>Knows(John,x)</b><br>
+Please enter the second predicate: <b>Knows(y,Mother(y))</b><br>
+The substitution is:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x := Mother(John)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y := John<br>
+</code></ul></div>
+
+<p>
+Notice that variables are lower-case words and other symbols
+(i.e., constants, function names, or predicate names) are upper-case words
+</p>
+
+<p>
+Your program should generate meaningful error message to explain
+why an unification fails. For example,
+</p>
+<div><ul><code>
+Please enter the first predicate: <b>Knows(John, Peter)</b><br>
+Please enter the second predicate: <b>NotKnows(John, x)</b><br>
+Unification failed: Different predicate names.<br>
+</code></ul></div>
+
+<div><ul><code>
+Please enter the first predicate: <b>Knows(John, Father(Mary))</b><br>
+Please enter the second predicate: <b>Knows(John, Mother(Mary))</b><br>
+Unification failed: Different function names.<br>
+</code></ul></div>
+
+<div><ul><code>
+Please enter the first predicate: <b>Knows(John, x)</b><br>
+Please enter the second predicate: <b>Knows(John, Mary, Bill)</b><br>
+Unification failed: Predicate argument number mismatched.<br>
+</code></ul></div>
+
+<div><ul><code>
+Please enter the first predicate: <b>Knows(John, Sister(Sister(x)))</b><br>
+Please enter the second predicate: <b>Knows(John, Sister(x))</b><br>
+Unification failed: Occur check failed.<br>
+</code></ul></div>
+
+<div><ul><code>
+Please enter the first predicate: <b>Knows(John,x)</b><br>
+Please enter the second predicate: <b>Knows(x,Elizabeth)</b><br>
+Unification failed: Unable to unify terms.<br>
+</code></ul></div>
+
+<p>
+Your algorithm should throw a <code>runtime_error</code> exception with an error message when
+an error occurs.
+</p>
+
+<p>
+Some of the above errors can be aboved by using a standardizing apart procedure,
+which renames some of the variables to avoid duplicated names in both predicates.
+By using <code>-s</code> option your program should call a standardizing apart procedure
+to rename the variables before sending the predicates to the unification procedure.
+For example,
+</p>
+
+<div><ul><code>
+&gt; <b>unify -s</b><br>
+Please enter the first predicate: <b>Knows(John,x)</b><br>
+Please enter the second predicate: <b>Knows(x,Elizabeth)</b><br>
+After standardizing apart, the predicates are:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Knows(John, x)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Knows(x_1, Elizabeth)<br>
+The substitution is:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x := Elizabeth<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x_1 := John<br>
+</code></ul></div>
+
+<p>
+You should rename the variables by appending <code>_n</code>,
+where <code>n</code> is a positive integer, to the end
+of the variables that require renaming.
+</p>
+
+
+<!-- --------------------------------------------------------- -->
+<a name="start"><h2>6. Compile your program</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+To compile the program correctly, you will need to use 
+the latest version of GNU Bison (version 3.0) and flex (version 2.5).
+Take a look at the Makefile to see how to compile the program.
+If you want to compile the program yourself, type the following
+commands:
+</p>
+
+<div><ul><code>
+bison fol-parser.ypp<br>
+flex -o fol-scanner.cpp fol-scanner.ll<br>
+g++ -O3 fol-parser.tab.cpp fol-scanner.cpp fol-reader.cpp fol.cpp unify.cpp -o unify<br>
+</code></ul></div>
+
+
+<!-- --------------------------------------------------------- -->
+<a name="evaluation"><h2>7. Evaluation of your implementation</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+We will run your program with several dozens of test cases and your
+program needs to generate correct answers.
+In the failure cases, your program should
+generate meaningful error messages as discussed in Section 5.
+</p>
+
+<br>
+<br>
+
+
+<!-- --------------------------------------------------------- -->
+<a name="submission"><h2>8. Submit your program</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+Your algorithm must be implemented in 
+<b>unify.cpp</b> entirely. In the file, please put your name and
+your email address as a comment at the top of the file.
+Your should also briefly describe your implementation at the top
+of the file.
+</p>
+<p></p>
+Please submit the file as an attachment on Blackboard.
+After the submission, please check to see whether the files 
+have been uploaded successfully.
+The due date of this assignment is November 11, 2016 at 23:59pm.
+<p></p>
+
+<br>
+<br>
+
+<!-- --------------------------------------------------------- -->
+<a name="grading"><h2>9. Grading Scheme</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+Our tentative grading scheme is as follows:
+</p>
+<ul>
+<li> CORRECTNESS OF UNIFICATION ALGORITHM (50%): the implementation of the unification algorithm is correct.
+</li><li> CORRECTNESS OF STANDARDIZING APART (30%): the implementation of the standardizing apart procedure is correct.
+</li><li> READABILITY (20%): How clean your code is, and whether your code is well-documented.
+</li></ul>
+<p>
+This grading scheme is subject to amendment.
+</p>
+
+
+<br>
+<br>
+
+<!-- --------------------------------------------------------- -->
+<a name="qa"><h2>10. Bug Reports</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+Please report any bugs in the code template to Tsz-Chiu Au
+at <a href="mailto:chiu@unist.ac.kr">chiu@unist.ac.kr</a>.
+</p>
+
+
+<br>
+<br>
+
+
+
+
+</div></body></html>

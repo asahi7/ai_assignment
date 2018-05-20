@@ -1,0 +1,1033 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0053)http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   <title>Programming Assignment 3: Game-Tree Search</title>
+   
+   <meta name="description" content="Programming Assignment 3: Game-Tree Search">
+   <meta http-equiv="Window-target" content="_top">
+
+   <script type="text/javascript"> <!--
+      if (top!= self) top.location.replace(self.location.href); //-->
+   </script>
+   <link rel="stylesheet" type="text/css" href="./Programming Assignment 3_ Game-Tree Search_files/mainstyle.css">
+   <link rel="stylesheet" type="text/css" href="./Programming Assignment 3_ Game-Tree Search_files/bedaux_net.css">
+</head>
+
+<body>
+
+<h1>Programming Assignment 3: Game-Tree Search for Generalized Tic-Tac-Toe</h1>
+
+<!-- --------------------------------------------------------- -->
+<a name="toc">
+<h2>Table of Contents</h2>
+</a>
+<!-- --------------------------------------------------------- -->
+
+<ol>
+<li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/#announcement">Announcement</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/#introduction">Introduction</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/#download">Download the code template and other files</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/#implementation">Implement your game tree search algorithm</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/#input">Game description files</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/#run">Run the sample program and the game simulator</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/#start">Compile your program</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/#verify">Test your program</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/#evaluation">Evaluation of your implementation</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/#submission">Submit your program</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/#grading">Grading Scheme</a>
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/#qa">Bug Reports</a>
+</li></ol>
+
+
+<!-- --------------------------------------------------------- -->
+<a name="announcement"><h2>1. Announcement</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<ul>
+<li> <b>(October 16, 2016)</b> The due date has been extended to October 28.
+</li><li> <b>(October 1, 2016)</b> The due date is October 23, 2016.
+</li></ul>
+
+<!-- --------------------------------------------------------- -->
+<a name="introduction"><h2>2. Introduction</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Tic-tac-toe">Tic-tac-toe</a> is a well-known game 
+that is played by children all over the world.  In tic-tac-toe, the players take turns to mark the spaces in a 3×3 grid, and the winner is the first one
+who successfully place three consecutive marks in a horizontal, vertical, or diagonal row.
+It is known that a game with two competent players will always end in a tie. In this exercise,
+we will write a program to prove this conventional wisdom.  To make this task
+more interesting, we will consider a generalization of tic-tac-toe that
+has (1) a rectangular grid of any size, (2) arbitrary winning sequences that
+do not have to be in horizontal, vertical, or diagonal row, and (3) blocks that
+prevents player to put marks at certain positions on the grid.
+You will write a program to check whether a given instance of this generalized tic-tac-toe
+is <a href="http://en.wikipedia.org/wiki/Balance_(game_design)">balanced</a>---the
+<a href="http://en.wikipedia.org/wiki/First-mover_advantage">first-mover advantage</a>
+(or <a href="http://en.wikipedia.org/wiki/Second-mover_advantage#Second-mover_advantage">second-mover advantage</a>, if any) is not strong enough to guarantee one of the players a win even if the player plays perfectly.  Checking whether a problem instance is balanced is more or less the same as <a href="https://en.wikipedia.org/wiki/Game_tree#Deterministic_Algorithm_Version">"solving"</a> the problem instance.
+</p>
+
+<!-- --------------------------------------------------------- -->
+<a name="download"><h2>3. Download the code template and other files</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+In this exercise, you will use C++ to implement the program. 
+To get start, download the following files:
+</p>
+<ul>
+<li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/gametree.cpp">gametree.cpp</a> - the code template of your program.
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/play.py">play.py</a> - a Python 3.4 script that can initialize a match between two agents or start an interactive session to play a game against an agent.
+</li><li> The executables of two sample agents, one with alpha-beta pruning and the other with no pruning, on several popular platforms:
+    <ul>
+    <li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/executable/gametree-pruning-linux64">gametree-pruning-linux64</a> and
+         <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/executable/gametree-complete-linux64">gametree-complete-linux64</a>
+         for 64-bit Linux on x86-64 machines
+    </li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/executable/gametree-pruning-mac">gametree-pruning-mac</a> and
+         <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/executable/gametree-complete-mac">gametree-complete-mac</a> 
+         for 64-bit Intel Mac
+    </li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/executable/gametree-pruning-win64.exe">gametree-pruning-win64.exe</a> and
+         <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/executable/gametree-complete-win64.exe">gametree-complete-win64.exe</a> 
+         for 64-bit Windows Platform using <a href="http://mingw-w64.sourceforge.net/">MingGW-w64</a> via <a href="https://www.cygwin.com/">Cygwin for 64-bit Windows</a>.
+    </li></ul>
+Notice that these sample agents *cannot* run on 32-bit machines; they rely on the use of 64-bit integer operations and therefore they only work on 64-bit machines.
+</li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/stateset-diff.cpp">stateset-diff.cpp</a> - the source code of the utility program for checking correctness of the states and payoffs generated by your program. We will explain how to use it in Section 8.  This program contains some codes for bitwise encoding of winning sequences and game states. Feel free to use them at your own discretion.
+</li><li> The executables of <code>stateset-diff.cpp</code> on several popular platforms:
+    <ul>
+    <li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/executable/stateset-diff-linux64">stateset-diff-linux64</a> - 64 bit Linux on x86-64 machines
+    </li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/executable/stateset-diff-mac">stateset-diff-mac</a> - 64 bit Intel Mac
+    </li><li> <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/executable/stateset-diff-win64.exe">stateset-diff-win64.exe</a> - 64 bit Windows Platform using <a href="http://mingw-w64.sourceforge.net/">MingGW-w64</a> via <a href="https://www.cygwin.com/">Cygwin for 64-bit Windows</a>.
+    </li></ul>
+</li><li> A set of game description files and the corresponding game trees:
+  <br>
+  <div align="center"> 
+    
+  <table width="700" border="1">
+    <tbody><tr>
+      <th scope="col"><div align="center">Game Description File</div></th>
+      <th scope="col"><div align="center">Pruned Game Tree</div></th>
+      <th scope="col"><div align="center">Complete Game Tree</div></th>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec1x1a.txt">spec1x1a.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-pruning-spec1x1a.txt">tree-pruning-spec1x1a.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-complete-spec1x1a.txt">tree-complete-spec1x1a.txt</a></div></td>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec2x1a.txt">spec2x1a.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-pruning-spec2x1a.txt">tree-pruning-spec2x1a.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-complete-spec2x1a.txt">tree-complete-spec2x1a.txt</a></div></td>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec2x2a.txt">spec2x2a.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-pruning-spec2x2a.txt">tree-pruning-spec2x2a.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-complete-spec2x2a.txt">tree-complete-spec2x2a.txt</a></div></td>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec2x2b.txt">spec2x2b.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-pruning-spec2x2b.txt">tree-pruning-spec2x2b.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-complete-spec2x2b.txt">tree-complete-spec2x2b.txt</a></div></td>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec3x2a.txt">spec3x2a.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-pruning-spec3x2a.txt">tree-pruning-spec3x2a.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-complete-spec3x2a.txt">tree-complete-spec3x2a.txt</a></div></td>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec3x2b.txt">spec3x2b.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-pruning-spec3x2b.txt">tree-pruning-spec3x2b.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-complete-spec3x2b.txt">tree-complete-spec3x2b.txt</a></div></td>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec3x3a.txt">spec3x3a.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-pruning-spec3x3a.txt">tree-pruning-spec3x3a.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-complete-spec3x3a.txt">tree-complete-spec3x3a.txt</a></div></td>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec3x3b.txt">spec3x3b.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-pruning-spec3x3b.txt">tree-pruning-spec3x3b.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-complete-spec3x3b.txt">tree-complete-spec3x3b.txt</a></div></td>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec4x3a.txt">spec4x3a.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-pruning-spec4x3a.txt">tree-pruning-spec4x3a.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-complete-spec4x3a.txt">tree-complete-spec4x3a.txt</a></div></td>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec4x3b.txt">spec4x3b.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-pruning-spec4x3b.txt">tree-pruning-spec4x3b.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-complete-spec4x3b.txt">tree-complete-spec4x3b.txt</a></div></td>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec4x3c.txt">spec4x3c.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-pruning-spec4x3c.txt">tree-pruning-spec4x3c.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-complete-spec4x3c.txt">tree-complete-spec4x3c.txt</a></div></td>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec4x4a.txt">spec4x4a.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-pruning-spec4x4a.txt">tree-pruning-spec4x4a.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-complete-spec4x4a.txt">tree-complete-spec4x4a.txt</a></div></td>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec4x4b.txt">spec4x4b.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-pruning-spec4x4b.txt">tree-pruning-spec4x4b.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-complete-spec4x4b.txt">tree-complete-spec4x4b.txt</a></div></td>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec5x4a.txt">spec5x4a.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-pruning-spec5x4a.txt.zip">tree-pruning-spec5x4a.txt.zip</a></div></td>
+      <td><div align="center">-</div></td>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec5x4b.txt">spec5x4b.txt</a></div></td>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/tree/tree-pruning-spec5x4b.txt.zip">tree-pruning-spec5x4b.txt.zip</a></div></td>
+      <td><div align="center">-</div></td>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec5x5a.txt">spec5x5a.txt</a></div></td>
+      <td><div align="center">-</div></td>
+      <td><div align="center">-</div></td>
+      </tr>
+    <tr>
+      <td><div align="center"><a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code/spec5x5b.txt">spec5x5b.txt</a></div></td>
+      <td><div align="center">-</div></td>
+      <td><div align="center">-</div></td>
+      </tr>
+  </tbody></table>
+  </div>
+</li></ul>
+
+<p>
+You can download all the above files (except the game tree) at once from this zip file: <a href="http://market.unist.ac.kr/~chiu/ai_resource/prog/hw3/code.zip">code.zip</a>.
+</p>
+
+<!-- --------------------------------------------------------- -->
+<a name="implementation"><h2>4. Implement your game tree search algorithm</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+We provide the following code template (<code>gametree.cpp</code>) for you to implement your game tree search algorithm.
+</p>
+
+
+
+<div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff" width="800px">
+   <tbody><tr>
+   <td nowrap="nowrap" valign="top" align="left">
+   
+<pre><span class="pre">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;stdexcept&gt;
+#include &lt;cstdlib&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;vector&gt;
+</span><span class="keyword">
+using namespace</span> std<span class="operator">;</span><span class="keyword">
+
+class</span> GameSpec<span class="operator"> {</span><span class="type">
+    
+    int</span> size<span class="operator">;</span><span class="type">
+    int</span> sizeX<span class="operator">,</span> sizeY<span class="operator">;</span><span class="type">
+    bool</span><span class="operator"> *</span>board<span class="operator">;</span><span class="comment">  //  board[i] is true if the position i is not blocked.
+</span>    vector<span class="operator">&lt;</span>vector<span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt; &gt;</span> winseq<span class="operator">;</span><span class="keyword">
+
+public</span><span class="operator">:</span>
+    GameSpec<span class="operator">(</span><span class="type">char</span><span class="operator"> *</span>specfilename<span class="operator">);
+    ~</span>GameSpec<span class="operator">() {</span><span class="keyword"> delete</span><span class="operator"> []</span> board<span class="operator">; }</span><span class="keyword">
+    
+    const</span><span class="type"> int</span> getIndex<span class="operator">(</span><span class="type">int</span> x<span class="operator">,</span><span class="type"> int</span> y<span class="operator">)</span><span class="keyword"> const</span><span class="operator"> {</span><span class="flow"> return</span> x<span class="operator"> +</span> sizeX<span class="operator"> *</span> y<span class="operator">; }</span><span class="keyword">
+    const</span><span class="type"> int</span> getSize<span class="operator">()</span><span class="keyword"> const</span><span class="operator"> {</span><span class="flow"> return</span> size<span class="operator">; }</span><span class="keyword">
+    const</span><span class="type"> int</span> getSizeX<span class="operator">()</span><span class="keyword"> const</span><span class="operator"> {</span><span class="flow"> return</span> sizeX<span class="operator">; }</span><span class="keyword">
+    const</span><span class="type"> int</span> getSizeY<span class="operator">()</span><span class="keyword"> const</span><span class="operator"> {</span><span class="flow"> return</span> sizeY<span class="operator">; }</span><span class="keyword">
+    const</span><span class="type"> bool</span> isBlocked<span class="operator">(</span><span class="type">int</span> i<span class="operator">)</span><span class="keyword"> const</span><span class="operator"> {</span><span class="flow"> return</span><span class="operator"> !</span>board<span class="operator">[</span>i<span class="operator">]; }</span><span class="keyword">
+    const</span><span class="type"> bool</span> isBlocked<span class="operator">(</span><span class="type">int</span> x<span class="operator">,</span><span class="type"> int</span> y<span class="operator">)</span><span class="keyword"> const</span><span class="operator"> {</span><span class="flow"> return</span><span class="operator"> !</span>board<span class="operator">[</span>x<span class="operator"> +</span> y<span class="operator"> *</span> sizeX<span class="operator">]; }</span><span class="keyword">
+    const</span> vector<span class="operator">&lt;</span>vector<span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt; &gt;&amp;</span> getWinSeq<span class="operator">()</span><span class="keyword"> const</span><span class="operator"> {</span><span class="flow"> return</span> winseq<span class="operator">; }</span><span class="keyword">
+    const</span><span class="type"> bool</span> isValidMove<span class="operator">(</span><span class="type">int</span> move<span class="operator">) {</span><span class="flow"> return</span><span class="int"> 0</span><span class="operator"> &lt;=</span> move<span class="operator"> &amp;&amp;</span> move<span class="operator"> &lt;</span> size<span class="operator"> &amp;&amp;</span> board<span class="operator">[</span>move<span class="operator">]; }</span><span class="type">
+    
+    void</span> print<span class="operator">();
+};</span>
+
+GameSpec<span class="operator">::</span>GameSpec<span class="operator">(</span><span class="type">char</span><span class="operator"> *</span>specfilename<span class="operator">) {</span>
+    ifstream f<span class="operator">(</span>specfilename<span class="operator">);</span><span class="flow">
+
+    if</span><span class="operator"> (</span>f<span class="operator">.</span>is_open<span class="operator">()) {</span>
+
+        f<span class="operator"> &gt;&gt;</span> sizeX<span class="operator"> &gt;&gt;</span> sizeY<span class="operator">;</span><span class="flow">
+
+        if</span><span class="operator"> (</span>f<span class="operator">.</span>bad<span class="operator">())</span><span class="flow"> throw</span> runtime_error<span class="operator">(</span><span class="string">"Failed to read from the specification file."</span><span class="operator">);</span><span class="flow">
+        if</span><span class="operator"> (</span>sizeX<span class="operator"> &lt;</span><span class="int"> 1</span><span class="operator"> ||</span> sizeY<span class="operator"> &lt;</span><span class="int"> 1</span><span class="operator">)</span><span class="flow"> throw</span> runtime_error<span class="operator">(</span><span class="string">"Invalid board size."</span><span class="operator">);</span>
+
+        size<span class="operator"> =</span> sizeX<span class="operator"> *</span> sizeY<span class="operator">;</span>
+        
+        board<span class="operator"> =</span><span class="keyword"> new</span><span class="type"> bool</span><span class="operator">[</span>size<span class="operator">];</span><span class="flow">
+        
+        for</span><span class="operator"> (</span><span class="type">int</span> y<span class="operator">=</span><span class="int">0</span><span class="operator">;</span> y<span class="operator">&lt;</span>sizeY<span class="operator">;</span> y<span class="operator">++) {</span><span class="flow">
+            for</span><span class="operator"> (</span><span class="type">int</span> x<span class="operator">=</span><span class="int">0</span><span class="operator">;</span> x<span class="operator">&lt;</span>sizeX<span class="operator">;</span> x<span class="operator">++) {</span><span class="type">
+                int</span> i<span class="operator"> =</span> x<span class="operator"> +</span> y<span class="operator"> *</span> sizeX<span class="operator">;</span><span class="type">
+                int</span> v<span class="operator">;</span>
+                f<span class="operator"> &gt;&gt;</span> v<span class="operator">;</span><span class="flow">
+                if</span><span class="operator"> (</span>v<span class="operator"> &gt;=</span><span class="int"> 0</span><span class="operator">) {</span><span class="flow">
+                    if</span><span class="operator"> (</span>v<span class="operator"> !=</span> i<span class="operator">)</span><span class="flow"> throw</span> runtime_error<span class="operator">(</span><span class="string">"Incorrect board entry."</span><span class="operator">);</span>
+                    board<span class="operator">[</span>i<span class="operator">] =</span><span class="bool"> true</span><span class="operator">;
+                }</span><span class="flow"> else</span><span class="operator"> {</span>
+                    board<span class="operator">[</span>i<span class="operator">] =</span><span class="bool"> false</span><span class="operator">;
+                }
+            }
+        }</span><span class="flow">
+
+        while</span><span class="operator">(</span><span class="bool">true</span><span class="operator">) {</span><span class="flow">
+            if</span><span class="operator"> (</span>f<span class="operator">.</span>bad<span class="operator">())</span><span class="flow"> throw</span> runtime_error<span class="operator">(</span><span class="string">"Unable to read winning sequences."</span><span class="operator">);</span><span class="type">
+            int</span> n<span class="operator">;</span>
+            f<span class="operator"> &gt;&gt;</span> n<span class="operator">;</span><span class="flow">
+            if</span><span class="operator"> (</span>n<span class="operator"> &lt;</span><span class="int"> 0</span><span class="operator">)</span><span class="flow"> break</span><span class="operator">;</span><span class="comment">  // no more winning sequences
+</span>            winseq<span class="operator">.</span>push_back<span class="operator">(</span>vector<span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;());</span><span class="flow">
+            for</span><span class="operator">(</span><span class="type">int</span> i<span class="operator">=</span><span class="int">0</span><span class="operator">;</span> i<span class="operator">&lt;</span>n<span class="operator">;</span> i<span class="operator">++) {</span><span class="type">
+                int</span> v<span class="operator">;</span>
+                f<span class="operator"> &gt;&gt;</span> v<span class="operator">;</span><span class="flow">
+                if</span><span class="operator"> (!</span>board<span class="operator">[</span>v<span class="operator">])</span><span class="flow"> throw</span> runtime_error<span class="operator">(</span><span class="string">"Winning sequences cannot include blocked locations"</span><span class="operator">);</span><span class="flow">
+                for</span><span class="operator">(</span><span class="type">int</span> i<span class="operator">=</span><span class="int">0</span><span class="operator">;</span> i<span class="operator">&lt;</span>winseq<span class="operator">.</span>back<span class="operator">().</span>size<span class="operator">();</span> i<span class="operator">++) {</span><span class="flow">
+                    if</span><span class="operator"> (</span>winseq<span class="operator">.</span>back<span class="operator">()[</span>i<span class="operator">] ==</span> v<span class="operator">)</span><span class="flow">
+                        throw</span> runtime_error<span class="operator">(</span><span class="string">"Duplicated locations in a winning sequences."</span><span class="operator">);
+                }</span>
+                winseq<span class="operator">.</span>back<span class="operator">().</span>push_back<span class="operator">(</span>v<span class="operator">);
+            }
+        }</span>
+
+        f<span class="operator">.</span>close<span class="operator">();
+    }</span><span class="flow"> else</span><span class="operator"> {</span><span class="flow">
+        throw</span> runtime_error<span class="operator">(</span><span class="string">"Cannot open the specification file."</span><span class="operator">);
+    }
+}</span><span class="type">
+
+void</span> GameSpec<span class="operator">::</span>print<span class="operator">() {</span>
+    cout<span class="operator"> &lt;&lt;</span><span class="string"> "Board:"</span><span class="operator">&lt;&lt;</span> endl<span class="operator">;</span><span class="flow">
+    for</span><span class="operator"> (</span><span class="type">int</span> y<span class="operator">=</span><span class="int">0</span><span class="operator">;</span> y<span class="operator">&lt;</span>sizeY<span class="operator">;</span> y<span class="operator">++) {</span><span class="flow">
+        for</span><span class="operator"> (</span><span class="type">int</span> x<span class="operator">=</span><span class="int">0</span><span class="operator">;</span> x<span class="operator">&lt;</span>sizeX<span class="operator">;</span> x<span class="operator">++) {</span><span class="flow">
+            if</span><span class="operator"> (</span>isBlocked<span class="operator">(</span>x<span class="operator">,</span> y<span class="operator">)) {</span>
+                cout<span class="operator"> &lt;&lt;</span><span class="string"> "*"</span><span class="operator">;
+            }</span><span class="flow"> else</span><span class="operator"> {</span>
+                cout<span class="operator"> &lt;&lt;</span><span class="string"> "#"</span><span class="operator">;
+            }
+        }</span>
+        cout<span class="operator"> &lt;&lt;</span> endl<span class="operator">;
+    }</span>
+    cout<span class="operator"> &lt;&lt;</span><span class="string"> "Winning sequences:"</span><span class="operator">&lt;&lt;</span> endl<span class="operator">;</span><span class="flow">
+    for</span><span class="operator"> (</span><span class="type">int</span> i<span class="operator">=</span><span class="int">0</span><span class="operator">;</span> i<span class="operator">&lt;</span>winseq<span class="operator">.</span>size<span class="operator">();</span> i<span class="operator">++) {</span><span class="flow">
+        for</span><span class="operator">(</span><span class="type">int</span> j<span class="operator">=</span><span class="int">0</span><span class="operator">;</span> j<span class="operator">&lt;</span>winseq<span class="operator">[</span>i<span class="operator">].</span>size<span class="operator">();</span> j<span class="operator">++) {</span><span class="type">
+            int</span> k<span class="operator"> =</span> winseq<span class="operator">[</span>i<span class="operator">][</span>j<span class="operator">];</span>
+            cout<span class="operator"> &lt;&lt;</span><span class="string"> "("</span><span class="operator"> &lt;&lt;</span> k<span class="operator"> %</span> sizeX<span class="operator"> &lt;&lt;</span><span class="string"> ","</span><span class="operator"> &lt;&lt;</span> k<span class="operator"> /</span> sizeX<span class="operator"> &lt;&lt;</span><span class="string"> ")"</span><span class="operator"> &lt;&lt;</span><span class="string"> " "</span><span class="operator">;
+        }</span>
+        cout<span class="operator"> &lt;&lt;</span> endl<span class="operator">;
+    }
+}</span><span class="keyword">
+
+class</span> GameTree<span class="operator"> {</span>
+    
+    GameSpec<span class="operator"> *</span>spec<span class="operator">;</span><span class="keyword">
+
+public</span><span class="operator">:</span>
+    GameTree<span class="operator">(</span>GameSpec<span class="operator"> *</span>spec<span class="operator">);
+    ~</span>GameTree<span class="operator">();</span><span class="type">
+    void</span> playAsPlayer1<span class="operator">();</span><span class="type">
+    void</span> playAsPlayer2<span class="operator">();</span><span class="type">
+    int</span> getRootMiniMaxValue<span class="operator">();</span><span class="type">
+    void</span> print<span class="operator">();
+};</span>
+
+GameTree<span class="operator">::</span>GameTree<span class="operator">(</span>GameSpec<span class="operator"> *</span>_spec<span class="operator">) :</span> spec<span class="operator">(</span>_spec<span class="operator">) {
+}</span>
+
+GameTree<span class="operator">::~</span>GameTree<span class="operator">() {
+}</span><span class="type">
+
+void</span> GameTree<span class="operator">::</span>playAsPlayer1<span class="operator">() {
+}</span><span class="type">
+
+void</span> GameTree<span class="operator">::</span>playAsPlayer2<span class="operator">() {
+}</span><span class="type">
+
+int</span> GameTree<span class="operator">::</span>getRootMiniMaxValue<span class="operator">() {
+}</span><span class="type">
+
+void</span> GameTree<span class="operator">::</span>print<span class="operator">() {
+}</span><span class="comment">
+  
+
+/*
+ * The main function.
+ */</span><span class="type">
+int</span><span class="keyword"> main</span><span class="operator">(</span><span class="type">int</span> argc<span class="operator">,</span><span class="type"> char</span><span class="operator">**</span> argv<span class="operator">) {</span><span class="type">
+
+    char</span><span class="operator"> *</span>specfilename<span class="operator">;</span><span class="type">
+    bool</span> isVerbose<span class="operator"> =</span><span class="bool"> false</span><span class="operator">,</span> isArgValid<span class="operator"> =</span><span class="bool"> true</span><span class="operator">;</span><span class="type">
+    bool</span> isPlaying<span class="operator"> =</span><span class="bool"> false</span><span class="operator">,</span> isFirstPlayer<span class="operator"> =</span><span class="bool"> false</span><span class="operator">;</span><span class="flow">
+
+    if</span><span class="operator"> (</span>argc<span class="operator">==</span><span class="int">2</span><span class="operator">) {</span>
+        specfilename<span class="operator"> =</span> argv<span class="operator">[</span><span class="int">1</span><span class="operator">];
+    }</span><span class="flow"> else if</span><span class="operator"> (</span>argc<span class="operator">==</span><span class="int">3</span><span class="operator">) {</span><span class="flow">
+        if</span><span class="operator"> (</span>strcmp<span class="operator">(</span>argv<span class="operator">[</span><span class="int">1</span><span class="operator">],</span><span class="string"> "-v"</span><span class="operator">)==</span><span class="int">0</span><span class="operator">) {</span>
+            isVerbose<span class="operator"> =</span><span class="bool"> true</span><span class="operator">;
+        }</span><span class="flow"> else if</span><span class="operator"> (</span>strcmp<span class="operator">(</span>argv<span class="operator">[</span><span class="int">1</span><span class="operator">],</span><span class="string"> "-p1"</span><span class="operator">)==</span><span class="int">0</span><span class="operator">) {</span>
+            isPlaying<span class="operator"> =</span><span class="bool"> true</span><span class="operator">;</span>
+            isFirstPlayer<span class="operator"> =</span><span class="bool"> true</span><span class="operator">;
+        }</span><span class="flow"> else if</span><span class="operator"> (</span>strcmp<span class="operator">(</span>argv<span class="operator">[</span><span class="int">1</span><span class="operator">],</span><span class="string"> "-p2"</span><span class="operator">)==</span><span class="int">0</span><span class="operator">) {</span>
+            isPlaying<span class="operator"> =</span><span class="bool"> true</span><span class="operator">;</span>
+            isFirstPlayer<span class="operator"> =</span><span class="bool"> false</span><span class="operator">;
+        }</span><span class="flow"> else</span><span class="operator"> {</span>
+            isArgValid<span class="operator"> =</span><span class="bool"> false</span><span class="operator">;
+        }</span>
+        specfilename<span class="operator"> =</span> argv<span class="operator">[</span><span class="int">2</span><span class="operator">];
+    }</span><span class="flow"> else</span><span class="operator"> {</span>
+        isArgValid<span class="operator"> =</span><span class="bool"> false</span><span class="operator">;
+    }</span><span class="flow">
+    
+    if</span><span class="operator"> (!</span>isArgValid<span class="operator">) {</span>
+        cerr<span class="operator"> &lt;&lt;</span><span class="string"> "Error in command line arguments."</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span><span class="string"> "Usage: "</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span><span class="string"> "       "</span><span class="operator"> &lt;&lt;</span> argv<span class="operator">[</span><span class="int">0</span><span class="operator">] &lt;&lt;</span><span class="string"> " [-v|-p1|-p2] spec.txt"</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span><span class="string"> "where spec.txt is the specification of a generalized Tic-Tac-Toe game."</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span><span class="string"> "The option -v enables the output of the intermediate states of the"</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span><span class="string"> "game tree search procedure."</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span><span class="string"> "The option -p1 causes the program to start playing as the first player."</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span><span class="string"> "The option -p2 causes the program to start playing as the second player."</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span><span class="flow">
+        return</span><span class="int"> 1</span><span class="operator">;
+    }</span>
+
+    GameSpec<span class="operator"> *</span>spec<span class="operator">;</span><span class="flow">
+    try</span><span class="operator"> {</span>
+       spec<span class="operator"> =</span><span class="keyword"> new</span> GameSpec<span class="operator">(</span>specfilename<span class="operator">);</span><span class="comment">
+       // spec.print();
+</span><span class="operator">    }</span><span class="flow"> catch</span><span class="operator">(</span>exception<span class="keyword"> const</span><span class="operator">&amp;</span> e<span class="operator">) {</span>
+        cerr<span class="operator"> &lt;&lt;</span> e<span class="operator">.</span>what<span class="operator">() &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span><span class="string"> "Invalid specification file."</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span><span class="flow">
+        return</span><span class="int"> 2</span><span class="operator">;
+    }</span>
+    
+    GameTree<span class="operator"> *</span>game_tree<span class="operator">;</span><span class="flow">
+    try</span><span class="operator"> {</span>
+        game_tree<span class="operator"> =</span><span class="keyword"> new</span> GameTree<span class="operator">(</span>spec<span class="operator">);
+    }</span><span class="flow"> catch</span><span class="operator">(</span>exception<span class="keyword"> const</span><span class="operator">&amp;</span> e<span class="operator">) {</span>
+        cerr<span class="operator"> &lt;&lt;</span> e<span class="operator">.</span>what<span class="operator">() &lt;&lt;</span> endl<span class="operator">;</span>
+        cerr<span class="operator"> &lt;&lt;</span><span class="string"> "Failed to create the game tree."</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;</span><span class="flow">
+        return</span><span class="int"> 3</span><span class="operator">;
+    }</span><span class="flow">
+    
+    if</span><span class="operator"> (</span>isVerbose<span class="operator">) {</span>
+        game_tree<span class="operator">-&gt;</span>print<span class="operator">();
+    }</span><span class="flow"> else if</span><span class="operator"> (</span>isPlaying<span class="operator">) {</span><span class="flow">
+        if</span><span class="operator"> (</span>isFirstPlayer<span class="operator">) {</span>
+            game_tree<span class="operator">-&gt;</span>playAsPlayer1<span class="operator">();
+        }</span><span class="flow"> else</span><span class="operator"> {</span>
+            game_tree<span class="operator">-&gt;</span>playAsPlayer2<span class="operator">();
+        }
+    }</span><span class="flow"> else</span><span class="operator"> {</span><span class="type">
+        int</span> v<span class="operator"> =</span> game_tree<span class="operator">-&gt;</span>getRootMiniMaxValue<span class="operator">();</span><span class="flow">
+        if</span><span class="operator"> (</span>v<span class="operator"> ==</span><span class="int"> 0</span><span class="operator">) {</span>
+            cout<span class="operator"> &lt;&lt;</span><span class="string"> "This is a balanced game."</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;
+        }</span><span class="flow"> else if</span><span class="operator"> (</span>v<span class="operator"> &gt;</span><span class="int"> 0</span><span class="operator">) {</span>
+            cout<span class="operator"> &lt;&lt;</span><span class="string"> "This game favors the first player."</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;
+        }</span><span class="flow"> else</span><span class="operator"> {</span><span class="comment">  // v &lt; 0
+</span>            cout<span class="operator"> &lt;&lt;</span><span class="string"> "This game favors the second player."</span><span class="operator"> &lt;&lt;</span> endl<span class="operator">;
+        }
+    }</span><span class="keyword">
+    
+    delete</span> spec<span class="operator">;</span><span class="keyword">
+    delete</span> game_tree<span class="operator">;</span><span class="flow">
+    
+    return</span><span class="int"> 0</span><span class="operator">;
+}</span>
+</pre>
+
+</td>
+</tr>
+</tbody></table>
+
+
+<p>
+In the code template, we have given you the main function,
+which handles the command line arguments for you.
+In addition, we have also given you the <code>GameSpec</code> class,
+which read the data in the game description file. You are not
+allowed to modify the main function and the <code>GameSpec</code> class.
+</p>
+
+<p>
+Your game tree search algorithm should be implemented in the <code>GameTree</code> class,
+which contains six public member functions:
+</p>
+<ul>
+<li> <code>GameTree::GameTree(GameSpec *_spec)</code> —
+
+This is the starting point of your algorithm. It takes a game description object and create a game tree object.
+
+</li><li> <code>GameTree::~GameTree()</code> —
+
+The destructor of the class.
+
+</li><li> <code>GameTree::playAsPlayer1()</code> —
+
+Start playing at the first player (Player 1).  It repeatedly 
+sends integers representing its move to the standard output and
+get integers representing the move of the opponent from the standard input,
+until the game ends.
+
+</li><li> <code>GameTree::playAsPlayer2()</code> —
+
+Start playing at the second player (Player 2).  It is just like 
+<code>GameTree::playAsPlayer1()</code> except it reads an integer
+before sending one.
+
+</li><li> <code>GameTree::getRootMiniMaxValue()</code> —
+
+Return the minimax value of the root of the game tree.
+It returns 1 if the first player has a strategy that guarantees to win,
+-1 if the second player has a strategy that guarantees to win, and
+0 if none of the players has a strategy that guarantees to win.
+
+</li><li> <code>GameTree::print()</code> —
+
+Print the game tree to the standard output.
+
+</li></ul>
+
+
+
+<p>
+You can modify the GameTree class and include other classes
+as long as you keep the interface of the <code>GameTree</code> class intact.
+You are allowed to use the C++ Standard Library in your program.
+In general, we do not allow the use of any other libraries.
+However, if you can convince us that an existing, non-standard library
+is particularly suitable for this exercise, we encourage you to talk to
+the instructor to seek approval.
+</p>
+
+<!-- --------------------------------------------------------- -->
+<a name="input"><h2>5. Game description files</h2></a>
+<!-- --------------------------------------------------------- -->
+
+
+<p>
+A game description file is a file containing a sequence of integers
+that describes the size of the game board, the blocked positions, and the
+winning sequences. As an example, take a look at <code>spec3x3b.txt</code>:
+</p>
+<div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff" width="800px">
+<tbody><tr>
+<td nowrap="nowrap" valign="top" align="left">
+<pre>3 3
+
+0 1 2
+3 -1 5
+6 7 8
+
+3  0 1 2
+2  3 5
+3  6 7 8
+3  0 3 6
+2  1 7
+3  2 5 8
+2  0 8
+2  2 6
+3  0 1 5
+
+-1 
+</pre>
+</td>
+</tr>
+</tbody></table>
+<p>
+The first two numbers, n and m, are the number of columns and the number of rows on the game board. The next n × m numbers are a sequence of 0, 1, 2, ..., (n × m-1), which are the <i>position ID</i> of the positions on the game board. Some of the position IDs are -1, which means that the positions are blocked and no players can put a mark at these positions.
+The remaining numbers describe the winning sequences.
+Each winning sequence starts with the number of positions in the sequence,
+following by exactly the same number of integers, each of them is a
+position ID on the sequence. In the above example, there are nine
+winning sequences, and the first winning sequence is (0, 1, 2).  The
+number 3 before (0, 1, 2) indicates the number of entries in the sequence.
+The last number in a game description file is always -1.
+</p>
+
+<p>
+In this exercise, you can assume that the size of the game board
+is no larger than 6 × 6, and the number of unblocked positions
+is no more than 32.
+</p>
+
+<!-- --------------------------------------------------------- -->
+<a name="run"><h2>6. Run the sample program and the game simulator</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+In this section, we will use the sample programs for 64 bit Linux machines to illustrate 
+how your program should work.  To check whether the ordinary tic-tac-toe is balanced, run this command:
+</p>
+<div><ul><code>
+gametree-pruning-linux64 spec3x3a.txt
+</code></ul></div>
+<p>
+The output is
+</p>
+<div><ul><code>
+This is a balanced game.
+</code></ul></div>
+
+<p>
+In <code>spec3x3b.txt</code>,
+the middle position acts as a prepositioned "wild card" for both Player 1 and Player 2,
+because all winning sequences through the middle position are shortened by one by removing the middle position. In addition, there is a special winning sequence
+(0, 1, 5) which is not a straight line. This game, however, is imbalanced. Type:
+</p>
+<div><ul><code>
+gametree-pruning-linux64 spec3x3b.txt
+</code></ul></div>
+<p>
+and you will see
+</p>
+<div><ul><code>
+This game favors the first player.
+</code></ul></div>
+
+<p>
+To see why it is the case, type:
+</p>
+<div><ul><code>
+gametree-pruning-linux64 -v spec3x3b.txt
+</code></ul></div>
+<p>
+and you will see the output of all states in the game tree and their payoff values (which are equal to the minimax values if there is no pruning). The first 12 states are:
+</p>
+<div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff" width="800px">
+<tbody><tr>
+<td nowrap="nowrap" valign="top" align="left">
+<pre>--- 1
+***
+*#*
+***
+--- 1
+O**
+*#*
+***
+--- 1
+OX*
+*#*
+***
+--- -1
+OXO
+*#*
+***
+--- 1
+OXO
+X#*
+***
+--- -1
+OXO
+X#O
+***
+--- 1
+OXO
+X#O
+X**
+--- 0
+OXO
+X#O
+XO*
+--- 0 DRAW
+OXO
+X#O
+XOX
+--- 1 WIN
+OXO
+X#O
+X*O
+--- -1 LOSE
+OXO
+X#O
+*X*
+--- pruned
+OXO
+X#O
+**X
+
+.
+.
+.
+</pre>
+</td>
+</tr>
+</tbody></table>
+
+<p>
+In each state, <code>O</code> and <code>X</code> indicate the moves made by Player 1 and Player 2, respectively, while <code>*</code> and <code>#</code> indicate the empty spaces and the blocked positions, respectively.  The payoff value (which is not equal to the minimax value if there is pruning, except the root) of the state is shown at the top-right corner of the state.  There are only three
+possible payoff values: -1, 0, and 1. If a state is a terminal state, a label of either <code>WIN</code>, <code>LOSE</code>, or <code>DRAW</code> is displayed, indicating how Player 1 does at the terminal state.
+Some states are pruned in alpha-beta pruning, and they are labeled as <code>pruned</code> and have no payoff values.
+<b>Your program should output the game tree in the same format.</b>
+</p>
+<p>
+The set of states in a game tree depends on (1) whether any pruning rules
+are used, and (2) whether revisiting the same node is avoided. Thus 
+it is okay for your program to show the set of states that is somewhat different
+from the sample game tree we provide.  However, the set of nodes generated by your program should be 
+a subset of the nodes generated by <code>gametree-complete-linux64</code>,
+which exhaustively enumerates all nodes in a game tree with the exact minimax values.
+You can use the utility program <code>stateset-diff-linux64</code> to check whether a set of nodes
+is a subset of another. See Section 8 for more detail.
+</p>
+<p>
+If you are not convinced by the result, you can using the game simulator <code>play.py</code>
+to interactively test the agent. <code>play.py</code> is a Python 3.4 script and you will need
+a Python 3.4 interpreter to execute the script.  You may also need to update the first line of the
+script to make it work in your environment.
+</p>
+<p>
+To make the agent plays against itself, run this command:
+</p>
+<div><ul><code>
+play.py spec3x3b.txt gametree-pruning-linux64 gametree-pruning-linux64
+</code></ul></div>
+<p>
+The following is one possible output:
+</p>
+
+<div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff" width="800px">
+<tbody><tr>
+<td nowrap="nowrap" valign="top" align="left">
+<pre>--- START
+***
+*#*
+***
+--- Player 1 chose (0,0)
+O**
+*#*
+***
+--- Player 2 chose (1,0)
+OX*
+*#*
+***
+--- Player 1 chose (1,2)
+OX*
+*#*
+*O*
+--- Player 2 chose (2,0)
+OXX
+*#*
+*O*
+--- Player 1 chose (0,2)
+OXX
+*#*
+OO*
+--- Player 2 chose (0,1)
+OXX
+X#*
+OO*
+--- Player 1 chose (2,2)
+OXX
+X#*
+OOO
+--- Player 1 won.
+</pre>
+</td>
+</tr>
+</tbody></table>
+
+<p>
+The output can be different every time you run the simulator with the sample programs because
+the sample programs use random number generators to randomize moves.  But in all cases, you should
+see that Player 1 <i>always</i> wins the game, which means that the game is imbalanced.
+</p>
+
+<p>
+Suppose your program is called <code>gametree</code>. You can test your program by playing against
+the sample agent:
+</p>
+<div><ul><code>
+play.py spec3x3b.txt gametree gametree-pruning-linux64
+</code></ul></div>
+<p>
+In this case, your agent is Player 1 and the sample agent is Player 2. If you want to swap the roles,
+type:
+</p>
+<div><ul><code>
+play.py spec3x3b.txt gametree-pruning-linux64 gametree
+</code></ul></div>
+<p>
+A human player can also play against an agent using the simulator. To do so,
+use <code>-</code> as the name of the agent. For example,
+</p>
+<div><ul><code>
+play.py spec3x3b.txt gametree-linux64 -
+</code></ul></div>
+<p>
+The interactive session may look like this:
+</p>
+<div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff" width="800px">
+<tbody><tr>
+<td nowrap="nowrap" valign="top" align="left">
+<pre>--- START
+***
+*#*
+***
+--- Player 1 chose (0,0)
+O**
+*#*
+***
+Enter Player 2's move: 2 2
+--- Player 2 chose (2,2)
+O**
+*#*
+**X
+--- Player 1 chose (1,0)
+OO*
+*#*
+**X
+Enter Player 2's move: 2 0
+--- Player 2 chose (2,0)
+OOX
+*#*
+**X
+--- Player 1 chose (2,1)
+OOX
+*#O
+**X
+--- Player 1 won.
+</pre>
+</td>
+</tr>
+</tbody></table>
+<p>
+When the simulator asks you for a move, you will
+have to enter the coordinate of the space you want to put your mark.
+Notice that the upper-left position is (0,0).
+</p>
+<p>
+In the above interactive session, the simulator actually started the sample agent using the following command:
+</p>
+<div><ul><code>
+gametree-pruning-linux64 -p1 spec3x3b.txt
+</code></ul></div>
+<p>
+And the interaction between the sample agent and the simulator is as follows:
+</p>
+<div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff" width="800px">
+<tbody><tr>
+<td nowrap="nowrap" valign="top" align="left">
+<pre>0
+<b><i>8</i></b>
+1
+<b><i>2</i></b>
+5
+</pre>
+</td>
+</tr>
+</tbody></table>
+<p>
+These numbers are the position ID as defined in the game description file,
+and the bold, italic numbers are the numbers entered by the simulator.
+You should implement <code>GameTree::playAsPlayer1()</code>
+and <code>GameTree::playAsPlayer2()</code> to interact with the simulator
+in this manner exactly.  Otherwise, your program cannot work
+with the simulator.
+</p>
+
+<!-- --------------------------------------------------------- -->
+<a name="start"><h2>7. Compile your program</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+After implementing your algorithm, you should compile
+the program using the following command on Mac or in a Linux environment:
+</p>
+
+<div>
+<ul>
+<code>
+g++ -O3 -march=x86-64 -std=c++11 -o gametree gametree.cpp
+</code>
+</ul>
+</div>
+
+<p>
+In Cygwin on Windows machines, you may need to add additional options in order to link the C++ libraries correctly:
+</p>
+
+<div>
+<ul>
+<code>
+x86_64-w64-mingw32-g++ -O3 -march=x86-64 -std=c++11 -static-libgcc -static-libstdc++ -o gametree gametree.cpp
+</code>
+</ul>
+</div>
+
+<p>
+In non-Linux environments, the commands may be different.
+We recommend you to use an IDE such NetBeans or Microsoft Visual Studio to implement your
+programs.  But before submitting your programs, you must test whether
+your program can be compiled successfully on the Linux machine we provide.
+We will test your program on the Linux machine only.
+</p>
+
+
+<!-- --------------------------------------------------------- -->
+<a name="verify"><h2>8. Test your program</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+Please test your program using the given game description files,
+and compare the game tree generated by your program to the 
+ones provided.  It is also helpful to devise your own games with
+your own game description files to test some extreme cases.
+In addition, use the game simulator to play against
+the sample agent and human to observe any abnormal behavior.
+</p>
+
+<p>
+To aid the comparison of game trees, we provide a utility program called
+<code>stateset-diff</code>. As the name suggested, it shows the
+difference of two sets of states. Note that each node of a game tree
+corresponds to a state in the search space.
+</p>
+
+<p>
+Given two game tree files such as <code>tree-pruning-spec3x3a.txt</code> and <code>tree-complete-spec3x3a.txt</code>,
+you can see whether the set of nodes in the pruned tree is a
+subset of the complete game tree by running this command:
+</p>
+
+<div>
+<ul>
+<code>
+stateset-diff-linux64 spec3x3a.txt tree-complete-spec3x3a.txt tree-pruning-spec3x3a.txt
+</code>
+</ul>
+</div>
+
+<p>
+Then it will compute the set difference, in the usual mathematical sense, of 
+<code>tree-complete-spec3x3a.txt</code> and <code>tree-pruning-spec3x3a.txt</code>.
+However, the program finds that there are 
+17 states that exist in the second set (<code>tree-pruning-spec3x3a.txt</code>) but
+not in the first set (<code>tree-complete-spec3x3a.txt</code>).
+Obviously, it is incorrect. The reason why it is incorrect is that
+the payoff values of the nodes in the game tree pruned by alpha-beta pruning
+will be different from the minimax values of the nodes. To ignore the payoff values,
+use the <code>-ip</code> option:
+</p>
+
+<div>
+<ul>
+<code>
+stateset-diff-linux64 -ip spec3x3a.txt tree-complete-spec3x3a.txt tree-pruning-spec3x3a.txt
+</code>
+</ul>
+</div>
+
+<p>
+Then it will show that there is no state that exists in the second set but not in the first set.
+</p>
+
+<!-- --------------------------------------------------------- -->
+<a name="evaluation"><h2>9. Evaluation of your implementation</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+The key challenge of this exercise is to come up with an
+efficient implementation of game tree search algorithms.
+Apart from the correctness of your implementation, we will check
+how large the problem your program can solve.
+And the problem size should be measured by 
+the largest number of non-blocked locations in a game.
+Please report the largest problem size your program can solve (i.e., prove whether a game is balanced) in 5 minutes. Please also submit one or more game description files of the largest problems your program can solve.
+</p>
+
+<p>
+In some implementations of the game tree search, the memory exhausts before running out of time.  If the memory usage is the limiting factor affecting how large the problem your program can solve,
+please report the largest problem size your program can solve given a maximum 32GB of main memory.
+</p>
+
+<p>
+In fact, the largest problem size may not be an accurate measure of the performance. The number of winning sequences and the relationship
+among them can also affect the performance greatly. However, it is not straightforward to quantify the complexity of the winning sequences. In the report, you are required to discuss various game features that can affect the performance of your program.
+</p>
+
+<br>
+<br>
+
+
+<!-- --------------------------------------------------------- -->
+<a name="submission"><h2>10. Submit your program</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+Your algorithm must be implemented in 
+<b>gametree.cpp</b> entirely. In the file, please put your name,
+your student ID, and
+your email address as a comment at the top of the file.
+Your should also briefly describe your implementation at the top
+of the file.
+</p>
+<p>
+You should also submit the performance report as a plain text file,
+together with the game description files of the largest problems
+your program can solve.
+</p><p>
+</p>
+Please submit these files as attachments on Blackboard.
+After the submission, please check to see whether the files 
+have been uploaded successfully.  
+The due date of this assignment is October 23, 2016 at 23:59pm.
+<p></p>
+
+<br>
+<br>
+
+<!-- --------------------------------------------------------- -->
+<a name="grading"><h2>11. Grading Scheme</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+Our tentative grading scheme is as follows:
+</p>
+<ul>
+<li> CORRECTNESS OF GAME-TREE SEARCH (30%): the implementation of the game tree search algorithm is correct, and the minimax value of the root is correct.
+</li><li> CORRECTNESS OF PLAYING AS THE FIRST PLAYER (10%): 
+the program makes correct moves when it plays as the first player in the game simulator.
+</li><li> CORRECTNESS OF PLAYING AS THE SECOND PLAYER (10%): 
+the program makes correct moves when it plays as the second player in the game simulator.
+</li><li> MAXIMUM PROBLEM SIZE (30%): the size of the largest problem handled by your program is reasonable.
+</li><li> REPORT (10%): How well you evaluate your program and how well your performance report is written.
+</li><li> READABILITY (10%): How clean your code is, and whether your code is well-documented.
+</li></ul>
+<p>
+This grading scheme is subject to amendment.
+</p>
+
+<br>
+<br>
+
+<!-- --------------------------------------------------------- -->
+<a name="qa"><h2>12. Bug Reports</h2></a>
+<!-- --------------------------------------------------------- -->
+
+<p>
+Please report any bugs in the code template and in this web page to Tsz-Chiu Au
+at <a href="mailto:chiu@unist.ac.kr">chiu@unist.ac.kr</a>.
+</p>
+
+
+<br>
+<br>
+
+
+
+
+</div></div></div></div></div></div></body></html>
